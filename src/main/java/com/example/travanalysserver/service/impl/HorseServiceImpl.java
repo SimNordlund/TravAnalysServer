@@ -7,6 +7,7 @@ import com.example.travanalysserver.service.interfaces.HorseService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,7 @@ public class HorseServiceImpl implements HorseService {
         Horse tempHorse = horseRepo.findById(id).orElse(null);
         return HorseToHorseDTO(tempHorse);
     }
+
     @Override
     public Horse HorseDtoToHorse(HorseDTO horseDTO) {
         return Horse.builder()
@@ -27,6 +29,7 @@ public class HorseServiceImpl implements HorseService {
                 .name(horseDTO.getName())
                 .build();
     }
+
     @Override
     public HorseDTO HorseToHorseDTO(Horse horse) {
         return HorseDTO.builder()
