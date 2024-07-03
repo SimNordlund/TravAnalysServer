@@ -7,4 +7,6 @@ import java.util.UUID;
 
 public interface UserRepo extends JpaRepository <User, UUID> {
     User findByUsername(String username);
+    User findByPassword(String password);
+    User findByUsernameAndPassword(String username, String password);
 }

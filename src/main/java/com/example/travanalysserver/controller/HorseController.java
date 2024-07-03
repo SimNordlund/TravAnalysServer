@@ -1,7 +1,6 @@
 package com.example.travanalysserver.controller;
 
 import com.example.travanalysserver.dto.horse.HorseDTO;
-import com.example.travanalysserver.entity.Horse;
 import com.example.travanalysserver.service.interfaces.HorseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
