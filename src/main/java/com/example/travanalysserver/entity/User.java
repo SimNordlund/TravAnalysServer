@@ -1,0 +1,41 @@
+package com.example.travanalysserver.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.UUID;
+
+@Entity
+@Table(name = "User")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class User {
+    @Id
+    @GeneratedValue
+    private UUID id;
+    @Email(message = "Email must include '@'")
+    private String username;
+    private String password;
+    private Boolean enabled;
+
+    private String resetToken;  //För reset av PW
+    private LocalDateTime resetTokenExpire; //För reset av PW
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "User_Role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Collection<Role> roles;
+}
