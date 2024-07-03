@@ -1,4 +1,4 @@
-package com.example.travanalysserver.config;
+package com.example.travanalysserver.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

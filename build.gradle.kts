@@ -41,15 +41,15 @@ dependencies {
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.1")
 	implementation("com.rabbitmq:amqp-client:5.21.0")
 	implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.1")
-	//implementation("org.springframework.boot:spring-boot-starter-security")
-	//testImplementation("org.springframework.security:spring-security-test:6.3.0")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	testImplementation("org.springframework.security:spring-security-test:6.3.0")
 
 	implementation("org.yaml:snakeyaml")
 	implementation("com.github.javafaker:javafaker:1.0.2") { exclude ("org.yaml") }
 	implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
 	implementation("org.modelmapper:modelmapper:3.2.0")
 
-	//implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
 	implementation("org.springframework.boot:spring-boot-starter-mail")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
