@@ -8,6 +8,8 @@ import com.example.travanalysserver.repository.HorseRepo;
 import com.example.travanalysserver.repository.LapRepo;
 import com.example.travanalysserver.repository.PerformanceRepo;
 import com.example.travanalysserver.repository.RaceRepo;
+import com.example.travanalysserver.security.RoleAndUserDataSeeder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,11 +24,14 @@ import java.util.Set;
 @SpringBootApplication
 public class TravAnalysServerApplication {
 
+    @Autowired
+    RoleAndUserDataSeeder roleAndUserDataSeeder;
+
     public static void main(String[] args) {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-    @Bean
+ /*   @Bean
     public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo) {
         return args -> {
             // Create horses
@@ -57,6 +62,17 @@ public class TravAnalysServerApplication {
             Performance perf6 = new Performance(null, horse3, lap2, 3, 4.5);
 
             performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6));
+        };
+
+
+    } */
+
+    //Seedar in användare.
+    @Bean
+    public CommandLineRunner commandLineRunner() {
+        return args -> {
+            roleAndUserDataSeeder.Seed();
+            // mailTemplateSeeder.Seed();
         };
     }
 }
