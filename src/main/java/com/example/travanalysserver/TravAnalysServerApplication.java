@@ -66,7 +66,7 @@ public class TravAnalysServerApplication {
 
 
     } */
-
+ /*
     //Seedar in användare.
     @Bean
     public CommandLineRunner commandLineRunner() {
@@ -75,4 +75,5 @@ public class TravAnalysServerApplication {
             // mailTemplateSeeder.Seed();
         };
     }
+    */
 }
