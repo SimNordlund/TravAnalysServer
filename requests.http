@@ -1,0 +1,12 @@
+POST http://localhost:8080/radar/store/single
+Content-Type: application/json
+
+{
+  "id": 26,
+  "name": "MissSpeedy",
+  "valueOne": 10,
+  "valueTwo": 20,
+  "valueThree": 30,
+  "valueFour": 40,
+  "valueFive": 50
+}

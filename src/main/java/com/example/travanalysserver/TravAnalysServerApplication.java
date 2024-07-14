@@ -1,13 +1,7 @@
 package com.example.travanalysserver;
 
-import com.example.travanalysserver.entity.Horse;
-import com.example.travanalysserver.entity.Lap;
-import com.example.travanalysserver.entity.Performance;
-import com.example.travanalysserver.entity.Race;
-import com.example.travanalysserver.repository.HorseRepo;
-import com.example.travanalysserver.repository.LapRepo;
-import com.example.travanalysserver.repository.PerformanceRepo;
-import com.example.travanalysserver.repository.RaceRepo;
+import com.example.travanalysserver.entity.*;
+import com.example.travanalysserver.repository.*;
 import com.example.travanalysserver.security.RoleAndUserDataSeeder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -31,9 +25,18 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
- /*   @Bean
-    public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo) {
+    @Bean
+    public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo, RadarHorseRepo radarHorseRepo) {
         return args -> {
+
+            RadarHorse radarHorse = new RadarHorse(null, "SpeedyGonzi", 10, 20, 30, 40, 50);
+            RadarHorse radarHorse2 = new RadarHorse(null, "ErnstPro", 88, 11, 44, 22, 55);
+            RadarHorse radarHorse3 = new RadarHorse(null, "SabelSigge", 44, 55, 11, 66, 7);
+
+            List<RadarHorse> radarHorses = Arrays.asList(radarHorse, radarHorse2, radarHorse3);
+            radarHorseRepo.saveAll(radarHorses);
+
+            /*
             // Create horses
             Horse horse1 = new Horse(null, "Lightning", new HashSet<>());
             Horse horse2 = new Horse(null, "Thunder", new HashSet<>());
@@ -61,11 +64,11 @@ public class TravAnalysServerApplication {
             Performance perf5 = new Performance(null, horse2, lap2, 2, 2.5);
             Performance perf6 = new Performance(null, horse3, lap2, 3, 4.5);
 
-            performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6));
+            performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6)); */
         };
 
 
-    } */
+    }
  /*
     //Seedar in användare.
     @Bean

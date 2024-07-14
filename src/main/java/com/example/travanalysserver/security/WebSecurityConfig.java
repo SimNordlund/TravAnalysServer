@@ -42,6 +42,7 @@ public class WebSecurityConfig {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/horses/**").permitAll() //Denna gör så man kan fetcha testdata XD
+                        .requestMatchers("/radar/store/single").permitAll() // Kanske fungerar?
                         .requestMatchers("/", "/js/**", ("/forgotPassword-24"), ("/resetPassword"), ("/updatePassword"), "/css/**", "/images/**", "/login/**", "/logout").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -52,7 +53,7 @@ public class WebSecurityConfig {
                 )
                 .formLogin((form) -> form
                                 .loginPage("/login")
-//                                .permitAll()
+                           //     .permitAll()
                 )
                 .logout((logout) -> {
                     logout.logoutUrl("/logout");
