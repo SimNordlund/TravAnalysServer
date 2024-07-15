@@ -8,6 +8,8 @@ import com.example.travanalysserver.service.interfaces.RadarHorseService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class RadarHorseServiceImpl implements RadarHorseService {
@@ -21,6 +23,13 @@ public class RadarHorseServiceImpl implements RadarHorseService {
             System.out.println("Något blev fel i getRadarHorseByID");
         }
         return RadarHorseToRadarHorseDto(tempRadarHorse);
+    }
+
+    @Override
+    public List <RadarHorseDTO> getAllRadarHorses() {
+        List <RadarHorse> tempRadarHorseList = radarHorseRepo.findAll();
+        List <RadarHorseDTO> radarHorsesDTOList = tempRadarHorseList.stream().map(e -> RadarHorseToRadarHorseDto(e)).toList();
+        return radarHorsesDTOList;
     }
 
 

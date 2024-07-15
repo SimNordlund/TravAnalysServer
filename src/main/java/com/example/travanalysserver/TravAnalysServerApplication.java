@@ -25,7 +25,7 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-    @Bean
+   /* @Bean
     public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo, RadarHorseRepo radarHorseRepo) {
         return args -> {
 
@@ -36,7 +36,7 @@ public class TravAnalysServerApplication {
             List<RadarHorse> radarHorses = Arrays.asList(radarHorse, radarHorse2, radarHorse3);
             radarHorseRepo.saveAll(radarHorses);
 
-            /*
+
             // Create horses
             Horse horse1 = new Horse(null, "Lightning", new HashSet<>());
             Horse horse2 = new Horse(null, "Thunder", new HashSet<>());
@@ -64,12 +64,12 @@ public class TravAnalysServerApplication {
             Performance perf5 = new Performance(null, horse2, lap2, 2, 2.5);
             Performance perf6 = new Performance(null, horse3, lap2, 3, 4.5);
 
-            performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6)); */
+            performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6));
         };
 
 
     }
- /*
+
     //Seedar in användare.
     @Bean
     public CommandLineRunner commandLineRunner() {
@@ -77,6 +77,6 @@ public class TravAnalysServerApplication {
             roleAndUserDataSeeder.Seed();
             // mailTemplateSeeder.Seed();
         };
-    }
-    */
+    } */
+
 }

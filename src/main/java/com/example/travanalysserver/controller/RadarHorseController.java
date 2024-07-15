@@ -24,6 +24,11 @@ public class RadarHorseController {
         return radarHorseService.getRadarHorseById(id);
     }
 
+    @GetMapping ("/find/all")
+    public List <RadarHorseDTO> getAllRadarHorsesFromDB() {
+        return radarHorseService.getAllRadarHorses();
+    }
+
     @PutMapping("/store/single")
     public List<RadarHorse> saveRadarHorseById(@RequestBody RadarHorse radarHorse) {
         radarList.add(radarHorse);
