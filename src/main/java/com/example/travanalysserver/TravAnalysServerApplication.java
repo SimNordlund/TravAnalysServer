@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Random;
 
 @SpringBootApplication
 public class TravAnalysServerApplication {
@@ -29,11 +30,20 @@ public class TravAnalysServerApplication {
     public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo, RadarHorseRepo radarHorseRepo) {
         return args -> {
 
-            RadarHorse radarHorse = new RadarHorse(null, "SpeedyGonzi", 10, 20, 30, 40, 50);
-            RadarHorse radarHorse2 = new RadarHorse(null, "ErnstPro", 88, 11, 44, 22, 55);
-            RadarHorse radarHorse3 = new RadarHorse(null, "SabelSigge", 44, 55, 11, 66, 7);
+            Random rand = new Random();
+            RadarHorse radarHorse1 = new RadarHorse(null, "1. Speedy Gonzi", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse2 = new RadarHorse(null, "2. Ernst Pro", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse3 = new RadarHorse(null, "3. Sabel Sigge", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse4 = new RadarHorse(null, "4. Torsten", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse5 = new RadarHorse(null, "5. Kapten Knut", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse6 = new RadarHorse(null, "6. Piss-Nicke", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse7 = new RadarHorse(null, "7. Soy-Simon", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse8 = new RadarHorse(null, "8. Alice Van Dog", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse9 = new RadarHorse(null, "9. Karin.KEKW", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse10 = new RadarHorse(null, "10. Dr Tras", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
 
-            List<RadarHorse> radarHorses = Arrays.asList(radarHorse, radarHorse2, radarHorse3);
+
+            List<RadarHorse> radarHorses = Arrays.asList(radarHorse1, radarHorse2, radarHorse3, radarHorse4, radarHorse5, radarHorse6, radarHorse7, radarHorse8, radarHorse9, radarHorse10);
             radarHorseRepo.saveAll(radarHorses);
 
 
