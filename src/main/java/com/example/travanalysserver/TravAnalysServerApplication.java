@@ -26,7 +26,7 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-   /* @Bean
+    @Bean
     public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo, RadarHorseRepo radarHorseRepo) {
         return args -> {
 
@@ -42,8 +42,20 @@ public class TravAnalysServerApplication {
             RadarHorse radarHorse9 = new RadarHorse(null, "9. Karin.KEKW", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
             RadarHorse radarHorse10 = new RadarHorse(null, "10. Dr Tras", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
 
+            RadarHorse radarHorse11 = new RadarHorse(null, "11. Speedy Gonzi", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse12 = new RadarHorse(null, "12. Ernst Pro", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse13 = new RadarHorse(null, "13. Sabel Sigge", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse14 = new RadarHorse(null, "14. Torsten", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse15 = new RadarHorse(null, "15. Kapten Knut", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse16 = new RadarHorse(null, "16. Piss-Nicke", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse17 = new RadarHorse(null, "17. Soy-Simon", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse18 = new RadarHorse(null, "18. Alice Van Dog", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse19 = new RadarHorse(null, "19. Karin.KEKW", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
+            RadarHorse radarHorse20 = new RadarHorse(null, "20. Dr Tras", rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1, rand.nextInt(100) + 1);
 
-            List<RadarHorse> radarHorses = Arrays.asList(radarHorse1, radarHorse2, radarHorse3, radarHorse4, radarHorse5, radarHorse6, radarHorse7, radarHorse8, radarHorse9, radarHorse10);
+
+            List<RadarHorse> radarHorses = Arrays.asList(radarHorse1, radarHorse2, radarHorse3, radarHorse4, radarHorse5, radarHorse6, radarHorse7, radarHorse8, radarHorse9, radarHorse10,
+                    radarHorse11, radarHorse12, radarHorse13, radarHorse14, radarHorse15, radarHorse16, radarHorse17, radarHorse18, radarHorse19, radarHorse20);
             radarHorseRepo.saveAll(radarHorses);
 
 
@@ -87,6 +99,6 @@ public class TravAnalysServerApplication {
             roleAndUserDataSeeder.Seed();
             // mailTemplateSeeder.Seed();
         };
-    } */
+    }
 
 }
