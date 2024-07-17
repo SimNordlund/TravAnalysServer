@@ -45,6 +45,16 @@ public class RadarHorseController {
         return radarHorsesList;
     }
 
+    @GetMapping ("/find/all3")
+    public List <RadarHorseDTO> getAllRadarHorsesFromDB3() {
+        List <RadarHorseDTO> tempHolderList = radarHorseService.getAllRadarHorses();
+        List <RadarHorseDTO> radarHorsesList = new ArrayList<>();
+        for (int i = 20; i < 30; i++){
+            radarHorsesList.add(tempHolderList.get(i));
+        }
+        return radarHorsesList;
+    }
+
     @PutMapping("/store/single")
     public List<RadarHorse> saveRadarHorseById(@RequestBody RadarHorse radarHorse) {
         radarList.add(radarHorse);
