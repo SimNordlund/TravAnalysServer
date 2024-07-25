@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,9 +18,12 @@ public class Race {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate date; //Ex 2024-07-25
-    private String location; //Ex. Solvalla
 
-    @OneToMany(mappedBy = "race", cascade = CascadeType.ALL)
-    private Set<Lap> laps;
+    @ManyToOne
+    @JoinColumn(name = "race_type_id")
+    private RaceType raceType;
+
+    @OneToMany(mappedBy = "race")
+    private List<Lap> laps = new ArrayList<>();
+
 }

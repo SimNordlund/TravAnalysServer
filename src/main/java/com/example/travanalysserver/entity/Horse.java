@@ -12,14 +12,10 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-public class Horse {
+public class Horse { //ÄR EJ MAPPAD ENDAST FÖR TEST YO
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-    @JsonIgnore //Annars reukurison XDOXD
-    @OneToMany(mappedBy = "horse", fetch = FetchType.LAZY)
-    private Set<Performance> performances;
-
 }

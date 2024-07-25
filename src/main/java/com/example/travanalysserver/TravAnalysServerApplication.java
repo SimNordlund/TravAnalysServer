@@ -26,8 +26,8 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-  /*  @Bean
-    public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, PerformanceRepo performanceRepo, RadarHorseRepo radarHorseRepo) {
+    @Bean
+    public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, RadarHorseRepo radarHorseRepo) {
         return args -> {
 
             Random rand = new Random();
@@ -70,35 +70,6 @@ public class TravAnalysServerApplication {
                     radarHorse21, radarHorse22, radarHorse23, radarHorse24, radarHorse25, radarHorse26, radarHorse27, radarHorse28, radarHorse29, radarHorse30);
             radarHorseRepo.saveAll(radarHorses);
 
-
-            // Create horses
-            Horse horse1 = new Horse(null, "Lightning", new HashSet<>());
-            Horse horse2 = new Horse(null, "Thunder", new HashSet<>());
-            Horse horse3 = new Horse(null, "Storm", new HashSet<>());
-
-            List<Horse> horses = Arrays.asList(horse1, horse2, horse3);
-            horseRepo.saveAll(horses);
-
-            // Create race
-            Race race = new Race(null, LocalDate.now(), "Newmarket", new HashSet<>());
-
-            // Create laps
-            Lap lap1 = new Lap(null, race, 1, new HashSet<>());
-            Lap lap2 = new Lap(null, race, 2, new HashSet<>());
-            Set<Lap> laps = new HashSet<>(Arrays.asList(lap1, lap2));
-            race.setLaps(laps);
-
-            raceRepo.save(race);
-
-            // Create performances
-            Performance perf1 = new Performance(null, horse1, lap1, 1, 3.5);
-            Performance perf2 = new Performance(null, horse2, lap1, 2, 2.0);
-            Performance perf3 = new Performance(null, horse3, lap1, 3, 5.0);
-            Performance perf4 = new Performance(null, horse1, lap2, 1, 3.0);
-            Performance perf5 = new Performance(null, horse2, lap2, 2, 2.5);
-            Performance perf6 = new Performance(null, horse3, lap2, 3, 4.5);
-
-            performanceRepo.saveAll(Arrays.asList(perf1, perf2, perf3, perf4, perf5, perf6));
         };
 
 
@@ -111,6 +82,6 @@ public class TravAnalysServerApplication {
             roleAndUserDataSeeder.Seed();
             // mailTemplateSeeder.Seed();
         };
-    } */
+    }
 
 }
