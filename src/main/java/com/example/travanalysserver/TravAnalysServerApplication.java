@@ -75,12 +75,12 @@ public class TravAnalysServerApplication {
 
 
     //Seedar in användare.
-    @Bean
+  /*  @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
             roleAndUserDataSeeder.Seed();
             // mailTemplateSeeder.Seed();
         };
-    }
+    } */
 
 }
