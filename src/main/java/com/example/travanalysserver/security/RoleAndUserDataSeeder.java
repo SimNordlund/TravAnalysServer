@@ -1,7 +1,7 @@
 package com.example.travanalysserver.security;
 
-import com.example.travanalysserver.entity.Role;
-import com.example.travanalysserver.entity.User;
+import com.example.travanalysserver.entity.login.Role;
+import com.example.travanalysserver.entity.login.User;
 import com.example.travanalysserver.repository.RoleRepo;
 import com.example.travanalysserver.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

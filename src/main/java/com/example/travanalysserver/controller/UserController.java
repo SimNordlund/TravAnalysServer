@@ -1,6 +1,6 @@
 package com.example.travanalysserver.controller;
 
-import com.example.travanalysserver.entity.User;
+import com.example.travanalysserver.entity.login.User;
 import com.example.travanalysserver.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

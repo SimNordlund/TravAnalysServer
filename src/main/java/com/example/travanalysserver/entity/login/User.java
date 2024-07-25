@@ -1,9 +1,8 @@
-package com.example.travanalysserver.entity;
+package com.example.travanalysserver.entity.login;
 
+import com.example.travanalysserver.entity.login.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

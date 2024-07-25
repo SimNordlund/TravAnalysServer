@@ -1,6 +1,6 @@
 package com.example.travanalysserver.repository;
 
-import com.example.travanalysserver.entity.User;
+import com.example.travanalysserver.entity.login.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

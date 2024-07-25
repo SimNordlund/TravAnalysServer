@@ -1,7 +1,7 @@
 package com.example.travanalysserver.security;
 
-import com.example.travanalysserver.entity.Role;
-import com.example.travanalysserver.entity.User;
+import com.example.travanalysserver.entity.login.Role;
+import com.example.travanalysserver.entity.login.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
