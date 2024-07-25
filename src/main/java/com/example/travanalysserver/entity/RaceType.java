@@ -1,5 +1,6 @@
 package com.example.travanalysserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,14 +14,14 @@ import java.util.Set;
 @Setter
 @Builder
 public class RaceType {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto Increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String raceType; //Ex. v75
-    private int lapCount; //Antal lopp, ex 7 på v75
+    private String raceType;
+    private int lapCount;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "raceType")
     private Set<Race> races = new HashSet<>();
 }
