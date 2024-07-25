@@ -1,6 +1,5 @@
 package com.example.travanalysserver.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,7 +20,7 @@ public class RaceType {
     private String raceType;
     private int lapCount;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(mappedBy = "raceType")
     private Set<Race> races = new HashSet<>();
 }
