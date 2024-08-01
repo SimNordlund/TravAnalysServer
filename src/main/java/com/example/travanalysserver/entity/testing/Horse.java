@@ -1,4 +1,4 @@
-package com.example.travanalysserver.entity;
+package com.example.travanalysserver.entity.testing;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

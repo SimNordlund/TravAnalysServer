@@ -1,7 +1,7 @@
 package com.example.travanalysserver.controller;
 
 import com.example.travanalysserver.dto.radarhorse.RadarHorseDTO;
-import com.example.travanalysserver.entity.RadarHorse;
+import com.example.travanalysserver.entity.testing.RadarHorse;
 import com.example.travanalysserver.repository.RadarHorseRepo;
 import com.example.travanalysserver.service.interfaces.RadarHorseService;
 import lombok.RequiredArgsConstructor;

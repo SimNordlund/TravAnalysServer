@@ -1,6 +1,7 @@
 package com.example.travanalysserver;
 
 import com.example.travanalysserver.entity.*;
+import com.example.travanalysserver.entity.testing.RadarHorse;
 import com.example.travanalysserver.repository.*;
 import com.example.travanalysserver.security.RoleAndUserDataSeeder;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.example.travanalysserver.dto.horse;
 
-import com.example.travanalysserver.entity.Horse;
+import com.example.travanalysserver.entity.testing.Horse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

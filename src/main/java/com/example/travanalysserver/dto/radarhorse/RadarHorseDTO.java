@@ -1,6 +1,5 @@
 package com.example.travanalysserver.dto.radarhorse;
 
-import com.example.travanalysserver.entity.RadarHorse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

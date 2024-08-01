@@ -1,5 +1,6 @@
-package com.example.travanalysserver.entity;
+package com.example.travanalysserver.entity.testing;
 
+import com.example.travanalysserver.entity.Lap;
 import jakarta.persistence.*;
 import lombok.*;
 

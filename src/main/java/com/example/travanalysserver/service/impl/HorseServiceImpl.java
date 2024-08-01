@@ -1,14 +1,11 @@
 package com.example.travanalysserver.service.impl;
 
 import com.example.travanalysserver.dto.horse.HorseDTO;
-import com.example.travanalysserver.entity.Horse;
+import com.example.travanalysserver.entity.testing.Horse;
 import com.example.travanalysserver.repository.HorseRepo;
 import com.example.travanalysserver.service.interfaces.HorseService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
