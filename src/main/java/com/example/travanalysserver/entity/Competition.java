@@ -1,11 +1,7 @@
 package com.example.travanalysserver.entity;
 
-import com.example.travanalysserver.entity.testing.RadarHorse;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -13,10 +9,10 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Lap {
+public class Competition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameOfLap;
-}
+    private String nameOfCompetition;
 
+}

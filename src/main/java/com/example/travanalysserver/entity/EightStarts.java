@@ -1,12 +1,10 @@
 package com.example.travanalysserver.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -14,11 +12,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-public class Race {
+public class EightStarts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
-
 }

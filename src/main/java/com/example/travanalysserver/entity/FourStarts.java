@@ -1,11 +1,10 @@
 package com.example.travanalysserver.entity;
 
-import com.example.travanalysserver.entity.testing.RadarHorse;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -13,10 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Lap {
+public class FourStarts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameOfLap;
 }
-

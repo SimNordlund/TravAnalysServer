@@ -1,6 +1,6 @@
 package com.example.travanalysserver.dto.lap;
 
-import com.example.travanalysserver.entity.Race;
+import com.example.travanalysserver.entity.Track;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class LapDTO {
     private Long id;
-    private Race race;
+    private Track track;
     private int number;
 }
