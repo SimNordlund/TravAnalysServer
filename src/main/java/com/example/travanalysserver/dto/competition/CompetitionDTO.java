@@ -1,4 +1,4 @@
-package com.example.travanalysserver.dto.race;
+package com.example.travanalysserver.dto.competition;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+
 @Data //getters + setters
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RaceDTO {
+public class CompetitionDTO {
     private Long id;
-    private LocalDate date;
-    private String location;
+    private String nameOfCompetition;
 }
