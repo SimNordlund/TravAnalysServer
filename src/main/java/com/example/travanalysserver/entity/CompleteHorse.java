@@ -1,9 +1,6 @@
 package com.example.travanalysserver.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -18,4 +15,19 @@ public class CompleteHorse {
     private Long id;
     private Long nameOfCompleteHorse;
 
+    @ManyToOne
+    @JoinColumn
+    private Lap lap;
+
+    @OneToOne
+    @JoinColumn
+    private FourStarts fourStarts;
+
+    @OneToOne
+    @JoinColumn
+    private EightStarts eightStarts;
+
+    @OneToOne
+    @JoinColumn
+    private TwelveStarts twelveStarts;
 }

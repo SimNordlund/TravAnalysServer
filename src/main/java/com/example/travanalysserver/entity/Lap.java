@@ -18,5 +18,9 @@ public class Lap {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameOfLap;
+
+    @ManyToOne
+    @JoinColumn
+    private Competition competition;
 }
 

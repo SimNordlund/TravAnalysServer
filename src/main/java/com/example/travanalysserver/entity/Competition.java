@@ -15,4 +15,7 @@ public class Competition {
     private Long id;
     private String nameOfCompetition;
 
+    @OneToOne
+    @JoinColumn
+    private Track track;
 }
