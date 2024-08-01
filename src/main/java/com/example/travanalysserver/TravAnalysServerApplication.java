@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.UUID;
 
 @SpringBootApplication
 public class TravAnalysServerApplication {
@@ -25,54 +26,24 @@ public class TravAnalysServerApplication {
     }
 
   /*  @Bean
-    public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, RadarHorseRepo radarHorseRepo, RaceTypeRepo raceTypeRepo) {
+    public CommandLineRunner demo(RadarHorseRepo repository) {
         return args -> {
             Random rand = new Random();
 
-            // Creating RaceTypes
-            RaceType v75 = new RaceType(null, "v75", 7, new HashSet<>());
-            RaceType v65 = new RaceType(null, "v65", 6, new HashSet<>());
-            raceTypeRepo.saveAll(Arrays.asList(v75, v65));
-
-            // Creating Races for each RaceType
-            createRacesAndLapsForRaceType(v75, raceRepo, lapRepo, radarHorseRepo, rand);
-            createRacesAndLapsForRaceType(v65, raceRepo, lapRepo, radarHorseRepo, rand);
+            for (int i = 0; i < 30; i++) {
+                RadarHorse horse = RadarHorse.builder()
+                        .name("Horse " + UUID.randomUUID().toString().substring(0, 8))
+                        .valueOne(rand.nextInt(100))
+                        .valueTwo(rand.nextInt(100))
+                        .valueThree(rand.nextInt(100))
+                        .valueFour(rand.nextInt(100))
+                        .valueFive(rand.nextInt(100))
+                        .build();
+                repository.save(horse);
+            }
         };
     } */
-    /*
-    private void createRacesAndLapsForRaceType(RaceType raceType, RaceRepo raceRepo, LapRepo lapRepo, RadarHorseRepo radarHorseRepo, Random rand) {
-        for (int i = 0; i < raceType.getLapCount(); i++) {
-            Race race = new Race();
-            race.setRaceType(raceType);
-            raceRepo.save(race);
 
-            // Creating Laps for each Race
-            createLapsForRace(race, lapRepo, radarHorseRepo, rand);
-        }
-    }
-
-    private void createLapsForRace(Race race, LapRepo lapRepo, RadarHorseRepo radarHorseRepo, Random rand) {
-        for (int i = 0; i < 5; i++) {  // Assuming each race has 5 laps
-            Lap lap = new Lap();
-            lap.setRace(race);
-            lapRepo.save(lap);
-
-            // Creating RadarHorses for each Lap
-            createRadarHorsesForLap(lap, radarHorseRepo, rand);
-        }
-    }
-
-    private void createRadarHorsesForLap(Lap lap, RadarHorseRepo radarHorseRepo, Random rand) {
-        for (int i = 0; i < 10; i++) {  // Assuming each lap has 10 horses
-            RadarHorse radarHorse = new RadarHorse(null, "Horse " + i + " in Lap " + lap.getId(),
-                    rand.nextInt(100) + 1, rand.nextInt(100) + 1,
-                    rand.nextInt(100) + 1, rand.nextInt(100) + 1,
-                    rand.nextInt(100) + 1);
-            radarHorse.setLap(lap);
-            radarHorseRepo.save(radarHorse);
-        }
-    }
-    /*
 
     //Seedar in användare.
    /* @Bean
