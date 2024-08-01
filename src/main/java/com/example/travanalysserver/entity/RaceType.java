@@ -17,10 +17,4 @@ public class RaceType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String raceType;
-    private int lapCount;
-
-    //@JsonIgnore
-    @OneToMany(mappedBy = "raceType")
-    private Set<Race> races = new HashSet<>();
 }

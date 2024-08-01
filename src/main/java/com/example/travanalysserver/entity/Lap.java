@@ -18,11 +18,5 @@ public class Lap {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "race_id", nullable = false)
-    private Race race;
-
-    @OneToMany(mappedBy = "lap")
-    private List<RadarHorse> horses = new ArrayList<>();
 }
 

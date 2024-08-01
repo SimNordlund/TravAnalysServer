@@ -24,7 +24,7 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-    @Bean
+  /*  @Bean
     public CommandLineRunner demo(HorseRepo horseRepo, RaceRepo raceRepo, LapRepo lapRepo, RadarHorseRepo radarHorseRepo, RaceTypeRepo raceTypeRepo) {
         return args -> {
             Random rand = new Random();
@@ -38,8 +38,8 @@ public class TravAnalysServerApplication {
             createRacesAndLapsForRaceType(v75, raceRepo, lapRepo, radarHorseRepo, rand);
             createRacesAndLapsForRaceType(v65, raceRepo, lapRepo, radarHorseRepo, rand);
         };
-    }
-
+    } */
+    /*
     private void createRacesAndLapsForRaceType(RaceType raceType, RaceRepo raceRepo, LapRepo lapRepo, RadarHorseRepo radarHorseRepo, Random rand) {
         for (int i = 0; i < raceType.getLapCount(); i++) {
             Race race = new Race();
@@ -72,7 +72,7 @@ public class TravAnalysServerApplication {
             radarHorseRepo.save(radarHorse);
         }
     }
-
+    /*
 
     //Seedar in användare.
    /* @Bean

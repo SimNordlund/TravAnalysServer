@@ -20,11 +20,5 @@ public class Race {
     private Long id;
 
 
-    @ManyToOne
-    @JoinColumn(name = "race_type_id")
-    private RaceType raceType;
-
-    @OneToMany(mappedBy = "race")
-    private List<Lap> laps = new ArrayList<>();
 
 }

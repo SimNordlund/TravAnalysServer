@@ -23,18 +23,4 @@ public class RadarHorse {
     private int valueFour;
     private int valueFive;
 
-    @ManyToOne
-    @JoinColumn(name = "lap_id")
-    private Lap lap;
-
-    public RadarHorse (Long id, String name, int valueOne, int valueTwo, int valueThree, int valueFour, int valueFive){
-        this.id = id;
-        this.name = name;
-        this.valueOne = valueOne;
-        this.valueTwo = valueTwo;
-        this.valueThree = valueThree;
-        this.valueFour = valueFour;
-        this.valueFive = valueFive;
-    }
-
 }
