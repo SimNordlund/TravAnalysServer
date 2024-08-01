@@ -16,4 +16,10 @@ public class EightStarts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private int valueOne;
+    private int valueTwo;
+    private int valueThree;
+    private int valueFour;
+    private int valueFive;
 }
