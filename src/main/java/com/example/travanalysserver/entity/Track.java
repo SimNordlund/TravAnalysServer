@@ -15,7 +15,6 @@ public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private LocalDate date;
     private String nameOfTrack;
 
