@@ -1,6 +1,6 @@
 package com.example.travanalysserver.controller;
 
-import com.example.travanalysserver.dto.track.TrackDTO;
+import com.example.travanalysserver.dto.track.DateTrackDTO;
 import com.example.travanalysserver.service.interfaces.TrackService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,12 +15,13 @@ import java.util.List;
 @RequestMapping
 public class TrackController {
 
-    private TrackService trackService;
-
+    private final TrackService trackService;
 
     @GetMapping("/dates")
-    public List<TrackDTO> getDatesFromDB(){
-        List <TrackDTO> allDatesList = trackService.getAllDates();
+    public List<DateTrackDTO> getDatesFromDB(){
+        List <DateTrackDTO> allDatesList = trackService.getAllDates();
         return allDatesList;
     }
+
+  //  @GetMapping("/locations")
 }

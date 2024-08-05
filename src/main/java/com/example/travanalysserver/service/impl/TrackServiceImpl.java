@@ -1,6 +1,8 @@
 package com.example.travanalysserver.service.impl;
 
 import com.example.travanalysserver.dto.radarhorse.RadarHorseDTO;
+import com.example.travanalysserver.dto.track.DateTrackDTO;
+import com.example.travanalysserver.dto.track.NameOfTrackDTO;
 import com.example.travanalysserver.dto.track.TrackDTO;
 import com.example.travanalysserver.entity.Track;
 import com.example.travanalysserver.entity.testing.RadarHorse;
@@ -18,11 +20,19 @@ public class TrackServiceImpl implements TrackService {
     private TrackRepo trackRepo;
 
     @Override
-    public List<TrackDTO> getAllDates(){
+    public List<DateTrackDTO> getAllDates(){
         List <Track> tempTrackList = trackRepo.findAll();
-        List <TrackDTO> dateList = tempTrackList.stream().map(e -> TrackToTrackDto(e)).toList();
+        List <DateTrackDTO> dateList = tempTrackList.stream().map(e -> TrackToDateTrackDTO(e)).toList();
         return dateList;
     }
+
+    @Override
+    public List<NameOfTrackDTO> getAllNamesOfTracks() {
+        List <Track> tempTrackList2 = trackRepo.findAll();
+        List <NameOfTrackDTO> nameOfTrackList = tempTrackList2.stream().map(e -> TrackToNameOfTrackDTO(e)).toList();
+        return nameOfTrackList;
+    }
+
 
     public TrackDTO TrackToTrackDto(Track track) {
         return TrackDTO.builder()
@@ -31,4 +41,19 @@ public class TrackServiceImpl implements TrackService {
                 .nameOfTrack(track.getNameOfTrack())
                 .build();
     }
+
+    public DateTrackDTO TrackToDateTrackDTO (Track track) {
+        return  DateTrackDTO.builder()
+                .id(track.getId())
+                .date(track.getDate())
+                .build();
+    }
+
+    public NameOfTrackDTO TrackToNameOfTrackDTO (Track track){
+        return NameOfTrackDTO.builder()
+                .id(track.getId())
+                .nameOfTrack(track.getNameOfTrack())
+                .build();
+    }
+
 }
