@@ -17,7 +17,7 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public List<CompetitionDTO> findCompetitionByTrackId(Long trackId){
-        List <Competition> tempList = competitionRepo.findByTrack();
+        List <Competition> tempList = competitionRepo.findAllByTrack_Id(trackId);
         List <CompetitionDTO> competitionsByFKList = tempList.stream().map(e -> CompetitionToCompetitionDTO(e)).toList();
         return competitionsByFKList;
     }
