@@ -7,8 +7,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -28,5 +30,12 @@ public class TrackController {
     public List<NameOfTrackDTO> getLocationsFromDB(){
         List <NameOfTrackDTO> allLocationsList = trackService.getAllNamesOfTracks();
         return allLocationsList;
+    }
+
+    @GetMapping("/locations/byDate")
+    public List<NameOfTrackDTO> getLocationsByDateFromDB(@RequestParam("date") String date){
+        LocalDate localDate = LocalDate.parse(date);
+        List <NameOfTrackDTO> allLocationsListByDate = trackService.getAllNamesOfTracksByDate(localDate);
+        return allLocationsListByDate;
     }
 }

@@ -46,6 +46,8 @@ public class WebSecurityConfig {
                         .requestMatchers("/radar/find/all2").permitAll()
                         .requestMatchers("/radar/find/all3").permitAll()
                         .requestMatchers("/track/dates").permitAll()
+                        .requestMatchers("/track/locations").permitAll()
+                        .requestMatchers("/track/locations/byDate").permitAll()
                         .requestMatchers("/radar/store/single").permitAll() // Kanske fungerar?
                         .requestMatchers("/", "/js/**", ("/forgotPassword-24"), ("/resetPassword"), ("/updatePassword"), "/css/**", "/images/**", "/login/**", "/logout").permitAll()
                         .anyRequest().authenticated()
