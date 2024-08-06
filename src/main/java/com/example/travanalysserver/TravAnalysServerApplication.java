@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
@@ -41,6 +42,21 @@ public class TravAnalysServerApplication {
                         .build();
                 repository.save(horse);
             }
+        };
+    } */
+
+  /*  @Bean
+    public CommandLineRunner demo2(TrackRepo trackRepo) {
+        return args -> {
+            Track track = new Track(null, LocalDate.of(2024, 8, 6), "Romme");
+            Track track1 = new Track(null, LocalDate.of(2024, 8, 9), "Knuthöjden");
+            Track track2 = new Track(null, LocalDate.of(2024, 8, 8), "Lill-sången");
+            Track track3 = new Track(null, LocalDate.of(2024, 8, 7), "Färjestad");
+
+            trackRepo.save(track);
+            trackRepo.save(track1);
+            trackRepo.save(track2);
+            trackRepo.save(track3);
         };
     } */
 
