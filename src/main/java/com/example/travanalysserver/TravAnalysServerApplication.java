@@ -26,7 +26,7 @@ public class TravAnalysServerApplication {
         SpringApplication.run(TravAnalysServerApplication.class, args);
     }
 
-  /*  @Bean
+   @Bean
     public CommandLineRunner demo(RadarHorseRepo repository) {
         return args -> {
             Random rand = new Random();
@@ -41,12 +41,13 @@ public class TravAnalysServerApplication {
                         .valueFive(rand.nextInt(100))
                         .build();
                 repository.save(horse);
+
             }
         };
-    } */
+    }
 
-  /*  @Bean
-    public CommandLineRunner demo2(TrackRepo trackRepo) {
+    @Bean
+    public CommandLineRunner demo2(TrackRepo trackRepo, CompetitionRepo competitionRepo) {
         return args -> {
             Track track = new Track(null, LocalDate.of(2024, 8, 6), "Romme");
             Track track1 = new Track(null, LocalDate.of(2024, 8, 9), "Knuthöjden");
@@ -57,8 +58,18 @@ public class TravAnalysServerApplication {
             trackRepo.save(track1);
             trackRepo.save(track2);
             trackRepo.save(track3);
+
+            Competition comp = new Competition(null, "v75", track3);
+            Competition comp1 = new Competition(null, "v65", track2);
+            Competition comp2 = new Competition(null, "v64", track1);
+            Competition comp3 = new Competition(null, "v86", track);
+
+            competitionRepo.save(comp);
+            competitionRepo.save(comp1);
+            competitionRepo.save(comp2);
+            competitionRepo.save(comp3);
         };
-    } */
+    }
 
 
     //Seedar in användare.
