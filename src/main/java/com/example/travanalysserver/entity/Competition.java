@@ -15,7 +15,7 @@ public class Competition {
     private Long id;
     private String nameOfCompetition;
 
-    @OneToOne
+    @ManyToOne //Måste vara many för att det ska gå att ha flera tävlingar på ex. Romme. Byt till 1-1 vid behov
     @JoinColumn
     private Track track;
 }
