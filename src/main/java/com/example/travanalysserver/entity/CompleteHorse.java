@@ -13,7 +13,7 @@ public class CompleteHorse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long nameOfCompleteHorse;
+    private String nameOfCompleteHorse;
 
     @ManyToOne
     @JoinColumn

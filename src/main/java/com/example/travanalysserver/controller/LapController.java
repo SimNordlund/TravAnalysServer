@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("lap")
+@RequestMapping("/lap")
 public class LapController {
 
     private final LapService lapService;

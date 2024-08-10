@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class LapServiceImpl implements LapService {
 
-    LapRepo lapRepo;
+    private LapRepo lapRepo;
 
     @Override
     public List<LapDTO> findAllByCompetition_Id(Long competitionId){

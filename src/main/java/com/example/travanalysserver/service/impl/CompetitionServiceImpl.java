@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CompetitionServiceImpl implements CompetitionService {
 
-    CompetitionRepo competitionRepo;
+    private CompetitionRepo competitionRepo;
 
     @Override
     public List<CompetitionDTO> findCompetitionByTrackId(Long trackId){
