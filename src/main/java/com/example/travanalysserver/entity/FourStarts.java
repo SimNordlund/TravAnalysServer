@@ -1,9 +1,6 @@
 package com.example.travanalysserver.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -17,9 +14,14 @@ public class FourStarts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int valueOne;
-    private int valueTwo;
-    private int valueThree;
-    private int valueFour;
-    private int valueFive;
+    private int analys;
+    private int fart;
+    private int styrka;
+    private int klass;
+    private int prispengar;
+    private int kusk;
+    private int spar;
+
+    @OneToOne(mappedBy = "fourStarts") //STÄMMER DENNA ELLER WTF? Vrf?
+    private CompleteHorse completeHorse;
 }
