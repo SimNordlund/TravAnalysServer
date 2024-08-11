@@ -10,6 +10,19 @@ import lombok.*;
 @Setter
 @Builder
 public class FourStarts {
+
+    public FourStarts(Long id, int analys, int fart, int styrka,
+                      int klass, int prispengar, int kusk, int spar) {
+        this.id = id;
+        this.analys = analys;
+        this.fart = fart;
+        this.styrka =styrka;
+        this.klass = klass;
+        this.prispengar = prispengar;
+        this.kusk = kusk;
+        this.spar = spar;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

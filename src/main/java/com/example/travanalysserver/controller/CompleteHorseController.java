@@ -19,7 +19,7 @@ public class CompleteHorseController {
 
     private final CompleteHorseService completeHorseService;
 
-    @GetMapping("/findByCompleteHorse")
+    @GetMapping("/findByLap")
     public List<CompleteHorseDTO> getAllCompleteHorsesFromDB (@RequestParam Long lapId) {
         List <CompleteHorseDTO> allCompleteHorseListByLap = completeHorseService.findCompleteHorseByCompetitionId(lapId);
         return allCompleteHorseListByLap;
