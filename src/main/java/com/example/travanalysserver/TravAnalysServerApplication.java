@@ -1,5 +1,6 @@
 package com.example.travanalysserver;
 
+import com.example.travanalysserver.data.FetchData;
 import com.example.travanalysserver.entity.*;
 import com.example.travanalysserver.entity.testing.RadarHorse;
 import com.example.travanalysserver.repository.*;
@@ -8,6 +9,7 @@ import com.example.travanalysserver.service.interfaces.LapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
@@ -21,7 +23,14 @@ public class TravAnalysServerApplication {
     RoleAndUserDataSeeder roleAndUserDataSeeder;
 
     public static void main(String[] args) {
-        SpringApplication.run(TravAnalysServerApplication.class, args);
+        if (args.length == 0) {
+            SpringApplication.run(TravAnalysServerApplication.class, args);
+        }
+        else if (Objects.equals(args[0], "fetchData")) {
+            SpringApplication application = new SpringApplication(FetchData.class);
+            application.setWebApplicationType(WebApplicationType.NONE);
+            application.run(args);
+        }
     }
 
     //Seedar in testRadar hästar
