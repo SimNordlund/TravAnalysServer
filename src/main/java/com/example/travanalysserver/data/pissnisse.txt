@@ -1,3 +1,79 @@
-123
-123
-123
+{
+  "date": "2024-08-11",
+  "location": {
+    "id": 1,
+    "nameOfTrack": "Stockholm Track",
+    "competitions": [
+      {
+        "id": 1,
+        "nameOfCompetition": "Summer Derby",
+        "laps": [
+          {
+            "id": 1,
+            "nameOfLap": "Lap 1",
+            "horses": [
+              {
+                "id": 1,
+                "nameOfCompleteHorse": "Lightning Bolt",
+                "fourStartsValues": {
+                  "analys": 85,
+                  "fart": 90,
+                  "styrka": 88,
+                  "klass": 92,
+                  "prispengar": 95,
+                  "kusk": 80,
+                  "spar": 75
+                }
+              },
+              {
+                "id": 2,
+                "nameOfCompleteHorse": "Thunderstorm",
+                "fourStartsValues": {
+                  "analys": 78,
+                  "fart": 82,
+                  "styrka": 85,
+                  "klass": 88,
+                  "prispengar": 91,
+                  "kusk": 85,
+                  "spar": 80
+                }
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "nameOfLap": "Lap 2",
+            "horses": [
+              {
+                "id": 3,
+                "nameOfCompleteHorse": "Wind Runner",
+                "fourStartsValues": {
+                  "analys": 88,
+                  "fart": 85,
+                  "styrka": 92,
+                  "klass": 89,
+                  "prispengar": 90,
+                  "kusk": 82,
+                  "spar": 78
+                }
+              },
+              {
+                "id": 4,
+                "nameOfCompleteHorse": "Storm Chaser",
+                "fourStartsValues": {
+                  "analys": 80,
+                  "fart": 83,
+                  "styrka": 87,
+                  "klass": 85,
+                  "prispengar": 88,
+                  "kusk": 81,
+                  "spar": 77
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
