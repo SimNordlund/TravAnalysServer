@@ -8,10 +8,15 @@ import com.example.travanalysserver.entity.Track;
 import com.example.travanalysserver.entity.testing.RadarHorse;
 import com.example.travanalysserver.repository.TrackRepo;
 import com.example.travanalysserver.service.interfaces.TrackService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -65,5 +70,23 @@ public class TrackServiceImpl implements TrackService {
                 .nameOfTrack(track.getNameOfTrack())
                 .build();
     }
+
+    @Override
+    public String saveDownAllTracksToDB(Track[] tracks) {
+        List<Track> trackList = Arrays.asList(tracks);
+        trackRepo.saveAll(trackList);
+        return "Allt gick bra";
+    }
+
+    @Override
+    public Track[] getTracksToArray() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\test2.json");
+
+        Track[] tracksArray = objectMapper.readValue(jsonFile, Track[].class);
+        return tracksArray;
+    }
+
 
 }
