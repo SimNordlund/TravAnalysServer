@@ -2,11 +2,16 @@ package com.example.travanalysserver.service.impl;
 
 import com.example.travanalysserver.dto.competition.CompetitionDTO;
 import com.example.travanalysserver.entity.Competition;
+import com.example.travanalysserver.entity.Track;
 import com.example.travanalysserver.repository.CompetitionRepo;
 import com.example.travanalysserver.service.interfaces.CompetitionService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -27,5 +32,21 @@ public class CompetitionServiceImpl implements CompetitionService {
                 .id(competition.getId())
                 .nameOfCompetition(competition.getNameOfCompetition())
                 .build();
+    }
+
+    @Override
+    public String saveDownCompetitionToDB(Competition competition) {
+        competitionRepo.save(competition);
+        return "Allt gick bra";
+    }
+
+    @Override
+    public Competition getCompetitionFromJsonFile() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\test3.json");
+
+        Competition competitionFromJson = objectMapper.readValue(jsonFile, Competition.class);
+        return competitionFromJson;
     }
 }

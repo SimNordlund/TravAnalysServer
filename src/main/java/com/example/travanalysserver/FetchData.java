@@ -1,6 +1,8 @@
 package com.example.travanalysserver;
 
+import com.example.travanalysserver.entity.Competition;
 import com.example.travanalysserver.entity.Track;
+import com.example.travanalysserver.service.interfaces.CompetitionService;
 import com.example.travanalysserver.service.interfaces.TrackService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,18 +13,25 @@ import java.io.IOException;
 public class FetchData implements CommandLineRunner {
 
 
-    TrackService trackService;
+    private final TrackService trackService;
+    private final CompetitionService competitionService;
 
-    public FetchData (TrackService trackService){
+    public FetchData (TrackService trackService, CompetitionService competitionService){
         this.trackService = trackService;
+        this.competitionService = competitionService;
     }
 
     @Override
     public void run(String... args) throws IOException {
 
         Track trackFromJson = trackService.getTrackFromJsonFile();
-        String respons  = trackService.saveDownTrackToDB(trackFromJson);
-        System.out.println(respons);
+        Competition competitionFromJson = competitionService.getCompetitionFromJsonFile();
+        competitionFromJson.setTrack(trackFromJson);
+
+        String responsTrack  = trackService.saveDownTrackToDB(trackFromJson);
+        String responsCompetition = competitionService.saveDownCompetitionToDB(competitionFromJson);
+        System.out.println(responsTrack);
+        System.out.println(responsCompetition);
 
         System.out.println("Hello, this is the end");
 
