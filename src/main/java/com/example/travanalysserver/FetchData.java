@@ -2,12 +2,9 @@ package com.example.travanalysserver;
 
 import com.example.travanalysserver.entity.Track;
 import com.example.travanalysserver.service.interfaces.TrackService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.io.IOException;
 
 @ComponentScan
@@ -23,9 +20,8 @@ public class FetchData implements CommandLineRunner {
     @Override
     public void run(String... args) throws IOException {
 
-
-        Track[] trackArray = trackService.getTracksToArray();
-        String respons  = trackService.saveDownAllTracksToDB(trackArray);
+        Track trackFromJson = trackService.getTrackFromJsonFile();
+        String respons  = trackService.saveDownTrackToDB(trackFromJson);
         System.out.println(respons);
 
         System.out.println("Hello, this is the end");

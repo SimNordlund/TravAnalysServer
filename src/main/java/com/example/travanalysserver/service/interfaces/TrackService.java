@@ -12,6 +12,6 @@ public interface TrackService {
     List<NameOfTrackDTO> getAllNamesOfTracks();
     List <NameOfTrackDTO> getAllNamesOfTracksByDate(LocalDate date);
 
-    String saveDownAllTracksToDB (Track[] track);
-    Track[] getTracksToArray() throws IOException;
+    String saveDownTrackToDB(Track track);
+    Track getTrackFromJsonFile() throws IOException;
 }

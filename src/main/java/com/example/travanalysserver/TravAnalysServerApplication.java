@@ -1,11 +1,17 @@
 package com.example.travanalysserver;
 
+import com.example.travanalysserver.entity.*;
+import com.example.travanalysserver.entity.testing.RadarHorse;
+import com.example.travanalysserver.repository.*;
 import com.example.travanalysserver.security.RoleAndUserDataSeeder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @SpringBootApplication
@@ -26,7 +32,7 @@ public class TravAnalysServerApplication {
     }
 
     //Seedar in testRadar hästar
- /*  @Bean
+   @Bean
     public CommandLineRunner demo(RadarHorseRepo repository) {
         return args -> {
             Random rand = new Random();
@@ -162,7 +168,7 @@ public class TravAnalysServerApplication {
             completeHorseRepo.saveAll(tempListHorses); //Sparar hästar
 
         };
-    } */
+    }
 
 
     //Seedar in användare.

@@ -72,20 +72,19 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public String saveDownAllTracksToDB(Track[] tracks) {
-        List<Track> trackList = Arrays.asList(tracks);
-        trackRepo.saveAll(trackList);
+    public String saveDownTrackToDB(Track track) {
+        trackRepo.save(track);
         return "Allt gick bra";
     }
 
     @Override
-    public Track[] getTracksToArray() throws IOException {
+    public Track getTrackFromJsonFile() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\test2.json");
 
-        Track[] tracksArray = objectMapper.readValue(jsonFile, Track[].class);
-        return tracksArray;
+        Track trackFromJson = objectMapper.readValue(jsonFile, Track.class);
+        return trackFromJson;
     }
 
 
