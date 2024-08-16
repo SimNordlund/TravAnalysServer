@@ -1,0 +1,92 @@
+[
+  {
+    "analys": 85,
+    "fart": 72,
+    "styrka": 90,
+    "klass": 3,
+    "prispengar": 15,
+    "kusk": 40,
+    "spar": 20
+  },
+  {
+    "analys": 78,
+    "fart": 88,
+    "styrka": 76,
+    "klass": 10,
+    "prispengar": 22,
+    "kusk": 20,
+    "spar": 50
+  },
+  {
+    "analys": 92,
+    "fart": 67,
+    "styrka": 85,
+    "klass": 40,
+    "prispengar": 18,
+    "kusk": 10,
+    "spar": 80
+  },
+  {
+    "analys": 63,
+    "fart": 79,
+    "styrka": 80,
+    "klass": 20,
+    "prispengar": 11,
+    "kusk": 30,
+    "spar": 10
+  },
+  {
+    "analys": 88,
+    "fart": 85,
+    "styrka": 91,
+    "klass": 50,
+    "prispengar": 25,
+    "kusk": 50,
+    "spar": 40
+  },
+  {
+    "analys": 74,
+    "fart": 81,
+    "styrka": 78,
+    "klass": 30,
+    "prispengar": 16,
+    "kusk": 20,
+    "spar": 60
+  },
+  {
+    "analys": 81,
+    "fart": 90,
+    "styrka": 84,
+    "klass": 40,
+    "prispengar": 20,
+    "kusk": 30,
+    "spar": 70
+  },
+  {
+    "analys": 67,
+    "fart": 73,
+    "styrka": 77,
+    "klass": 20,
+    "prispengar": 12,
+    "kusk": 10,
+    "spar": 30
+  },
+  {
+    "analys": 89,
+    "fart": 86,
+    "styrka": 93,
+    "klass": 55,
+    "prispengar": 23,
+    "kusk": 43,
+    "spar": 93
+  },
+  {
+    "analys": 77,
+    "fart": 82,
+    "styrka": 79,
+    "klass": 32,
+    "prispengar": 14,
+    "kusk": 21,
+    "spar": 15
+  }
+]

@@ -30,7 +30,7 @@ public class TravAnalysServerApplication {
             application.run(args);
         }
     }
-    /*
+
     //Seedar in testRadar hästar
    @Bean
     public CommandLineRunner demo(RadarHorseRepo repository) {
@@ -168,7 +168,7 @@ public class TravAnalysServerApplication {
             completeHorseRepo.saveAll(tempListHorses); //Sparar hästar
 
         };
-    } */
+    }
 
 
     //Seedar in användare.
