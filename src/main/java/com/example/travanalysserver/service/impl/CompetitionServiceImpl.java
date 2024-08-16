@@ -37,14 +37,14 @@ public class CompetitionServiceImpl implements CompetitionService {
     @Override
     public String saveDownCompetitionToDB(Competition competition) {
         competitionRepo.save(competition);
-        return "Allt gick bra";
+        return "Allt gick bra med Competition";
     }
 
     @Override
     public Competition getCompetitionFromJsonFile() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
-        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\test3.json");
+        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\competition.json");
 
         Competition competitionFromJson = objectMapper.readValue(jsonFile, Competition.class);
         return competitionFromJson;

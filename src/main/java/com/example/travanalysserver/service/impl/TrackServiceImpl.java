@@ -74,14 +74,14 @@ public class TrackServiceImpl implements TrackService {
     @Override
     public String saveDownTrackToDB(Track track) {
         trackRepo.save(track);
-        return "Allt gick bra";
+        return "Allt gick bra med Track";
     }
 
     @Override
     public Track getTrackFromJsonFile() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
-        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\test2.json");
+        File jsonFile = new File("C:\\Users\\TaraR\\IdeaProjects\\TravAnalysServer\\src\\main\\java\\com\\example\\travanalysserver\\data\\track.json");
 
         Track trackFromJson = objectMapper.readValue(jsonFile, Track.class);
         return trackFromJson;
