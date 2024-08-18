@@ -32,7 +32,7 @@ public class TravAnalysServerApplication {
     }
 
     //Seedar in testRadar hästar
-   @Bean
+/*   @Bean
     public CommandLineRunner demo(RadarHorseRepo repository) {
         return args -> {
             Random rand = new Random();
@@ -50,10 +50,10 @@ public class TravAnalysServerApplication {
 
             }
         };
-    }
+    } */
 
     //Seedar in tracks + competition
-    @Bean
+ /*   @Bean
     public CommandLineRunner demo2(TrackRepo trackRepo, CompetitionRepo competitionRepo,
                                    LapRepo lapRepo, CompleteHorseRepo completeHorseRepo, FourStartsRepo fourStartsRepo) {
         return args -> {
@@ -168,7 +168,7 @@ public class TravAnalysServerApplication {
             completeHorseRepo.saveAll(tempListHorses); //Sparar hästar
 
         };
-    }
+    } */
 
 
     //Seedar in användare.

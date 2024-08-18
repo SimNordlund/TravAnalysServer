@@ -42,7 +42,7 @@ public class FetchData implements CommandLineRunner {
 
         CompleteHorse[] completeHorsesFromJson = completeHorseService.getCompleteHorsesFromJsonFile();
         for (int i = 0; i < completeHorsesFromJson.length; i++){
-            if (i < 5) {
+            if (i < 10) {
                 completeHorsesFromJson[i].setLap(lapsFromJson[0]);
             }
             else {
@@ -52,7 +52,7 @@ public class FetchData implements CommandLineRunner {
 
         FourStarts[] fourStartsFromJson = fourStartsService.getFourStartsFromJsonFile();
         for (int i = 0; i < fourStartsFromJson.length; i++){
-            if (i < 5) {
+            if (i < 10) {
                 completeHorsesFromJson[i].setFourStarts(fourStartsFromJson[i]);
             }
             else {
