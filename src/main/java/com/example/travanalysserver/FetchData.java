@@ -10,7 +10,6 @@ import java.io.IOException;
 @ComponentScan
 public class FetchData implements CommandLineRunner {
 
-
     private final TrackService trackService;
     private final CompetitionService competitionService;
     private final LapService lapService;
