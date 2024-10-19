@@ -1,24 +1,19 @@
 # Step 1: Build the application using Gradle
-FROM gradle:8.3-jdk20 AS build
+FROM gradle:8.2.1-jdk20 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy Gradle wrapper and configuration files
-COPY gradlew settings.gradle build.gradle ./
-COPY gradle ./gradle
-
-# Copy the source code
-COPY src ./src
-
-# Grant execution permission to the Gradle wrapper
-RUN chmod +x gradlew
+# Copy the build.gradle, settings.gradle, and src folder to the container
+COPY ./build.gradle ./
+COPY ./settings.gradle ./
+COPY ./src ./src
 
 # Build the application
-RUN ./gradlew build --no-daemon
+RUN gradle clean build //Changes: Use Gradle to build the application
 
 # Step 2: Create a smaller image for running the application
-FROM eclipse-temurin:20-jre
+FROM openjdk:20-jdk-slim
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar

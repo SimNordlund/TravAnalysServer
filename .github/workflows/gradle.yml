@@ -18,26 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        name: Check out code
 
       - name: Set up JDK 20
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'  # Use 'corretto' if preferred
           java-version: '20'
+          distribution: 'corretto' // You can change this to your preferred distribution, e.g., adopt, zulu, etc.
           cache: gradle
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
 
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Build & push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v6
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
         with:
-          image: your-dockerhub-username/your-image-name
+          image: your-dockerhub-username/your-java-app
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
