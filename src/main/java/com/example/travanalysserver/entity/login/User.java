@@ -28,7 +28,7 @@ public class User {
     private Boolean enabled;
 
     private String resetToken;  //För reset av PW
-    private LocalDateTime resetTokenExpire; //För reset avaw
+    private LocalDateTime resetTokenExpire; //För reset
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
