@@ -41,36 +41,11 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/horses/**").permitAll() //Denna gör så man kan fetcha testdata XD
-                        .requestMatchers("/radar/find/all").permitAll()
-                        .requestMatchers("/radar/find/all2").permitAll()
-                        .requestMatchers("/radar/find/all3").permitAll()
-                        .requestMatchers("/track/dates").permitAll()
-                        .requestMatchers("/track/locations").permitAll()
-                        .requestMatchers("/track/locations/byDate").permitAll()
-                        .requestMatchers("/competition/findByTrack").permitAll()
-                        .requestMatchers("/lap/findByCompetition").permitAll()
-                        .requestMatchers("/completeHorse/findByLap").permitAll()
-                        .requestMatchers("/fourStarts/findData").permitAll()
-                        .requestMatchers("/radar/store/single").permitAll() // Kanske fungerar?
-                        .requestMatchers("/", "/js/**", ("/forgotPassword-24"), ("/resetPassword"), ("/updatePassword"), "/css/**", "/images/**", "/login/**", "/logout").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()  // Allow all requests without authentication
                 )
-                .exceptionHandling((exceptions) -> exceptions
-                        .accessDeniedHandler((request, response, accessDeniedException) -> {
-                            response.sendRedirect("/");
-                        })
-                )
-                .formLogin((form) -> form
-                                .loginPage("/login")
-                           //     .permitAll()
-                )
-                .logout((logout) -> {
-                    logout.logoutUrl("/logout");
-                    logout.permitAll();
-                    logout.logoutSuccessUrl("/");
-                })
-                .csrf(AbstractHttpConfigurer::disable);
+                .csrf(AbstractHttpConfigurer::disable)  // Disable CSRF for unrestricted access
+                .formLogin(AbstractHttpConfigurer::disable)  // Disable form login (no need for a login page)
+                .logout(AbstractHttpConfigurer::disable);  // Disable logout functionality (no restrictions)
 
         return http.build();
     }
