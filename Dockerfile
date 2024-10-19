@@ -1,5 +1,5 @@
-# Step 1: Build the application using Gradle
-FROM gradle:8.2.1-jdk20 AS build
+# Step 1: Build the application using Gradle with JDK 21
+FROM gradle:8.3-jdk21 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN chmod +x gradlew
 RUN ./gradlew clean build
 
 # Step 2: Create a smaller image for running the application
-FROM openjdk:20-jdk-slim
+FROM amazoncorretto:21
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
