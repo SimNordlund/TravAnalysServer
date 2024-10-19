@@ -34,28 +34,3 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build
 
-  dependency-submission:
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      # Step 1: Check out the code from the repository
-      - uses: actions/checkout@v4
-        name: Check out code
-
-      # Step 2: Grant executable permission for Gradle wrapper
-      - name: Grant execute permission for Gradle wrapper
-        run: chmod +x ./gradlew
-
-      # Step 3: Set up JDK 20
-      - name: Set up JDK 20
-        uses: actions/setup-java@v4
-        with:
-          java-version: '20'
-          distribution: 'temurin'
-
-      # Step 4: Generate and submit the dependency graph
-      - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@v4
