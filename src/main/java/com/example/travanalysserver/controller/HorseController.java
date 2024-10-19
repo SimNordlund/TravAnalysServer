@@ -33,7 +33,7 @@ public class HorseController {
     @PostMapping("/send2/{name}")
     public ResponseEntity<String> addHorse(@PathVariable String name) {
         System.out.println("Metoden fungerar");
-        horseRepo.save(new Horse(null, name));  // Save horse with only a name
+        horseRepo.save(new Horse(null, name));
         return new ResponseEntity<>("Horse added successfully", HttpStatus.CREATED);
     }
 }
