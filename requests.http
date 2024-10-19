@@ -10,3 +10,17 @@ Content-Type: application/json
   "valueFour": 40,
   "valueFive": 50
 }
+
+###
+
+POST http://localhost:8080/api/horses/send
+Content-Type: application/json
+
+{
+ "name": "SpeedyVonPedro"
+}
+
+###
+POST http://localhost:8080/api/horses/send2/per
+###
+
