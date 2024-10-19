@@ -21,7 +21,14 @@ public class TravAnalysServerApplication {
     RoleAndUserDataSeeder roleAndUserDataSeeder;
 
     public static void main(String[] args) {
-        SpringApplication.run(TravAnalysServerApplication.class, args);
+        if (args.length == 0) {
+            SpringApplication.run(TravAnalysServerApplication.class, args);
+        }
+        else if (Objects.equals(args[0], "fetchData")) {
+            SpringApplication application = new SpringApplication(FetchData.class);
+            application.setWebApplicationType(WebApplicationType.NONE);
+            application.run(args);
+        }
     }
 
     //Seedar in testRadar hästar
