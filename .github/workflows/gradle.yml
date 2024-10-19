@@ -1,4 +1,4 @@
-name: Docker Image CI with Gradle
+name: Docker Image CI with Gradle and Corretto 20
 
 on:
   push:
@@ -22,8 +22,8 @@ jobs:
       - uses: actions/checkout@v4
         name: Check out code
 
-      # Step 2: Set up JDK 20 (same as your working Kotlin project)
-      - name: Set up JDK 20
+      # Step 2: Set up JDK 20 (Corretto)
+      - name: Set up JDK 20 (Corretto)
         uses: actions/setup-java@v4
         with:
           java-version: '20'

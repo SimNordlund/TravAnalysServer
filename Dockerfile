@@ -1,5 +1,5 @@
-# Step 1: Build the application using Gradle
-FROM gradle:7.5.1-jdk17 AS build
+# Step 1: Build the application using Gradle with Corretto 20
+FROM gradle:7.5.1-jdk20 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -16,8 +16,8 @@ COPY ./src ./src
 # Build the application
 RUN gradle clean build -x test --no-daemon
 
-# Step 2: Create a smaller image for running the application
-FROM openjdk:20-jdk-slim
+# Step 2: Create a smaller image for running the application with Corretto 20
+FROM amazoncorretto:20-alpine
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
