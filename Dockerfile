@@ -1,5 +1,5 @@
-# Step 1: Build the application using Gradle with JDK 20
-FROM gradle:8.2.1-jdk20 AS build
+# Step 1: Build the application using Gradle with OpenJDK 19
+FROM gradle:7.6.1-jdk19 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -12,14 +12,17 @@ COPY build.gradle.kts settings.gradle.kts ./
 # Ensure gradlew is executable
 RUN chmod +x gradlew
 
+# Download dependencies to cache them
+RUN ./gradlew dependencies --no-daemon
+
 # Copy the rest of the source code
 COPY ./src ./src
 
 # Build the application
 RUN ./gradlew clean build -x test --no-daemon
 
-# Step 2: Create a smaller image for running the application with Corretto 20
-FROM amazoncorretto:20-alpine
+# Step 2: Create a smaller image for running the application with OpenJDK 19
+FROM openjdk:19-jdk-slim
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
