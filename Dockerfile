@@ -1,28 +1,24 @@
-# Step 1: Build the application using Gradle with OpenJDK 19
-FROM gradle:7.6.1-jdk19 AS build
+# Step 1: Build the application using Gradle
+FROM gradle:8.2.1-jdk19 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Gradle wrapper and build files
-COPY gradlew gradlew
-COPY gradle gradle
-COPY build.gradle.kts settings.gradle.kts ./
+# Copy Gradle wrapper and configuration files
+COPY gradlew settings.gradle build.gradle ./
+COPY gradle ./gradle
 
-# Ensure gradlew is executable
+# Copy the source code
+COPY src ./src
+
+# Grant execution permission to the Gradle wrapper
 RUN chmod +x gradlew
 
-# Download dependencies to cache them
-RUN ./gradlew dependencies --no-daemon
-
-# Copy the rest of the source code
-COPY ./src ./src
-
 # Build the application
-RUN ./gradlew clean build -x test --no-daemon
+RUN ./gradlew build --no-daemon
 
-# Step 2: Create a smaller image for running the application with OpenJDK 19
-FROM openjdk:19-jdk-slim
+# Step 2: Create a smaller image for running the application
+FROM eclipse-temurin:19-jre
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
