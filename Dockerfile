@@ -1,5 +1,5 @@
 # Step 1: Build the application using Gradle
-FROM gradle:8.2.1-jdk19 AS build
+FROM gradle:8.3-jdk20 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -18,7 +18,7 @@ RUN chmod +x gradlew
 RUN ./gradlew build --no-daemon
 
 # Step 2: Create a smaller image for running the application
-FROM eclipse-temurin:19-jre
+FROM eclipse-temurin:20-jre
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
