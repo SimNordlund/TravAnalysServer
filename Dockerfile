@@ -7,9 +7,8 @@ WORKDIR /app
 # Copy the Gradle wrapper and configuration files
 COPY gradlew .
 COPY gradle gradle
-COPY build.gradle .
-# Copy settings.gradle if it exists
-COPY settings.gradle .
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
 
 # Copy the source code
 COPY src src
