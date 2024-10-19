@@ -13,11 +13,11 @@ import java.util.Collection;
 import java.util.UUID;
 
 @Entity
-@Table(name = "User")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue

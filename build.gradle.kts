@@ -55,6 +55,9 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
 	implementation("org.apache.commons:commons-text:1.12.0")
+
+	implementation ("org.postgresql:postgresql:42.7.2")
+	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 tasks.withType<Test> {
