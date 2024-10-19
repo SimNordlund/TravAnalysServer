@@ -4,13 +4,20 @@ FROM gradle:8.2.1-jdk20 AS build
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the build.gradle, settings.gradle, and src folder to the container
-COPY ./build.gradle ./
-COPY ./settings.gradle ./
-COPY ./src ./src
+# Copy the Gradle wrapper and configuration files
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle .
+COPY settings.gradle .
 
-# Build the application
-RUN gradle clean build //Changes: Use Gradle to build the application
+# Copy the source code
+COPY src src
+
+# Make the Gradle wrapper executable
+RUN chmod +x gradlew
+
+# Build the application using the Gradle wrapper
+RUN ./gradlew clean build
 
 # Step 2: Create a smaller image for running the application
 FROM openjdk:20-jdk-slim

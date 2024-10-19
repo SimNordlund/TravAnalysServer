@@ -25,8 +25,11 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '20'
-          distribution: 'corretto' // You can change this to your preferred distribution, e.g., adopt, zulu, etc.
+          distribution: 'corretto'  # You can change this to your preferred distribution, e.g., 'temurin' or 'zulu'
           cache: gradle
+
+      - name: Grant execute permission for Gradle Wrapper
+        run: chmod +x ./gradlew
 
       - name: Build with Gradle
         run: ./gradlew build
