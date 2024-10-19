@@ -7,10 +7,9 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 
-env:
-  build-number: ${{ github.run_number }}
-
-permissions: write-all
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   build:
@@ -44,9 +43,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
+      - name: Deploy to Render
+        uses: render-examples/github-actions-deploy@v1
         with:
-          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.MY_RENDER_API_KEY }}
-          wait-for-success: false
+          apiKey: ${{ secrets.MY_RENDER_API_KEY }}
+          serviceId: ${{ secrets.MY_RENDER_SERVICE_ID }}
