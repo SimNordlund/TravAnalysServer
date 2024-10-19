@@ -1,10 +1,10 @@
 # Step 1: Build the application using Gradle
-FROM gradle:7.5.1-jdk20 AS build  # Use JDK 20
+FROM gradle:7.5.1-jdk17 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy only the Gradle wrapper and build files first, to cache dependencies
+# Copy only the Gradle build files first (to cache dependencies)
 COPY build.gradle.kts settings.gradle.kts ./
 
 # Download dependencies to cache them
@@ -17,7 +17,7 @@ COPY ./src ./src
 RUN gradle clean build -x test --no-daemon
 
 # Step 2: Create a smaller image for running the application
-FROM openjdk:20-jdk-slim  # Use JDK 20 in the runtime container
+FROM openjdk:20-jdk-slim
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/build/libs/*.jar /app.jar
