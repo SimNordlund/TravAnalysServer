@@ -1,6 +1,7 @@
 package com.example.travanalysserver;
 
 import com.example.travanalysserver.entity.*;
+import com.example.travanalysserver.entity.testing.Horse;
 import com.example.travanalysserver.entity.testing.RadarHorse;
 import com.example.travanalysserver.repository.*;
 import com.example.travanalysserver.security.RoleAndUserDataSeeder;
@@ -29,6 +30,19 @@ public class TravAnalysServerApplication {
             application.setWebApplicationType(WebApplicationType.NONE);
             application.run(args);
         }
+    }
+
+   @Bean
+    public CommandLineRunner demo(HorseRepo repository) {
+        return args -> {
+            Horse horsekek = new Horse(null, "Sörensson");
+            Horse horsekek1 = new Horse(null, "Sörensson2");
+            Horse horsekek2 = new Horse(null, "awdawdawd");
+
+            repository.save(horsekek);
+            repository.save(horsekek1);
+            repository.save(horsekek2);
+        };
     }
 
     //Seedar in testRadar hästar
