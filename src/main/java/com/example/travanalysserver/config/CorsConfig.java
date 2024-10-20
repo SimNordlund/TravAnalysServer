@@ -11,14 +11,28 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOriginPattern("http://localhost:5173");
-        config.addAllowedOriginPattern("https://travanalys.onrender.com"); // Changed to addAllowedOriginPattern
-        config.addAllowedMethod("*");
-        config.addAllowedHeader("*");
+
+        // Allowing frontend origins
+        config.addAllowedOriginPattern("http://localhost:5173"); // Local development
+        config.addAllowedOriginPattern("https://travanalys.onrender.com"); // Production frontend
+
+        // Specify allowed HTTP methods
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("DELETE");
+
+        // Specify allowed headers
+        config.addAllowedHeader("Authorization");
+        config.addAllowedHeader("Content-Type");
+
+        // Allow credentials (cookies, authentication headers)
         config.setAllowCredentials(true);
 
+        // Apply the CORS configuration to all endpoints
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
+
         return new CorsFilter(source);
     }
 }
