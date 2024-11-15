@@ -37,7 +37,7 @@ public class TravAnalysServerApplication {
         return args -> {
             Horse horsekek = new Horse(null, "Sörensson");
             Horse horsekek1 = new Horse(null, "Sörensson2");
-            Horse horsekek2 = new Horse(null, "awdawdawd");
+            Horse horsekek2 = new Horse(null, "PissNicke");
 
             repository.save(horsekek);
             repository.save(horsekek1);
