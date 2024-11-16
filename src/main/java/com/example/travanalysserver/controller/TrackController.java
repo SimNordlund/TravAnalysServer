@@ -2,13 +2,15 @@ package com.example.travanalysserver.controller;
 
 import com.example.travanalysserver.dto.track.DateTrackDTO;
 import com.example.travanalysserver.dto.track.NameOfTrackDTO;
+import com.example.travanalysserver.entity.Competition;
+import com.example.travanalysserver.entity.Track;
+import com.example.travanalysserver.repository.TrackRepo;
 import com.example.travanalysserver.service.interfaces.TrackService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
 public class TrackController {
 
     private final TrackService trackService;
+    private final TrackRepo trackRepo;
 
     @GetMapping("/dates")
     public List<DateTrackDTO> getDatesFromDB(){
@@ -37,5 +40,11 @@ public class TrackController {
         LocalDate localDate = LocalDate.parse(date);
         List <NameOfTrackDTO> allLocationsListByDate = trackService.getAllNamesOfTracksByDate(localDate);
         return allLocationsListByDate;
+    }
+
+    @PostMapping("/createTrack")
+    public ResponseEntity<String> addTrack(@RequestBody Track track) {
+        trackRepo.save(track);
+        return new ResponseEntity<>("Bana sparad", HttpStatus.CREATED);
     }
 }

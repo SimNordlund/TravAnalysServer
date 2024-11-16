@@ -28,13 +28,35 @@ public class HorseController {
 
     @GetMapping
     public List<Horse> getAllHorses() {
-        return horseRepo.findAll();  // Fetch all horses as DTOs
+        return horseRepo.findAll();
     }
 
     @PostMapping("/send")
     public ResponseEntity<String> addHorse(@RequestBody Horse horse) {
         horseRepo.save(horse);
         return new ResponseEntity<>("Horse added successfully", HttpStatus.CREATED);
+    }
+
+ /*   @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteHorse(@RequestBody Long horseId) {
+        Horse horseToDelete = horseRepo.findById(horseId).orElse(null);
+        if (horseToDelete == null) {
+            return new ResponseEntity<>("Horse not found", HttpStatus.NOT_FOUND);
+        }
+
+        horseRepo.delete(horseToDelete);
+
+        return new ResponseEntity<>("Horse deleted successfully", HttpStatus.OK);
+    } */
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteHorse(@RequestParam Long horseId) {
+        if (!horseRepo.existsById(horseId)) {
+            return new ResponseEntity<>("Horse not found", HttpStatus.NOT_FOUND);
+        }
+
+        horseRepo.deleteById(horseId);
+        return new ResponseEntity<>("Horse deleted successfully", HttpStatus.OK);
     }
 
     @PostMapping("/send2/{name}")
