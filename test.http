@@ -1,0 +1,67 @@
+
+
+#1 Create Track
+POST https://travanalyserver-latest.onrender.com/track/createTrack
+Content-Type: application/json
+
+{
+  "date": "2024-11-16",
+  "nameOfTrack": "Knuthöjden"
+}
+###
+# Assume this Track gets auto-assigned ID 1
+###
+
+#2 Create Competition
+POST https://travanalyserver-latest.onrender.com/competition/createCompetition
+Content-Type: application/json
+
+{
+  "nameOfCompetition": "v69",
+  "track": {
+    "id": 1
+  }
+}
+###
+# Assume this Competition gets auto-assigned ID 1
+###
+
+#3 Create Lap and Link to Competition
+POST https://travanalyserver-latest.onrender.com/lap/createLap
+Content-Type: application/json
+
+{
+  "nameOfLap": "Lap 1",
+  "competition": {
+    "id": 1
+  }
+}
+###
+# Assume this Lap gets auto-assigned ID 1
+###
+
+#4 Create FourStarts
+POST https://travanalyserver-latest.onrender.com/fourStarts/createFourStarts
+Content-Type: application/json
+
+{
+  "analys": 70
+}
+###
+# Assume this FourStarts gets auto-assigned ID 101
+###
+
+#5 Create CompleteHorse and Link to Lap and FourStarts
+POST https://travanalyserver-latest.onrender.com/completeHorse/createCompleteHorse
+Content-Type: application/json
+
+{
+  "nameOfCompleteHorse": "Poggeru",
+  "lap": {
+    "id": 1
+  },
+  "fourStarts": {
+    "id": 4
+  }
+}
+###
