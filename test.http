@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
   "date": "2024-11-16",
-  "nameOfTrack": "Knuthöjden"
+  "nameOfTrack": "Eskilstuna"
 }
 ###
 # Assume this Track gets auto-assigned ID 1
@@ -17,7 +17,7 @@ POST https://travanalyserver-latest.onrender.com/competition/createCompetition
 Content-Type: application/json
 
 {
-  "nameOfCompetition": "v69",
+  "nameOfCompetition": "v75",
   "track": {
     "id": 1
   }
@@ -31,7 +31,7 @@ POST https://travanalyserver-latest.onrender.com/lap/createLap
 Content-Type: application/json
 
 {
-  "nameOfLap": "Lap 1",
+  "nameOfLap": "Lap 7",
   "competition": {
     "id": 1
   }
@@ -45,7 +45,7 @@ POST https://travanalyserver-latest.onrender.com/fourStarts/createFourStarts
 Content-Type: application/json
 
 {
-  "analys": 70
+  "analys": 39
 }
 ###
 # Assume this FourStarts gets auto-assigned ID 101
@@ -56,12 +56,12 @@ POST https://travanalyserver-latest.onrender.com/completeHorse/createCompleteHor
 Content-Type: application/json
 
 {
-  "nameOfCompleteHorse": "Poggeru",
+  "nameOfCompleteHorse": "Häst 5",
   "lap": {
-    "id": 1
+    "id": 7
   },
   "fourStarts": {
-    "id": 4
+    "id": 18
   }
 }
 ###
