@@ -5,8 +5,8 @@ POST https://travanalyserver-latest.onrender.com/track/createTrack
 Content-Type: application/json
 
 {
-  "date": "2024-11-16",
-  "nameOfTrack": "Eskilstuna"
+  "date": "2024-11-10",
+  "nameOfTrack": "Knuthöjden"
 }
 ###
 # Assume this Track gets auto-assigned ID 1
@@ -31,7 +31,7 @@ POST https://travanalyserver-latest.onrender.com/lap/createLap
 Content-Type: application/json
 
 {
-  "nameOfLap": "Lap 7",
+  "nameOfLap": "Lap 2",
   "competition": {
     "id": 1
   }
@@ -45,7 +45,7 @@ POST https://travanalyserver-latest.onrender.com/fourStarts/createFourStarts
 Content-Type: application/json
 
 {
-  "analys": 39
+  "analys": 30
 }
 ###
 # Assume this FourStarts gets auto-assigned ID 101
@@ -56,12 +56,46 @@ POST https://travanalyserver-latest.onrender.com/completeHorse/createCompleteHor
 Content-Type: application/json
 
 {
-  "nameOfCompleteHorse": "Häst 5",
+  "nameOfCompleteHorse": "RiRi",
   "lap": {
-    "id": 7
+    "id": 1
   },
   "fourStarts": {
-    "id": 18
+    "id": 13
   }
+}
+###
+
+###
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+
+{
+  "nameOfTrack": "Knuthöjden",
+  "date": "2024-11-10",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 95,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 ###

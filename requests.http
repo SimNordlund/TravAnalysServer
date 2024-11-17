@@ -90,6 +90,153 @@ Content-Type: application/json
 }
 ###
 
+###
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+
+{
+  "nameOfTrack": "Knuthöjden",
+  "date": "2024-11-10",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 120000,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+###
 
 
 
@@ -101,7 +248,7 @@ Content-Type: application/json
 
 
 
-
+###
 
 #1 Create Track
 POST http://localhost:8080/track/createTrack
