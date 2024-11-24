@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/travanalys")
@@ -63,6 +65,18 @@ public class TravAnalysController {
         }
 
         return new ResponseEntity<>("All data saved successfully!", HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/deleteTrackByName")
+    public ResponseEntity<String> deleteTrackByName(@RequestParam String nameOfTrack) {
+        Optional<Track> trackOptional = trackRepo.findByNameOfTrack(nameOfTrack);
+
+        if (trackOptional.isEmpty()) {
+            return new ResponseEntity<>("Track not found", HttpStatus.NOT_FOUND);
+        }
+
+        trackRepo.delete(trackOptional.get());
+        return new ResponseEntity<>("Track and all connected entities deleted successfully", HttpStatus.OK);
     }
 }
 

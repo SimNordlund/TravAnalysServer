@@ -71,11 +71,11 @@ POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Knuthöjden",
-  "date": "2024-11-10",
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
   "competitions": [
     {
-      "nameOfCompetition": "v75",
+      "nameOfCompetition": "v69",
       "laps": [
         {
           "nameOfLap": "Lap 1",
@@ -212,3 +212,5 @@ Content-Type: application/json
   ]
 }
 ###
+
+

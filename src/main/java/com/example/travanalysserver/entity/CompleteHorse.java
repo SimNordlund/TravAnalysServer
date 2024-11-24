@@ -16,18 +16,18 @@ public class CompleteHorse {
     private String nameOfCompleteHorse;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "lap_id")
     private Lap lap;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "four_starts_id")
     private FourStarts fourStarts;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "eight_starts_id")
     private EightStarts eightStarts;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "twelve_starts_id")
     private TwelveStarts twelveStarts;
 }

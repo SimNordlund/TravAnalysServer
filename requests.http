@@ -95,8 +95,8 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Knuthöjden",
-  "date": "2024-11-10",
+  "nameOfTrack": "Pedro",
+  "date": "2024-11-20",
   "competitions": [
     {
       "nameOfCompetition": "v75",
@@ -105,7 +105,7 @@ Content-Type: application/json
           "nameOfLap": "Lap 1",
           "horses": [
             {
-              "nameOfCompleteHorse": "RiRi",
+              "nameOfCompleteHorse": "Apa",
               "fourStarts": {
                 "analys": 90,
                 "fart": 85,
@@ -170,7 +170,7 @@ Content-Type: application/json
           "nameOfLap": "Lap 2",
           "horses": [
             {
-              "nameOfCompleteHorse": "Kekk123o",
+              "nameOfCompleteHorse": "Lill-sången",
               "fourStarts": {
                 "analys": 44,
                 "fart": 85,
@@ -239,7 +239,9 @@ Content-Type: application/json
 ###
 
 
-
+###
+DELETE http://localhost:8080/travanalys/deleteTrackByName?nameOfTrack=Kek
+###
 
 
 

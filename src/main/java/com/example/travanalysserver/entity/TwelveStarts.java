@@ -1,9 +1,6 @@
 package com.example.travanalysserver.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -22,4 +19,7 @@ public class TwelveStarts {
     private int valueThree;
     private int valueFour;
     private int valueFive;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    private CompleteHorse completeHorse;
 }

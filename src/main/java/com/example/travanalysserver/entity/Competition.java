@@ -3,6 +3,9 @@ package com.example.travanalysserver.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +18,10 @@ public class Competition {
     private Long id;
     private String nameOfCompetition;
 
-    @ManyToOne //Måste vara many för att det ska gå att ha flera tävlingar på ex. Romme. Byt till 1-1 vid behov
-    @JoinColumn
+    @ManyToOne
+    @JoinColumn(name = "track_id")
     private Track track;
+
+    @OneToMany(mappedBy = "competition", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Lap> laps = new ArrayList<>();
 }

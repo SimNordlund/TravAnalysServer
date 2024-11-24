@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -17,5 +19,8 @@ public class Track {
     private Long id;
     private LocalDate date;
     private String nameOfTrack;
+
+    @OneToMany(mappedBy = "track", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Competition> competitions = new ArrayList<>();
 
 }

@@ -20,7 +20,10 @@ public class Lap {
     private String nameOfLap;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "competition_id")
     private Competition competition;
+
+    @OneToMany(mappedBy = "lap", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CompleteHorse> horses = new ArrayList<>();
 }
 
