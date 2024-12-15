@@ -95,8 +95,8 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Pedro",
-  "date": "2024-11-20",
+  "nameOfTrack": "ok",
+  "date": "2024-11-21",
   "competitions": [
     {
       "nameOfCompetition": "v75",
@@ -240,7 +240,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8080/travanalys/deleteTrackByName?nameOfTrack=Kek
+DELETE http://localhost:8080/travanalys/deleteTrackByName?nameOfTrack=Pedro
 ###
 
 
