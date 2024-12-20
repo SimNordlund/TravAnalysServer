@@ -238,17 +238,24 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:8080/reduced/system
+Content-Type: application/json
+
+{
+  "rd": "This is the pink beaver from soviet"
+}
+
+###
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+
 
 ###
 DELETE http://localhost:8080/travanalys/deleteTrackByName?nameOfTrack=Pedro
 ###
-
-
-
-
-
-
-
 
 ###
 
