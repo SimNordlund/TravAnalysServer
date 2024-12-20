@@ -85,23 +85,23 @@ Content-Type: application/json
               "fourStarts": {
                 "analys": 90,
                 "fart": 85,
-                "styrka": 70,
+                "styrka": 30,
                 "klass": 80,
-                "prispengar": 120000,
+                "prispengar": 22,
                 "kusk": 95,
-                "spar": 4
+                "spår": 4
               }
             },
             {
               "nameOfCompleteHorse": "bbbb",
               "fourStarts": {
-                "analys": 11,
-                "fart": 85,
+                "analys": 14,
+                "fart": 82,
                 "styrka": 33,
-                "klass": 80,
-                "prispengar": 120000,
+                "klass": 8,
+                "prispengar": 12,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
@@ -110,34 +110,34 @@ Content-Type: application/json
                 "analys": 55,
                 "fart": 85,
                 "styrka": 33,
-                "klass": 80,
-                "prispengar": 120000,
+                "klass": 30,
+                "prispengar": 44,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
               "nameOfCompleteHorse": "peppe",
               "fourStarts": {
-                "analys": 55,
-                "fart": 85,
+                "analys": 5,
+                "fart": 8,
                 "styrka": 33,
-                "klass": 80,
-                "prispengar": 120000,
+                "klass": 8,
+                "prispengar": 66,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
               "nameOfCompleteHorse": "awd123",
               "fourStarts": {
                 "analys": 55,
-                "fart": 85,
-                "styrka": 33,
+                "fart": 25,
+                "styrka": 43,
                 "klass": 80,
-                "prispengar": 120000,
+                "prispengar": 3,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             }
           ]
@@ -148,13 +148,13 @@ Content-Type: application/json
             {
               "nameOfCompleteHorse": "Kekk123o",
               "fourStarts": {
-                "analys": 44,
-                "fart": 85,
+                "analys": 14,
+                "fart": 25,
                 "styrka": 33,
                 "klass": 80,
-                "prispengar": 120000,
+                "prispengar": 2,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
@@ -163,22 +163,22 @@ Content-Type: application/json
                 "analys": 44,
                 "fart": 85,
                 "styrka": 33,
-                "klass": 80,
-                "prispengar": 120000,
-                "kusk": 55,
-                "spar": 4
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
               }
             },
             {
               "nameOfCompleteHorse": "123awd",
               "fourStarts": {
                 "analys": 33,
-                "fart": 85,
+                "fart": 15,
                 "styrka": 33,
-                "klass": 80,
-                "prispengar": 120000,
+                "klass": 30,
+                "prispengar": 14,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
@@ -188,21 +188,21 @@ Content-Type: application/json
                 "fart": 85,
                 "styrka": 33,
                 "klass": 80,
-                "prispengar": 120000,
+                "prispengar": 12,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             },
             {
               "nameOfCompleteHorse": "Kekko",
               "fourStarts": {
                 "analys": 22,
-                "fart": 85,
+                "fart": 35,
                 "styrka": 33,
                 "klass": 55,
-                "prispengar": 120000,
+                "prispengar": 15,
                 "kusk": 55,
-                "spar": 4
+                "spår": 4
               }
             }
           ]
