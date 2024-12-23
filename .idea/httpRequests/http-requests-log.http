@@ -1,0 +1,3880 @@
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-23T132421.200.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-23T132415.200.txt
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: text/plain
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T132348.201.txt
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: text/plain
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T132246.500.json
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: text/plain
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T132211.500.json
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: text/plain
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T132129.415.json
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: application/text
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T132011.415.json
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: application/text
+Content-Length: 712
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
+
+<> 2024-12-23T131848.415.json
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 29079
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "canaria",
+  "date": "2024-12-24",
+  "competitions": [
+    {
+      "nameOfCompetition": "V75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap1",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap1",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap1",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap1",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap1",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap1",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap1",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap1",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap1",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap1",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse11_Lap1",
+              "fourStarts": {
+                "analys": 110,
+                "fart": 165,
+                "styrka": 220,
+                "klass": 275,
+                "prispengar": 330,
+                "kusk": 385,
+                "spår": 11
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse12_Lap1",
+              "fourStarts": {
+                "analys": 120,
+                "fart": 180,
+                "styrka": 240,
+                "klass": 300,
+                "prispengar": 360,
+                "kusk": 420,
+                "spår": 12
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse13_Lap1",
+              "fourStarts": {
+                "analys": 130,
+                "fart": 195,
+                "styrka": 260,
+                "klass": 325,
+                "prispengar": 390,
+                "kusk": 455,
+                "spår": 13
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse14_Lap1",
+              "fourStarts": {
+                "analys": 140,
+                "fart": 210,
+                "styrka": 280,
+                "klass": 350,
+                "prispengar": 420,
+                "kusk": 490,
+                "spår": 14
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse15_Lap1",
+              "fourStarts": {
+                "analys": 150,
+                "fart": 225,
+                "styrka": 300,
+                "klass": 375,
+                "prispengar": 450,
+                "kusk": 525,
+                "spår": 15
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap2",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap2",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap2",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap2",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap2",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap2",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap2",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap2",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap2",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap2",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse11_Lap2",
+              "fourStarts": {
+                "analys": 110,
+                "fart": 165,
+                "styrka": 220,
+                "klass": 275,
+                "prispengar": 330,
+                "kusk": 385,
+                "spår": 11
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse12_Lap2",
+              "fourStarts": {
+                "analys": 120,
+                "fart": 180,
+                "styrka": 240,
+                "klass": 300,
+                "prispengar": 360,
+                "kusk": 420,
+                "spår": 12
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse13_Lap2",
+              "fourStarts": {
+                "analys": 130,
+                "fart": 195,
+                "styrka": 260,
+                "klass": 325,
+                "prispengar": 390,
+                "kusk": 455,
+                "spår": 13
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse14_Lap2",
+              "fourStarts": {
+                "analys": 140,
+                "fart": 210,
+                "styrka": 280,
+                "klass": 350,
+                "prispengar": 420,
+                "kusk": 490,
+                "spår": 14
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 3",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap3",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap3",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap3",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap3",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap3",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap3",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap3",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap3",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap3",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap3",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse11_Lap3",
+              "fourStarts": {
+                "analys": 110,
+                "fart": 165,
+                "styrka": 220,
+                "klass": 275,
+                "prispengar": 330,
+                "kusk": 385,
+                "spår": 11
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse12_Lap3",
+              "fourStarts": {
+                "analys": 120,
+                "fart": 180,
+                "styrka": 240,
+                "klass": 300,
+                "prispengar": 360,
+                "kusk": 420,
+                "spår": 12
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse13_Lap3",
+              "fourStarts": {
+                "analys": 130,
+                "fart": 195,
+                "styrka": 260,
+                "klass": 325,
+                "prispengar": 390,
+                "kusk": 455,
+                "spår": 13
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 4",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap4",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap4",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap4",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap4",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap4",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap4",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap4",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap4",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap4",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap4",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse11_Lap4",
+              "fourStarts": {
+                "analys": 110,
+                "fart": 165,
+                "styrka": 220,
+                "klass": 275,
+                "prispengar": 330,
+                "kusk": 385,
+                "spår": 11
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse12_Lap4",
+              "fourStarts": {
+                "analys": 120,
+                "fart": 180,
+                "styrka": 240,
+                "klass": 300,
+                "prispengar": 360,
+                "kusk": 420,
+                "spår": 12
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 5",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap5",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap5",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap5",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap5",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap5",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap5",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap5",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap5",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap5",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap5",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse11_Lap5",
+              "fourStarts": {
+                "analys": 110,
+                "fart": 165,
+                "styrka": 220,
+                "klass": 275,
+                "prispengar": 330,
+                "kusk": 385,
+                "spår": 11
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 6",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap6",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap6",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap6",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap6",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap6",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap6",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap6",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap6",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap6",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap6",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 7",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap7",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap7",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap7",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap7",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap7",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap7",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap7",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap7",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap7",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-22T132128.201.txt
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 24303
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Romme",
+  "date": "2024-12-22",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap1",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap1",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap1",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap1",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap1",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap1",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap1",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap1",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap1",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap1",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap2",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap2",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap2",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap2",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap2",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap2",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap2",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap2",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap2",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap2",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 3",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap3",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap3",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap3",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap3",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap3",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap3",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap3",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap3",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap3",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap3",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 4",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap4",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap4",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap4",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap4",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap4",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap4",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap4",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap4",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap4",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap4",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 5",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap5",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap5",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap5",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap5",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap5",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap5",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap5",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap5",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap5",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap5",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 6",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap6",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap6",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap6",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap6",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap6",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap6",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap6",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap6",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap6",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap6",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 7",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Horse1_Lap7",
+              "fourStarts": {
+                "analys": 10,
+                "fart": 15,
+                "styrka": 20,
+                "klass": 25,
+                "prispengar": 30,
+                "kusk": 35,
+                "spår": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse2_Lap7",
+              "fourStarts": {
+                "analys": 20,
+                "fart": 30,
+                "styrka": 40,
+                "klass": 50,
+                "prispengar": 60,
+                "kusk": 70,
+                "spår": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse3_Lap7",
+              "fourStarts": {
+                "analys": 30,
+                "fart": 45,
+                "styrka": 60,
+                "klass": 75,
+                "prispengar": 90,
+                "kusk": 105,
+                "spår": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse4_Lap7",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 60,
+                "styrka": 80,
+                "klass": 100,
+                "prispengar": 120,
+                "kusk": 140,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse5_Lap7",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 75,
+                "styrka": 100,
+                "klass": 125,
+                "prispengar": 150,
+                "kusk": 175,
+                "spår": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse6_Lap7",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 90,
+                "styrka": 120,
+                "klass": 150,
+                "prispengar": 180,
+                "kusk": 210,
+                "spår": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse7_Lap7",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 105,
+                "styrka": 140,
+                "klass": 175,
+                "prispengar": 210,
+                "kusk": 245,
+                "spår": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse8_Lap7",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 120,
+                "styrka": 160,
+                "klass": 200,
+                "prispengar": 240,
+                "kusk": 280,
+                "spår": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse9_Lap7",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 135,
+                "styrka": 180,
+                "klass": 225,
+                "prispengar": 270,
+                "kusk": 315,
+                "spår": 9
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Horse10_Lap7",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 150,
+                "styrka": 200,
+                "klass": 250,
+                "prispengar": 300,
+                "kusk": 350,
+                "spår": 10
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-22T102212.201.txt
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3569
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "ok",
+  "date": "2024-11-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Apa",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 125,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 1,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Lill-sången",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 4,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-22T100232.201.txt
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3581
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 30,
+                "klass": 80,
+                "prispengar": 22,
+                "kusk": 95,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 82,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 44,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 5,
+                "fart": 8,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 66,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 25,
+                "styrka": 43,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 25,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 15,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 14,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 35,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 15,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T195156.201.txt
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3569
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "ok",
+  "date": "2024-11-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Apa",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 125,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 1,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Lill-sången",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 4,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T191729.201.txt
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3581
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 30,
+                "klass": 80,
+                "prispengar": 22,
+                "kusk": 95,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 82,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 44,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 5,
+                "fart": 8,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 66,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 25,
+                "styrka": 43,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 25,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 15,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 14,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 35,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 15,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T191235.201.txt
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3581
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 30,
+                "klass": 80,
+                "prispengar": 22,
+                "kusk": 95,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 82,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 44,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 5,
+                "fart": 8,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 66,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 25,
+                "styrka": 43,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 25,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 15,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 14,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 35,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 15,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T165456.201.txt
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3569
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "ok",
+  "date": "2024-11-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Apa",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 125,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 1,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Lill-sången",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 4,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T153021.201.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T151149.200.txt
+
+###
+
+POST https://travanalyserver-latest.onrender.com/save/system/one
+Content-Type: application/json
+Content-Length: 25
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "rd": "give me ipa"
+}
+
+<> 2024-12-21T151135.201.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T151035.200.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Accept: application/text
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T150926.404.txt
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T150922.404.txt
+
+###
+
+POST https://travanalys.onrender.com/save/system/one
+Content-Type: application/json
+Content-Length: 25
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "rd": "give me ipa"
+}
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3581
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 30,
+                "klass": 80,
+                "prispengar": 22,
+                "kusk": 95,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 82,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 44,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 5,
+                "fart": 8,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 66,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 25,
+                "styrka": 43,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 25,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 15,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 14,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 35,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 15,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T150548.201.txt
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T150045.404.txt
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T150041.404.txt
+
+###
+
+POST https://travanalys.onrender.com/save/system/one
+Content-Type: application/json
+Content-Length: 25
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "rd": "give me ipa"
+}
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145945.200.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145940.200.txt
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "rd": "This is the pink beaver from soviet"
+}
+
+<> 2024-12-21T145933.201.txt
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145811.404.txt
+
+###
+
+POST https://travanalys.onrender.com/update/system/one
+Content-Type: application/json
+Content-Length: 36
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "rd": "give me ipa"
+}
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145741.404.txt
+
+###
+
+GET https://travanalys.onrender.com/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145634.404.txt
+
+###
+
+POST https://travanalys.onrender.com/update/system/one
+Content-Type: application/json
+Content-Length: 36
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "rd": "give me ipa"
+}
+
+###
+
+GET https://travanalys.onrender.com/s1?id=10
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T145551.404.txt
+
+###
+
+POST https://travanalys.onrender.com/update/system/one
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 10,
+  "rd": "give me ipa"
+}
+
+###
+
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3581
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Hagförs",
+  "date": "2024-11-16",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "RiRi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 30,
+                "klass": 80,
+                "prispengar": 22,
+                "kusk": 95,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 82,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 44,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 5,
+                "fart": 8,
+                "styrka": 33,
+                "klass": 8,
+                "prispengar": 66,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 25,
+                "styrka": 43,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Kekk123o",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 25,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 40,
+                "prispengar": 1,
+                "kusk": 25,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 15,
+                "styrka": 33,
+                "klass": 30,
+                "prispengar": 14,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 12,
+                "kusk": 55,
+                "spår": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 35,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 15,
+                "kusk": 55,
+                "spår": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T145251.201.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T144215.200.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Accept: application/text
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 3569
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "ok",
+  "date": "2024-11-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v75",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Apa",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 85,
+                "styrka": 70,
+                "klass": 80,
+                "prispengar": 120,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "bbbb",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 125,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aaa",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 1,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "peppe",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd123",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "Lill-sången",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "aw3",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "123awd",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 4,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "awd",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 80,
+                "prispengar": 2,
+                "kusk": 55,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "Kekko",
+              "fourStarts": {
+                "analys": 22,
+                "fart": 85,
+                "styrka": 33,
+                "klass": 55,
+                "prispengar": 3,
+                "kusk": 55,
+                "spar": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2024-12-21T143646.201.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T143047.200.txt
+
+###
+
+POST http://localhost:8080/save/system/one
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "rd": "This is the pink beaver from soviet"
+}
+
+<> 2024-12-21T143043.201.txt
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T142930.200.json
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T142925.200.json
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T142556.200.json
+
+###
+
+GET http://localhost:8080/s1?id=1
+Content-Type: application/text
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T142425.200.json
+
+###
+
+GET http://localhost:8080/s1?id=1
+Accept: application/text
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/s1?id=1
+Accept: application/xml
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-21T142209.200.xml
+
+###
+

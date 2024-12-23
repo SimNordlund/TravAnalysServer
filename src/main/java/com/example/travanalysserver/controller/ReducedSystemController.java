@@ -46,11 +46,21 @@ public class ReducedSystemController {
     }
 
 
-    @PostMapping("/save/system/one")
+ /*   @PostMapping("/save/system/one")
     public ResponseEntity<String> addReducedSystem(@RequestBody ReducedSystem reducedSystem) {
         reducedSystemRepo.save(reducedSystem);
         return new ResponseEntity<>("Reduced system added successfully", HttpStatus.CREATED);
+    } */
+
+    @PostMapping(value = "/save/system/one", consumes = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> addReducedSystem(@RequestBody String rawXml) {
+        ReducedSystem reducedSystem = new ReducedSystem();
+        reducedSystem.setRd(rawXml); // Save the raw XML as a string in the database
+        reducedSystemRepo.save(reducedSystem);
+
+        return new ResponseEntity<>("Reduced system added successfully", HttpStatus.CREATED);
     }
+
 
     @PutMapping("/update/system/one")
     public ResponseEntity<String> putSystemOne(@RequestBody ReducedSystem reducedSystem) {

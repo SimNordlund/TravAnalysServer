@@ -251,6 +251,24 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:8080/save/system/one
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="us-ascii"?>
+<issuer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="atg_filebetting.xsd" version="1.8.2" schemaversion="ATG File Betting XSD ver 1.8">
+    <betcoupons>
+        <v75Coupon couponid="1" date="2024-12-21">
+            <leg legno="1" marks="100000000000000" />
+            <leg legno="2" marks="000000000010000" />
+            <leg legno="3" marks="100000000000000" />
+            <leg legno="4" marks="000100000000000" />
+            <leg legno="5" marks="000000001000000" />
+            <leg legno="6" marks="000000010000000" />
+            <leg legno="7" marks="000010000000000" />
+        </v75Coupon>
+    </betcoupons>
+</issuer>
 ###
 PUT http://localhost:8080/update/system/one
 Content-Type: application/json
