@@ -25,7 +25,35 @@ public class ReducedSystemController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/s2")
+ /*   @GetMapping(value = "/s2", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> getSystemTwo(@RequestParam Long id) {
+        return reducedSystemRepo.findById(id)
+                .map(system -> ResponseEntity.ok(system.getRd()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(value = "/s3", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> getSystemThree(@RequestParam Long id) {
+        return reducedSystemRepo.findById(id)
+                .map(system -> ResponseEntity.ok(system.getRd()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(value = "/s4", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> getSystemFour(@RequestParam Long id) {
+        return reducedSystemRepo.findById(id)
+                .map(system -> ResponseEntity.ok(system.getRd()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(value = "/s5", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> getSystemFive(@RequestParam Long id) {
+        return reducedSystemRepo.findById(id)
+                .map(system -> ResponseEntity.ok(system.getRd()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    } */
+
+   /* @GetMapping("/s2")
     public Optional<ReducedSystem> getSystemTwo(@RequestParam Long id) {
         return reducedSystemRepo.findById(id);
     }
@@ -43,7 +71,7 @@ public class ReducedSystemController {
     @GetMapping("/s5")
     public Optional<ReducedSystem> getSystemFive(@RequestParam Long id) {
         return reducedSystemRepo.findById(id);
-    }
+    } */
 
 
  /*   @PostMapping("/save/system/one")
