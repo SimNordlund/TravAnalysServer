@@ -53,27 +53,6 @@ public class ReducedSystemController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     } */
 
-   /* @GetMapping("/s2")
-    public Optional<ReducedSystem> getSystemTwo(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id);
-    }
-
-    @GetMapping("/s3")
-    public Optional<ReducedSystem> getSystemThree(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id);
-    }
-
-    @GetMapping("/s4")
-    public Optional<ReducedSystem> getSystemFour(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id);
-    }
-
-    @GetMapping("/s5")
-    public Optional<ReducedSystem> getSystemFive(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id);
-    } */
-
-
  /*   @PostMapping("/save/system/one")
     public ResponseEntity<String> addReducedSystem(@RequestBody ReducedSystem reducedSystem) {
         reducedSystemRepo.save(reducedSystem);
@@ -89,8 +68,23 @@ public class ReducedSystemController {
         return new ResponseEntity<>("Reduced system added successfully", HttpStatus.CREATED);
     }
 
+    @PutMapping(value = "/update/system/one", consumes = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> putSystemOne(@RequestParam Long id, @RequestBody String rawXml) {
+        Optional<ReducedSystem> optionalReducedSystem = reducedSystemRepo.findById(id);
 
-    @PutMapping("/update/system/one")
+        if (optionalReducedSystem.isPresent()) {
+            ReducedSystem reducedSystem = optionalReducedSystem.get();
+            reducedSystem.setRd(rawXml); // Update the "rd" field with the new raw XML
+            reducedSystemRepo.save(reducedSystem); // Save the updated entity
+
+            return new ResponseEntity<>("Reduced system updated successfully", HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity<>("Reduced system not found", HttpStatus.NOT_FOUND);
+    }
+
+
+ /*   @PutMapping("/update/system/one")
     public ResponseEntity<String> putSystemOne(@RequestBody ReducedSystem reducedSystem) {
 
         if (reducedSystemRepo.findById(reducedSystem.getId()).isPresent()) {
@@ -102,5 +96,5 @@ public class ReducedSystemController {
         }
 
         return new ResponseEntity<>("Reduced sket sig", HttpStatus.FORBIDDEN);
-    }
+    } */
 }

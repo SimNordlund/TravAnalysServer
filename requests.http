@@ -1313,6 +1313,21 @@ Content-Type: text/plain
 </v75Coupon>
 </betcoupons>
 </issuer>
+
+###
+PUT http://localhost:8080/update/system/one?id=1
+Content-Type: text/plain
+
+<v75Coupon couponid="2" date="2024-12-23">
+<leg legno="1" marks="000000000001000" />
+<leg legno="2" marks="000010000000000" />
+<leg legno="3" marks="010000000000000" />
+<leg legno="4" marks="000000000000010" />
+<leg legno="5" marks="000000001000000" />
+<leg legno="6" marks="000000000010000" />
+<leg legno="7" marks="100000000000000" />
+</v75Coupon>
+
 ###
 PUT http://localhost:8080/update/system/one
 Content-Type: application/json
