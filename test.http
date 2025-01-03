@@ -6830,3 +6830,10 @@ Content-Type: text/plain
 </betcoupons>
 </issuer>
 ###
+
+PUT https://travanalyserver-latest.onrender.com/update/system/one?id=1
+Content-Type: text/plain
+
+<Mer knut till folken>
+
+###

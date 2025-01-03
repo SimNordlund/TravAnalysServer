@@ -25,40 +25,6 @@ public class ReducedSystemController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
- /*   @GetMapping(value = "/s2", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> getSystemTwo(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id)
-                .map(system -> ResponseEntity.ok(system.getRd()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping(value = "/s3", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> getSystemThree(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id)
-                .map(system -> ResponseEntity.ok(system.getRd()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping(value = "/s4", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> getSystemFour(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id)
-                .map(system -> ResponseEntity.ok(system.getRd()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping(value = "/s5", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> getSystemFive(@RequestParam Long id) {
-        return reducedSystemRepo.findById(id)
-                .map(system -> ResponseEntity.ok(system.getRd()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    } */
-
- /*   @PostMapping("/save/system/one")
-    public ResponseEntity<String> addReducedSystem(@RequestBody ReducedSystem reducedSystem) {
-        reducedSystemRepo.save(reducedSystem);
-        return new ResponseEntity<>("Reduced system added successfully", HttpStatus.CREATED);
-    } */
-
     @PostMapping(value = "/save/system/one", consumes = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> addReducedSystem(@RequestBody String rawXml) {
         ReducedSystem reducedSystem = new ReducedSystem();
@@ -73,6 +39,7 @@ public class ReducedSystemController {
         Optional<ReducedSystem> optionalReducedSystem = reducedSystemRepo.findById(id);
 
         if (optionalReducedSystem.isPresent()) {
+
             ReducedSystem reducedSystem = optionalReducedSystem.get();
             reducedSystem.setRd(rawXml); // Update the "rd" field with the new raw XML
             reducedSystemRepo.save(reducedSystem); // Save the updated entity
