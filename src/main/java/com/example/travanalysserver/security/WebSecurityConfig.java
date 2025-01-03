@@ -9,9 +9,16 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.core.user.OAuth2UserAuthority;
 import org.springframework.security.web.SecurityFilterChain;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Configuration
 @EnableWebSecurity
@@ -40,13 +47,51 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests((requests) -> requests
-                        .anyRequest().permitAll()  // Allow all requests without authentication
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/", "/login/**", "/oauth2/**").permitAll() // Allow public access
+                        .anyRequest().permitAll() //Tillåter allt just nu. Ändra sen.
                 )
-                .csrf(AbstractHttpConfigurer::disable)  // Disable CSRF for unrestricted access
-                .formLogin(AbstractHttpConfigurer::disable)  // Disable form login (no need for a login page)
-                .logout(AbstractHttpConfigurer::disable);  // Disable logout functionality (no restrictions)
+                .oauth2Login(oauth2 -> oauth2
+                        .defaultSuccessUrl("http://localhost:5173", true) // Redirect to React app after successful login
+                        .userInfoEndpoint(userInfo -> userInfo
+                                .userAuthoritiesMapper(this.userAuthoritiesMapper())
+                        )
+                )
+                .csrf(AbstractHttpConfigurer::disable); // Disable CSRF for development
 
         return http.build();
+    }
+
+
+    private GrantedAuthoritiesMapper userAuthoritiesMapper() {
+
+        return (authorities) -> {
+            List<SimpleGrantedAuthority> mappedAuthorities = new ArrayList<>();
+
+
+            authorities.forEach(authority -> {
+
+                if (authority instanceof OAuth2UserAuthority oauth2UserAuthority) {
+
+                    Map<String, Object> userAttributes = oauth2UserAuthority.getAttributes();
+
+
+                    //String email = userAttributes.get("email").toString();
+                    // email is not returned from Github!!! If not public email setting is turned on in your account
+
+                    // så - vi kan gå på login
+                    String login = userAttributes.get("login").toString();
+
+                    // Map the attributes found in userAttributes
+                    // to one or more GrantedAuthority's and add it to mappedAuthorities
+                    if(login.equals("SimNordlund")){
+                        mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
+                    }
+                }
+
+            });
+
+            return mappedAuthorities;
+        };
     }
 }
