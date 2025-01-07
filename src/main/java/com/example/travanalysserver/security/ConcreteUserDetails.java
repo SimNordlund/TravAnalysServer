@@ -55,4 +55,5 @@ public class ConcreteUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }
