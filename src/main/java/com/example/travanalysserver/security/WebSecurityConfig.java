@@ -83,8 +83,17 @@ public class WebSecurityConfig {
                     //String email = userAttributes.get("email").toString();
                     // email is not returned from Github!!! If not public email setting is turned on in your account
 
-                    // så - vi kan gå på login
-                    String login = userAttributes.get("login").toString();
+
+                  //  String login = userAttributes.get("login").toString();
+                  //  System.out.println(login);
+
+                 /*   String email = (String) userAttributes.get("email"); // Primary email
+                    if (email == null) {
+                        System.out.println("No email available. Did you include the user:email scope?");
+                    } else {
+                        System.out.println("User's email: " + email);
+                    } */
+
 
                     // Map the attributes found in userAttributes
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
