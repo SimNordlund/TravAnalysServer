@@ -94,7 +94,6 @@ public class WebSecurityConfig {
                 }
 
             });
-
             return mappedAuthorities;
         };
     }
