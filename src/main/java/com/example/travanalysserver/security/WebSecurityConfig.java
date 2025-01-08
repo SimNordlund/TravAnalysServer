@@ -2,6 +2,7 @@ package com.example.travanalysserver.security;
 
 
 import com.example.travanalysserver.service.impl.UserDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -24,6 +25,9 @@ import java.util.Map;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
+
+    @Value("${frontend.url}")
+    private String frontendUrl;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -52,7 +56,7 @@ public class WebSecurityConfig {
                         .anyRequest().permitAll() //Tillåter allt just nu. Ändra sen.
                 )
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("http://localhost:5173", true) // Redirect to React app after successful login
+                        .defaultSuccessUrl(frontendUrl, true) // Redirect to React app after successful login
                         .userInfoEndpoint(userInfo -> userInfo
                                 .userAuthoritiesMapper(this.userAuthoritiesMapper())
                         )
