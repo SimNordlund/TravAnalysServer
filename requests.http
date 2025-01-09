@@ -1423,10 +1423,13 @@ Content-Type: application/json
 }
 ###
 
-GET http://localhost:8080/g-login/email?email=Simon_nordlund@hotmail.com
+GET http://localhost:8080/g-login/email1337?email=Simon_nordlund@hotmail.com
 Content-Type: application/json
 
 ###
+
+GET https://travanalyserver-latest.onrender.com/g-login/email1337?email=Simon_nordlund@hotmail.com
+Content-Type: application/json
 
 
 
