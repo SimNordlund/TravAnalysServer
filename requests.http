@@ -1423,6 +1423,10 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:8080/g-login/email?email=Simon_nordlund@hotmail.com
+Content-Type: application/json
+
+###
 
 
 

@@ -1,6 +1,8 @@
 package com.example.travanalysserver.security;
 
 
+import com.example.travanalysserver.entity.login.GoogleUser;
+import com.example.travanalysserver.repository.GoogleRepo;
 import com.example.travanalysserver.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +27,12 @@ import java.util.Map;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
+
+    GoogleRepo googleRepo;
+
+    WebSecurityConfig(GoogleRepo googleRepo) {
+        this.googleRepo = googleRepo;
+    }
 
     @Value("${frontend.url}")
     private String frontendUrl;
@@ -87,22 +95,28 @@ public class WebSecurityConfig {
                   //  String login = userAttributes.get("login").toString();
                   //  System.out.println(login);
 
-                 /*   String email = (String) userAttributes.get("email"); // Primary email
-                    if (email == null) {
-                        System.out.println("No email available. Did you include the user:email scope?");
+                    Object emailObject = userAttributes.get("email"); // Fetch email
+                    if (emailObject == null) {
+                        System.out.println("No email available. Probably Github");
                     } else {
-                        System.out.println("User's email: " + email);
-                    } */
+                        String email = emailObject.toString(); // Safely convert to string
+                        System.out.println("Email: " + email);
 
+                        // Check if email exists in the database
+                        if (!googleRepo.existsByEmail(email)) {
+                            GoogleUser newUser = new GoogleUser(email);
+                            googleRepo.save(newUser); // Save the new user to the database
+                            System.out.println("New user saved: " + email);
+                        } else {
+                            System.out.println("User already exists in the database.");
+                        }
+                    }
 
                     // Map the attributes found in userAttributes
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
                  /*   if(login.equals("SimNordlund")){
                         mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
                     } */
-
-
-                    //Lagra nu i DB??
                 }
 
             });
