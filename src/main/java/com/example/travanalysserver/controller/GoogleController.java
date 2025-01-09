@@ -18,7 +18,7 @@ public class GoogleController {
 
     private final GoogleRepo googleRepo;
 
-    @GetMapping("/email1337")
+ /*   @GetMapping("/email1337")
     public ResponseEntity<String> getEmail1337(@RequestParam String email) {
         GoogleUser googleUser = googleRepo.findByEmail(email);
 
@@ -28,7 +28,7 @@ public class GoogleController {
 
         String userEmail = googleUser.getEmail();
         return ResponseEntity.ok(userEmail);
-    }
+    } */
 
     @GetMapping("/email")
     public ResponseEntity<String> getEmail(@org.springframework.security.core.annotation.AuthenticationPrincipal OAuth2User principal) {
