@@ -102,7 +102,7 @@ Content-Type: application/json
       "nameOfCompetition": "v75",
       "laps": [
         {
-          "nameOfLap": "Lap 1",
+          "nameOfLap": "Lap 3",
           "horses": [
             {
               "nameOfCompleteHorse": "Apa",

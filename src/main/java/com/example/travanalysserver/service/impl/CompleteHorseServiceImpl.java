@@ -1,6 +1,7 @@
 package com.example.travanalysserver.service.impl;
 
 import com.example.travanalysserver.dto.completehorse.CompleteHorseDTO;
+import com.example.travanalysserver.dto.completehorse.CompleteHorseDTOAnalys;
 import com.example.travanalysserver.entity.CompleteHorse;
 import com.example.travanalysserver.entity.Lap;
 import com.example.travanalysserver.repository.CompleteHorseRepo;
@@ -24,7 +25,8 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
     @Override
     public List<CompleteHorseDTO> findCompleteHorseByCompetitionId(Long competitionId) {
         List <CompleteHorse> tempList = completeHorseRepo.findAllByLap_Id(competitionId);
-        List <CompleteHorseDTO> completeHorseByFKList = tempList.stream().map(e -> completeHorseToCompleteHorseDTO(e)).toList();
+        List <CompleteHorseDTO> completeHorseByFKList = tempList.stream()
+                .map(e -> completeHorseToCompleteHorseDTO(e)).toList();
         return completeHorseByFKList;
 
     }
@@ -33,6 +35,22 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
         return CompleteHorseDTO.builder()
                 .id(completeHorse.getId())
                 .nameOfCompleteHorse(completeHorse.getNameOfCompleteHorse())
+                .build();
+    }
+
+    @Override
+    public List<CompleteHorseDTOAnalys> getAllCompleteHorsesAnalysFromDB (Long competitionId) {
+        List <CompleteHorse> tempList = completeHorseRepo.findAllByLap_Id(competitionId);
+        List <CompleteHorseDTOAnalys> kukhorse = tempList.stream()
+                .map(e -> completeHorseToCompleteHorseDTOAnalys(e)).toList();
+        return kukhorse; //For forskning
+    }
+
+    public CompleteHorseDTOAnalys completeHorseToCompleteHorseDTOAnalys (CompleteHorse completeHorse) {
+        return CompleteHorseDTOAnalys.builder()
+                .id(completeHorse.getId())
+                .nameOfCompleteHorse(completeHorse.getNameOfCompleteHorse())
+                .fourStartsAnalys(completeHorse.getFourStarts().getAnalys())
                 .build();
     }
 
