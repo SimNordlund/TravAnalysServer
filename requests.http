@@ -1429,7 +1429,7 @@ GET https://travanalyserver-latest.onrender.com/g-login/email1337?email=Simon_no
 Content-Type: application/json
 
 ###
-POST http://localhost:8080/travanalys/sendEverything
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
 Content-Type: application/json
 
 {
