@@ -1443,7 +1443,7 @@ Content-Type: application/json
           "nameOfLap": "Lap 1",
           "horses": [
             {
-              "nameOfCompleteHorse": "RoDoSi",
+              "nameOfCompleteHorse": "1. RoDoSi",
               "fourStarts": {
                 "analys": 83,
                 "fart": 81,
@@ -1455,7 +1455,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "HeNaFa",
+              "nameOfCompleteHorse": "2. HeNaFa",
               "fourStarts": {
                 "analys": 92,
                 "fart": 12,
@@ -1467,7 +1467,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "KiLu",
+              "nameOfCompleteHorse": "3. KiLu",
               "fourStarts": {
                 "analys": 57,
                 "fart": 59,
@@ -1479,7 +1479,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "NaHeMi",
+              "nameOfCompleteHorse": "4. NaHeMi",
               "fourStarts": {
                 "analys": 74,
                 "fart": 25,
@@ -1491,7 +1491,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "LiNa",
+              "nameOfCompleteHorse": "5. LiNa",
               "fourStarts": {
                 "analys": 44,
                 "fart": 43,
@@ -1503,7 +1503,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "LiNaZo",
+              "nameOfCompleteHorse": "6. LiNaZo",
               "fourStarts": {
                 "analys": 59,
                 "fart": 72,
@@ -1515,7 +1515,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "RoHoDo",
+              "nameOfCompleteHorse": "7. RoHoDo",
               "fourStarts": {
                 "analys": 70,
                 "fart": 83,
@@ -1527,7 +1527,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "HeTaKi",
+              "nameOfCompleteHorse": "8. HeTaKi",
               "fourStarts": {
                 "analys": 77,
                 "fart": 37,
@@ -1539,7 +1539,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "HeBoZo",
+              "nameOfCompleteHorse": "9. HeBoZo",
               "fourStarts": {
                 "analys": 57,
                 "fart": 94,
@@ -1551,7 +1551,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "FaRo",
+              "nameOfCompleteHorse": "10. FaRo",
               "fourStarts": {
                 "analys": 64,
                 "fart": 98,
@@ -1563,7 +1563,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "SiZo",
+              "nameOfCompleteHorse": "11. SiZo",
               "fourStarts": {
                 "analys": 70,
                 "fart": 10,
@@ -1575,7 +1575,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "LuZo",
+              "nameOfCompleteHorse": "12. LuZo",
               "fourStarts": {
                 "analys": 73,
                 "fart": 79,
@@ -1587,7 +1587,7 @@ Content-Type: application/json
               }
             },
             {
-              "nameOfCompleteHorse": "DoSiHe",
+              "nameOfCompleteHorse": "13. DoSiHe",
               "fourStarts": {
                 "analys": 59,
                 "fart": 72,
