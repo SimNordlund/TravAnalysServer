@@ -21,6 +21,9 @@ public class TravAnalysController {
     private final CompleteHorseRepo completeHorseRepo;
     private final FourStartsRepo fourStartsRepo;
 
+    //Gör en put som känner igen Datum, Bana så skrivs det över
+    //Gör en delete som kan ta bort via bara att man ger Datum och Bana.
+
     @PostMapping("/sendEverything")
     public ResponseEntity<String> addEverything(@RequestBody SendEverythingDTO request) {
         // Save Track
