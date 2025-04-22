@@ -1,4 +1,5 @@
 HELP.md
+http-requests-log-http
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
