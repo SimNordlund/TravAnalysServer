@@ -23,6 +23,12 @@ public class TrackController {
     private final TrackService trackService;
     private final TrackRepo trackRepo;
 
+    @GetMapping("/all")
+    public List<NameOfTrackDTO> getTracksToHandleTableData(){
+        List <NameOfTrackDTO> allLocationsList = trackService.getAllNamesOfTracks();
+        return allLocationsList;
+    }
+
     @GetMapping("/dates")
     public List<DateTrackDTO> getDatesFromDB(){
         List <DateTrackDTO> allDatesList = trackService.getAllDates();

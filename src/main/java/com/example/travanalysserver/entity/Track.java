@@ -23,4 +23,14 @@ public class Track {
     @OneToMany(mappedBy = "track", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Competition> competitions = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "Track{" +
+                "id=" + id +
+                ", date=" + date +
+                ", nameOfTrack='" + nameOfTrack + '\'' +
+                '}';
+    }
+
 }
+

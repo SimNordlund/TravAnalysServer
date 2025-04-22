@@ -95,7 +95,7 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Färjestad",
+  "nameOfTrack": "Rövestad",
   "date": "2025-04-21",
   "competitions": [
     {
@@ -1337,10 +1337,11 @@ Content-Type: application/json
 ###
 GET http://localhost:8080/s1?id=3
 Content-Type: application/json
-
 ###
+GET https://travanalyserver-latest.onrender.com/fourStarts/findData?completeHorseId=1
 
-GET http://localhost:8080/s1?id=1
+### GET http://localhost:8080/s1?id=1
+GET https://travanalyserver-latest.onrender.com/s1?id=1
 Content-Type: text/plain
 
 ###
@@ -1424,16 +1425,28 @@ GET http://localhost:8080/g-login/email1337?email=Simon_nordlund@hotmail.com
 Content-Type: application/json
 
 ###
+GET https://travanalyserver-latest.onrender.com/completeHorse/findByLap?lapId=1
+Content-Type: application/json
+###
 
 GET https://travanalyserver-latest.onrender.com/g-login/email1337?email=Simon_nordlund@hotmail.com
 Content-Type: application/json
 
 ###
-POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+
+DELETE http://localhost:8080/travanalys/deleteTrackById/1
+Content-Type: application/json
+###
+GET http://localhost:8080/track/all
+Content-Type: application/json
+###
+###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+### PUT http://localhost:8080/travanalys/sendEverything/1
+POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Uddevalla",
+  "nameOfTrack": "Tomasby",
   "date": "2025-02-21",
   "competitions": [
     {
