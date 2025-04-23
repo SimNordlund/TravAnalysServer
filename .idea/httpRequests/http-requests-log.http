@@ -1,3 +1,4797 @@
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 42548
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Pissnickehyttan",
+  "date": "2025-04-23",
+  "competitions": [
+    {
+      "nameOfCompetition": "v86",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "1. RoDoSi",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 81,
+                "styrka": 70,
+                "klass": 75,
+                "prispengar": 98,
+                "kusk": 73,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "2. HeNaFa",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 12,
+                "styrka": 99,
+                "klass": 91,
+                "prispengar": 157,
+                "kusk": 27,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "3. KiLu",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 59,
+                "styrka": 81,
+                "klass": 14,
+                "prispengar": 60,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "4. NaHeMi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 25,
+                "styrka": 52,
+                "klass": 24,
+                "prispengar": 66,
+                "kusk": 55,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "5. LiNa",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 43,
+                "styrka": 17,
+                "klass": 73,
+                "prispengar": 147,
+                "kusk": 12,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "6. LiNaZo",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 96,
+                "klass": 73,
+                "prispengar": 100,
+                "kusk": 84,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "7. RoHoDo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 83,
+                "styrka": 51,
+                "klass": 86,
+                "prispengar": 114,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "8. HeTaKi",
+              "fourStarts": {
+                "analys": 77,
+                "fart": 37,
+                "styrka": 39,
+                "klass": 17,
+                "prispengar": 122,
+                "kusk": 45,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "9. HeBoZo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 94,
+                "styrka": 97,
+                "klass": 93,
+                "prispengar": 126,
+                "kusk": 76,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "10. FaRo",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 98,
+                "styrka": 60,
+                "klass": 82,
+                "prispengar": 22,
+                "kusk": 39,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "11. SiZo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 10,
+                "styrka": 38,
+                "klass": 40,
+                "prispengar": 102,
+                "kusk": 96,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "12. LuZo",
+              "fourStarts": {
+                "analys": 73,
+                "fart": 79,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 23,
+                "kusk": 38,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "13. DoSiHe",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 21,
+                "klass": 62,
+                "prispengar": 27,
+                "kusk": 32,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "SiHoFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 65,
+                "styrka": 47,
+                "klass": 79,
+                "prispengar": 81,
+                "kusk": 79,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 63,
+                "styrka": 11,
+                "klass": 80,
+                "prispengar": 95,
+                "kusk": 76,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 22,
+                "styrka": 45,
+                "klass": 57,
+                "prispengar": 6,
+                "kusk": 65,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 19,
+                "fart": 13,
+                "styrka": 59,
+                "klass": 97,
+                "prispengar": 196,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiBoKi",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 32,
+                "styrka": 63,
+                "klass": 69,
+                "prispengar": 91,
+                "kusk": 16,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoZoTa",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 81,
+                "styrka": 23,
+                "klass": 59,
+                "prispengar": 57,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaDoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 87,
+                "styrka": 14,
+                "klass": 80,
+                "prispengar": 49,
+                "kusk": 99,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 52,
+                "styrka": 19,
+                "klass": 72,
+                "prispengar": 87,
+                "kusk": 42,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHeZo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 66,
+                "styrka": 21,
+                "klass": 19,
+                "prispengar": 103,
+                "kusk": 15,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 54,
+                "styrka": 14,
+                "klass": 44,
+                "prispengar": 151,
+                "kusk": 70,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHoMi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 21,
+                "styrka": 86,
+                "klass": 93,
+                "prispengar": 107,
+                "kusk": 28,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 3",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuTaHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 42,
+                "styrka": 57,
+                "klass": 89,
+                "prispengar": 71,
+                "kusk": 82,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 44,
+                "styrka": 56,
+                "klass": 60,
+                "prispengar": 77,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaZo",
+              "fourStarts": {
+                "analys": 35,
+                "fart": 100,
+                "styrka": 50,
+                "klass": 99,
+                "prispengar": 12,
+                "kusk": 69,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 77,
+                "styrka": 35,
+                "klass": 76,
+                "prispengar": 154,
+                "kusk": 99,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLi",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 20,
+                "styrka": 54,
+                "klass": 44,
+                "prispengar": 116,
+                "kusk": 41,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFa",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 10,
+                "styrka": 14,
+                "klass": 68,
+                "prispengar": 64,
+                "kusk": 20,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoFa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 53,
+                "styrka": 64,
+                "klass": 62,
+                "prispengar": 82,
+                "kusk": 17,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 95,
+                "styrka": 76,
+                "klass": 54,
+                "prispengar": 150,
+                "kusk": 16,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeDoHo",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 67,
+                "styrka": 41,
+                "klass": 90,
+                "prispengar": 48,
+                "kusk": 29,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 68,
+                "fart": 11,
+                "styrka": 10,
+                "klass": 95,
+                "prispengar": 130,
+                "kusk": 44,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiHe",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 21,
+                "styrka": 27,
+                "klass": 11,
+                "prispengar": 143,
+                "kusk": 51,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLiFa",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 31,
+                "styrka": 44,
+                "klass": 76,
+                "prispengar": 118,
+                "kusk": 34,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHo",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 92,
+                "styrka": 80,
+                "klass": 74,
+                "prispengar": 55,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoRoLi",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 51,
+                "styrka": 51,
+                "klass": 82,
+                "prispengar": 33,
+                "kusk": 90,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 4",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LiFa",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 52,
+                "styrka": 67,
+                "klass": 78,
+                "prispengar": 133,
+                "kusk": 25,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 54,
+                "fart": 20,
+                "styrka": 50,
+                "klass": 44,
+                "prispengar": 19,
+                "kusk": 77,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoMi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 15,
+                "styrka": 52,
+                "klass": 28,
+                "prispengar": 174,
+                "kusk": 84,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 33,
+                "styrka": 22,
+                "klass": 49,
+                "prispengar": 142,
+                "kusk": 72,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 34,
+                "styrka": 36,
+                "klass": 15,
+                "prispengar": 105,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoRoNa",
+              "fourStarts": {
+                "analys": 81,
+                "fart": 27,
+                "styrka": 20,
+                "klass": 55,
+                "prispengar": 91,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 66,
+                "styrka": 35,
+                "klass": 64,
+                "prispengar": 181,
+                "kusk": 14,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaHeFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 84,
+                "styrka": 86,
+                "klass": 17,
+                "prispengar": 196,
+                "kusk": 57,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiDo",
+              "fourStarts": {
+                "analys": 21,
+                "fart": 93,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 122,
+                "kusk": 44,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoMiLu",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 54,
+                "styrka": 48,
+                "klass": 32,
+                "prispengar": 130,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaRoZo",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 51,
+                "styrka": 61,
+                "klass": 72,
+                "prispengar": 189,
+                "kusk": 44,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiHo",
+              "fourStarts": {
+                "analys": 61,
+                "fart": 90,
+                "styrka": 98,
+                "klass": 43,
+                "prispengar": 181,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaZoMi",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 59,
+                "styrka": 63,
+                "klass": 31,
+                "prispengar": 158,
+                "kusk": 50,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 5",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 65,
+                "styrka": 67,
+                "klass": 87,
+                "prispengar": 166,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiBo",
+              "fourStarts": {
+                "analys": 95,
+                "fart": 73,
+                "styrka": 83,
+                "klass": 49,
+                "prispengar": 169,
+                "kusk": 19,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiLuTa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 100,
+                "styrka": 87,
+                "klass": 82,
+                "prispengar": 169,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuDo",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 63,
+                "styrka": 10,
+                "klass": 54,
+                "prispengar": 127,
+                "kusk": 85,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLiZo",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 30,
+                "styrka": 62,
+                "klass": 34,
+                "prispengar": 156,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuRoLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 53,
+                "styrka": 41,
+                "klass": 11,
+                "prispengar": 36,
+                "kusk": 53,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiFaSi",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 36,
+                "styrka": 34,
+                "klass": 33,
+                "prispengar": 163,
+                "kusk": 32,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLuDo",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 88,
+                "styrka": 16,
+                "klass": 14,
+                "prispengar": 175,
+                "kusk": 87,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoBoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 75,
+                "styrka": 76,
+                "klass": 87,
+                "prispengar": 114,
+                "kusk": 50,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoFa",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 84,
+                "styrka": 98,
+                "klass": 74,
+                "prispengar": 161,
+                "kusk": 29,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHe",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 92,
+                "styrka": 50,
+                "klass": 91,
+                "prispengar": 144,
+                "kusk": 94,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiTaTa",
+              "fourStarts": {
+                "analys": 25,
+                "fart": 62,
+                "styrka": 65,
+                "klass": 48,
+                "prispengar": 85,
+                "kusk": 87,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 6",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "BoMiTa",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 87,
+                "styrka": 15,
+                "klass": 62,
+                "prispengar": 50,
+                "kusk": 31,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 83,
+                "styrka": 53,
+                "klass": 49,
+                "prispengar": 195,
+                "kusk": 32,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiKiNa",
+              "fourStarts": {
+                "analys": 47,
+                "fart": 71,
+                "styrka": 92,
+                "klass": 98,
+                "prispengar": 21,
+                "kusk": 87,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuNa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 66,
+                "styrka": 40,
+                "klass": 52,
+                "prispengar": 123,
+                "kusk": 68,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiTa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 78,
+                "styrka": 69,
+                "klass": 16,
+                "prispengar": 101,
+                "kusk": 57,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHe",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 39,
+                "styrka": 82,
+                "klass": 48,
+                "prispengar": 197,
+                "kusk": 53,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHo",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 73,
+                "styrka": 70,
+                "klass": 16,
+                "prispengar": 84,
+                "kusk": 31,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFaDo",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 30,
+                "styrka": 87,
+                "klass": 55,
+                "prispengar": 125,
+                "kusk": 36,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuTaDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 37,
+                "styrka": 64,
+                "klass": 76,
+                "prispengar": 34,
+                "kusk": 86,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 56,
+                "styrka": 52,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 26,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 7",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "FaNa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 88,
+                "styrka": 62,
+                "klass": 51,
+                "prispengar": 162,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 28,
+                "styrka": 11,
+                "klass": 92,
+                "prispengar": 54,
+                "kusk": 71,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoNa",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 97,
+                "styrka": 100,
+                "klass": 52,
+                "prispengar": 41,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTaTa",
+              "fourStarts": {
+                "analys": 98,
+                "fart": 80,
+                "styrka": 88,
+                "klass": 39,
+                "prispengar": 89,
+                "kusk": 18,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 61,
+                "styrka": 74,
+                "klass": 70,
+                "prispengar": 112,
+                "kusk": 20,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLuSi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 76,
+                "styrka": 18,
+                "klass": 49,
+                "prispengar": 69,
+                "kusk": 88,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSi",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 64,
+                "styrka": 20,
+                "klass": 42,
+                "prispengar": 37,
+                "kusk": 64,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeMi",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 49,
+                "styrka": 24,
+                "klass": 68,
+                "prispengar": 86,
+                "kusk": 62,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTa",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 72,
+                "styrka": 65,
+                "klass": 72,
+                "prispengar": 103,
+                "kusk": 34,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 48,
+                "styrka": 67,
+                "klass": 33,
+                "prispengar": 156,
+                "kusk": 85,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHoSi",
+              "fourStarts": {
+                "analys": 31,
+                "fart": 89,
+                "styrka": 72,
+                "klass": 43,
+                "prispengar": 81,
+                "kusk": 30,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 62,
+                "styrka": 67,
+                "klass": 19,
+                "prispengar": 135,
+                "kusk": 33,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 8",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuHeDo",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 38,
+                "styrka": 100,
+                "klass": 73,
+                "prispengar": 45,
+                "kusk": 35,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiNa",
+              "fourStarts": {
+                "analys": 13,
+                "fart": 38,
+                "styrka": 79,
+                "klass": 89,
+                "prispengar": 56,
+                "kusk": 33,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoZoLu",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 43,
+                "styrka": 55,
+                "klass": 34,
+                "prispengar": 169,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoHoZo",
+              "fourStarts": {
+                "analys": 88,
+                "fart": 95,
+                "styrka": 46,
+                "klass": 97,
+                "prispengar": 104,
+                "kusk": 95,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 95,
+                "styrka": 70,
+                "klass": 84,
+                "prispengar": 142,
+                "kusk": 30,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiSi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 84,
+                "styrka": 63,
+                "klass": 73,
+                "prispengar": 117,
+                "kusk": 13,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiHo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 82,
+                "styrka": 56,
+                "klass": 85,
+                "prispengar": 99,
+                "kusk": 33,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaNa",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 34,
+                "styrka": 91,
+                "klass": 33,
+                "prispengar": 69,
+                "kusk": 58,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 11,
+                "styrka": 88,
+                "klass": 55,
+                "prispengar": 60,
+                "kusk": 27,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiBo",
+              "fourStarts": {
+                "analys": 89,
+                "fart": 90,
+                "styrka": 36,
+                "klass": 51,
+                "prispengar": 128,
+                "kusk": 56,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiLiDo",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 50,
+                "styrka": 98,
+                "klass": 68,
+                "prispengar": 172,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSiSi",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 100,
+                "styrka": 59,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 29,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 40,
+                "styrka": 85,
+                "klass": 55,
+                "prispengar": 136,
+                "kusk": 70,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHoSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 69,
+                "styrka": 67,
+                "klass": 12,
+                "prispengar": 163,
+                "kusk": 98,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHeHo",
+              "fourStarts": {
+                "analys": 65,
+                "fart": 61,
+                "styrka": 83,
+                "klass": 91,
+                "prispengar": 122,
+                "kusk": 76,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 9",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 38,
+                "styrka": 62,
+                "klass": 72,
+                "prispengar": 39,
+                "kusk": 47,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 96,
+                "styrka": 80,
+                "klass": 13,
+                "prispengar": 123,
+                "kusk": 49,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaHe",
+              "fourStarts": {
+                "analys": 63,
+                "fart": 81,
+                "styrka": 91,
+                "klass": 87,
+                "prispengar": 44,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFaKi",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 23,
+                "styrka": 99,
+                "klass": 87,
+                "prispengar": 70,
+                "kusk": 78,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRoLu",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 62,
+                "styrka": 71,
+                "klass": 76,
+                "prispengar": 193,
+                "kusk": 67,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoTaKi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 15,
+                "styrka": 48,
+                "klass": 95,
+                "prispengar": 51,
+                "kusk": 13,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaLiBo",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 54,
+                "styrka": 56,
+                "klass": 86,
+                "prispengar": 83,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoSiSi",
+              "fourStarts": {
+                "analys": 75,
+                "fart": 97,
+                "styrka": 60,
+                "klass": 27,
+                "prispengar": 48,
+                "kusk": 47,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuBoTa",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 65,
+                "styrka": 63,
+                "klass": 61,
+                "prispengar": 125,
+                "kusk": 25,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLi",
+              "fourStarts": {
+                "analys": 66,
+                "fart": 88,
+                "styrka": 55,
+                "klass": 62,
+                "prispengar": 133,
+                "kusk": 36,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 35,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 148,
+                "kusk": 22,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaNaBo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 82,
+                "styrka": 91,
+                "klass": 11,
+                "prispengar": 15,
+                "kusk": 12,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiRoTa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 34,
+                "styrka": 49,
+                "klass": 33,
+                "prispengar": 197,
+                "kusk": 79,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 10",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "NaKiLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 32,
+                "styrka": 10,
+                "klass": 85,
+                "prispengar": 156,
+                "kusk": 67,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 46,
+                "styrka": 93,
+                "klass": 85,
+                "prispengar": 188,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiBo",
+              "fourStarts": {
+                "analys": 38,
+                "fart": 20,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 121,
+                "kusk": 33,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 85,
+                "styrka": 79,
+                "klass": 95,
+                "prispengar": 173,
+                "kusk": 51,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLu",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 12,
+                "styrka": 82,
+                "klass": 84,
+                "prispengar": 103,
+                "kusk": 59,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 39,
+                "fart": 86,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 131,
+                "kusk": 59,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaRoNa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 96,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 144,
+                "kusk": 47,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiLuLi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 43,
+                "styrka": 15,
+                "klass": 10,
+                "prispengar": 19,
+                "kusk": 46,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiSi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 42,
+                "styrka": 41,
+                "klass": 97,
+                "prispengar": 84,
+                "kusk": 33,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiTa",
+              "fourStarts": {
+                "analys": 72,
+                "fart": 20,
+                "styrka": 61,
+                "klass": 13,
+                "prispengar": 199,
+                "kusk": 31,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHeLi",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 13,
+                "styrka": 76,
+                "klass": 63,
+                "prispengar": 78,
+                "kusk": 18,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoHe",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 94,
+                "styrka": 71,
+                "klass": 21,
+                "prispengar": 129,
+                "kusk": 39,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 86,
+                "styrka": 69,
+                "klass": 50,
+                "prispengar": 121,
+                "kusk": 59,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHe",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 61,
+                "styrka": 94,
+                "klass": 59,
+                "prispengar": 15,
+                "kusk": 41,
+                "spar": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2025-04-23T112612.201.txt
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 42542
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "SimpaTown",
+  "date": "2024-01-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v61",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "1. RoDoSi",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 81,
+                "styrka": 70,
+                "klass": 75,
+                "prispengar": 98,
+                "kusk": 73,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "2. HeNaFa",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 12,
+                "styrka": 99,
+                "klass": 91,
+                "prispengar": 157,
+                "kusk": 27,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "3. KiLu",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 59,
+                "styrka": 81,
+                "klass": 14,
+                "prispengar": 60,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "4. NaHeMi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 25,
+                "styrka": 52,
+                "klass": 24,
+                "prispengar": 66,
+                "kusk": 55,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "5. LiNa",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 43,
+                "styrka": 17,
+                "klass": 73,
+                "prispengar": 147,
+                "kusk": 12,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "6. LiNaZo",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 96,
+                "klass": 73,
+                "prispengar": 100,
+                "kusk": 84,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "7. RoHoDo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 83,
+                "styrka": 51,
+                "klass": 86,
+                "prispengar": 114,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "8. HeTaKi",
+              "fourStarts": {
+                "analys": 77,
+                "fart": 37,
+                "styrka": 39,
+                "klass": 17,
+                "prispengar": 122,
+                "kusk": 45,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "9. HeBoZo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 94,
+                "styrka": 97,
+                "klass": 93,
+                "prispengar": 126,
+                "kusk": 76,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "10. FaRo",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 98,
+                "styrka": 60,
+                "klass": 82,
+                "prispengar": 22,
+                "kusk": 39,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "11. SiZo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 10,
+                "styrka": 38,
+                "klass": 40,
+                "prispengar": 102,
+                "kusk": 96,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "12. LuZo",
+              "fourStarts": {
+                "analys": 73,
+                "fart": 79,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 23,
+                "kusk": 38,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "13. DoSiHe",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 21,
+                "klass": 62,
+                "prispengar": 27,
+                "kusk": 32,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "SiHoFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 65,
+                "styrka": 47,
+                "klass": 79,
+                "prispengar": 81,
+                "kusk": 79,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 63,
+                "styrka": 11,
+                "klass": 80,
+                "prispengar": 95,
+                "kusk": 76,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 22,
+                "styrka": 45,
+                "klass": 57,
+                "prispengar": 6,
+                "kusk": 65,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 19,
+                "fart": 13,
+                "styrka": 59,
+                "klass": 97,
+                "prispengar": 196,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiBoKi",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 32,
+                "styrka": 63,
+                "klass": 69,
+                "prispengar": 91,
+                "kusk": 16,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoZoTa",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 81,
+                "styrka": 23,
+                "klass": 59,
+                "prispengar": 57,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaDoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 87,
+                "styrka": 14,
+                "klass": 80,
+                "prispengar": 49,
+                "kusk": 99,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 52,
+                "styrka": 19,
+                "klass": 72,
+                "prispengar": 87,
+                "kusk": 42,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHeZo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 66,
+                "styrka": 21,
+                "klass": 19,
+                "prispengar": 103,
+                "kusk": 15,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 54,
+                "styrka": 14,
+                "klass": 44,
+                "prispengar": 151,
+                "kusk": 70,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHoMi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 21,
+                "styrka": 86,
+                "klass": 93,
+                "prispengar": 107,
+                "kusk": 28,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 3",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuTaHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 42,
+                "styrka": 57,
+                "klass": 89,
+                "prispengar": 71,
+                "kusk": 82,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 44,
+                "styrka": 56,
+                "klass": 60,
+                "prispengar": 77,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaZo",
+              "fourStarts": {
+                "analys": 35,
+                "fart": 100,
+                "styrka": 50,
+                "klass": 99,
+                "prispengar": 12,
+                "kusk": 69,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 77,
+                "styrka": 35,
+                "klass": 76,
+                "prispengar": 154,
+                "kusk": 99,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLi",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 20,
+                "styrka": 54,
+                "klass": 44,
+                "prispengar": 116,
+                "kusk": 41,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFa",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 10,
+                "styrka": 14,
+                "klass": 68,
+                "prispengar": 64,
+                "kusk": 20,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoFa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 53,
+                "styrka": 64,
+                "klass": 62,
+                "prispengar": 82,
+                "kusk": 17,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 95,
+                "styrka": 76,
+                "klass": 54,
+                "prispengar": 150,
+                "kusk": 16,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeDoHo",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 67,
+                "styrka": 41,
+                "klass": 90,
+                "prispengar": 48,
+                "kusk": 29,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 68,
+                "fart": 11,
+                "styrka": 10,
+                "klass": 95,
+                "prispengar": 130,
+                "kusk": 44,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiHe",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 21,
+                "styrka": 27,
+                "klass": 11,
+                "prispengar": 143,
+                "kusk": 51,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLiFa",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 31,
+                "styrka": 44,
+                "klass": 76,
+                "prispengar": 118,
+                "kusk": 34,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHo",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 92,
+                "styrka": 80,
+                "klass": 74,
+                "prispengar": 55,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoRoLi",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 51,
+                "styrka": 51,
+                "klass": 82,
+                "prispengar": 33,
+                "kusk": 90,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 4",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LiFa",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 52,
+                "styrka": 67,
+                "klass": 78,
+                "prispengar": 133,
+                "kusk": 25,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 54,
+                "fart": 20,
+                "styrka": 50,
+                "klass": 44,
+                "prispengar": 19,
+                "kusk": 77,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoMi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 15,
+                "styrka": 52,
+                "klass": 28,
+                "prispengar": 174,
+                "kusk": 84,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 33,
+                "styrka": 22,
+                "klass": 49,
+                "prispengar": 142,
+                "kusk": 72,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 34,
+                "styrka": 36,
+                "klass": 15,
+                "prispengar": 105,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoRoNa",
+              "fourStarts": {
+                "analys": 81,
+                "fart": 27,
+                "styrka": 20,
+                "klass": 55,
+                "prispengar": 91,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 66,
+                "styrka": 35,
+                "klass": 64,
+                "prispengar": 181,
+                "kusk": 14,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaHeFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 84,
+                "styrka": 86,
+                "klass": 17,
+                "prispengar": 196,
+                "kusk": 57,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiDo",
+              "fourStarts": {
+                "analys": 21,
+                "fart": 93,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 122,
+                "kusk": 44,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoMiLu",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 54,
+                "styrka": 48,
+                "klass": 32,
+                "prispengar": 130,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaRoZo",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 51,
+                "styrka": 61,
+                "klass": 72,
+                "prispengar": 189,
+                "kusk": 44,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiHo",
+              "fourStarts": {
+                "analys": 61,
+                "fart": 90,
+                "styrka": 98,
+                "klass": 43,
+                "prispengar": 181,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaZoMi",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 59,
+                "styrka": 63,
+                "klass": 31,
+                "prispengar": 158,
+                "kusk": 50,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 5",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 65,
+                "styrka": 67,
+                "klass": 87,
+                "prispengar": 166,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiBo",
+              "fourStarts": {
+                "analys": 95,
+                "fart": 73,
+                "styrka": 83,
+                "klass": 49,
+                "prispengar": 169,
+                "kusk": 19,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiLuTa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 100,
+                "styrka": 87,
+                "klass": 82,
+                "prispengar": 169,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuDo",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 63,
+                "styrka": 10,
+                "klass": 54,
+                "prispengar": 127,
+                "kusk": 85,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLiZo",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 30,
+                "styrka": 62,
+                "klass": 34,
+                "prispengar": 156,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuRoLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 53,
+                "styrka": 41,
+                "klass": 11,
+                "prispengar": 36,
+                "kusk": 53,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiFaSi",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 36,
+                "styrka": 34,
+                "klass": 33,
+                "prispengar": 163,
+                "kusk": 32,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLuDo",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 88,
+                "styrka": 16,
+                "klass": 14,
+                "prispengar": 175,
+                "kusk": 87,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoBoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 75,
+                "styrka": 76,
+                "klass": 87,
+                "prispengar": 114,
+                "kusk": 50,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoFa",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 84,
+                "styrka": 98,
+                "klass": 74,
+                "prispengar": 161,
+                "kusk": 29,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHe",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 92,
+                "styrka": 50,
+                "klass": 91,
+                "prispengar": 144,
+                "kusk": 94,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiTaTa",
+              "fourStarts": {
+                "analys": 25,
+                "fart": 62,
+                "styrka": 65,
+                "klass": 48,
+                "prispengar": 85,
+                "kusk": 87,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 6",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "BoMiTa",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 87,
+                "styrka": 15,
+                "klass": 62,
+                "prispengar": 50,
+                "kusk": 31,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 83,
+                "styrka": 53,
+                "klass": 49,
+                "prispengar": 195,
+                "kusk": 32,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiKiNa",
+              "fourStarts": {
+                "analys": 47,
+                "fart": 71,
+                "styrka": 92,
+                "klass": 98,
+                "prispengar": 21,
+                "kusk": 87,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuNa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 66,
+                "styrka": 40,
+                "klass": 52,
+                "prispengar": 123,
+                "kusk": 68,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiTa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 78,
+                "styrka": 69,
+                "klass": 16,
+                "prispengar": 101,
+                "kusk": 57,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHe",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 39,
+                "styrka": 82,
+                "klass": 48,
+                "prispengar": 197,
+                "kusk": 53,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHo",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 73,
+                "styrka": 70,
+                "klass": 16,
+                "prispengar": 84,
+                "kusk": 31,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFaDo",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 30,
+                "styrka": 87,
+                "klass": 55,
+                "prispengar": 125,
+                "kusk": 36,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuTaDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 37,
+                "styrka": 64,
+                "klass": 76,
+                "prispengar": 34,
+                "kusk": 86,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 56,
+                "styrka": 52,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 26,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 7",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "FaNa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 88,
+                "styrka": 62,
+                "klass": 51,
+                "prispengar": 162,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 28,
+                "styrka": 11,
+                "klass": 92,
+                "prispengar": 54,
+                "kusk": 71,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoNa",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 97,
+                "styrka": 100,
+                "klass": 52,
+                "prispengar": 41,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTaTa",
+              "fourStarts": {
+                "analys": 98,
+                "fart": 80,
+                "styrka": 88,
+                "klass": 39,
+                "prispengar": 89,
+                "kusk": 18,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 61,
+                "styrka": 74,
+                "klass": 70,
+                "prispengar": 112,
+                "kusk": 20,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLuSi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 76,
+                "styrka": 18,
+                "klass": 49,
+                "prispengar": 69,
+                "kusk": 88,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSi",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 64,
+                "styrka": 20,
+                "klass": 42,
+                "prispengar": 37,
+                "kusk": 64,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeMi",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 49,
+                "styrka": 24,
+                "klass": 68,
+                "prispengar": 86,
+                "kusk": 62,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTa",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 72,
+                "styrka": 65,
+                "klass": 72,
+                "prispengar": 103,
+                "kusk": 34,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 48,
+                "styrka": 67,
+                "klass": 33,
+                "prispengar": 156,
+                "kusk": 85,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHoSi",
+              "fourStarts": {
+                "analys": 31,
+                "fart": 89,
+                "styrka": 72,
+                "klass": 43,
+                "prispengar": 81,
+                "kusk": 30,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 62,
+                "styrka": 67,
+                "klass": 19,
+                "prispengar": 135,
+                "kusk": 33,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 8",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuHeDo",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 38,
+                "styrka": 100,
+                "klass": 73,
+                "prispengar": 45,
+                "kusk": 35,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiNa",
+              "fourStarts": {
+                "analys": 13,
+                "fart": 38,
+                "styrka": 79,
+                "klass": 89,
+                "prispengar": 56,
+                "kusk": 33,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoZoLu",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 43,
+                "styrka": 55,
+                "klass": 34,
+                "prispengar": 169,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoHoZo",
+              "fourStarts": {
+                "analys": 88,
+                "fart": 95,
+                "styrka": 46,
+                "klass": 97,
+                "prispengar": 104,
+                "kusk": 95,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 95,
+                "styrka": 70,
+                "klass": 84,
+                "prispengar": 142,
+                "kusk": 30,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiSi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 84,
+                "styrka": 63,
+                "klass": 73,
+                "prispengar": 117,
+                "kusk": 13,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiHo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 82,
+                "styrka": 56,
+                "klass": 85,
+                "prispengar": 99,
+                "kusk": 33,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaNa",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 34,
+                "styrka": 91,
+                "klass": 33,
+                "prispengar": 69,
+                "kusk": 58,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 11,
+                "styrka": 88,
+                "klass": 55,
+                "prispengar": 60,
+                "kusk": 27,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiBo",
+              "fourStarts": {
+                "analys": 89,
+                "fart": 90,
+                "styrka": 36,
+                "klass": 51,
+                "prispengar": 128,
+                "kusk": 56,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiLiDo",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 50,
+                "styrka": 98,
+                "klass": 68,
+                "prispengar": 172,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSiSi",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 100,
+                "styrka": 59,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 29,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 40,
+                "styrka": 85,
+                "klass": 55,
+                "prispengar": 136,
+                "kusk": 70,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHoSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 69,
+                "styrka": 67,
+                "klass": 12,
+                "prispengar": 163,
+                "kusk": 98,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHeHo",
+              "fourStarts": {
+                "analys": 65,
+                "fart": 61,
+                "styrka": 83,
+                "klass": 91,
+                "prispengar": 122,
+                "kusk": 76,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 9",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 38,
+                "styrka": 62,
+                "klass": 72,
+                "prispengar": 39,
+                "kusk": 47,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 96,
+                "styrka": 80,
+                "klass": 13,
+                "prispengar": 123,
+                "kusk": 49,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaHe",
+              "fourStarts": {
+                "analys": 63,
+                "fart": 81,
+                "styrka": 91,
+                "klass": 87,
+                "prispengar": 44,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFaKi",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 23,
+                "styrka": 99,
+                "klass": 87,
+                "prispengar": 70,
+                "kusk": 78,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRoLu",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 62,
+                "styrka": 71,
+                "klass": 76,
+                "prispengar": 193,
+                "kusk": 67,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoTaKi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 15,
+                "styrka": 48,
+                "klass": 95,
+                "prispengar": 51,
+                "kusk": 13,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaLiBo",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 54,
+                "styrka": 56,
+                "klass": 86,
+                "prispengar": 83,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoSiSi",
+              "fourStarts": {
+                "analys": 75,
+                "fart": 97,
+                "styrka": 60,
+                "klass": 27,
+                "prispengar": 48,
+                "kusk": 47,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuBoTa",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 65,
+                "styrka": 63,
+                "klass": 61,
+                "prispengar": 125,
+                "kusk": 25,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLi",
+              "fourStarts": {
+                "analys": 66,
+                "fart": 88,
+                "styrka": 55,
+                "klass": 62,
+                "prispengar": 133,
+                "kusk": 36,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 35,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 148,
+                "kusk": 22,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaNaBo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 82,
+                "styrka": 91,
+                "klass": 11,
+                "prispengar": 15,
+                "kusk": 12,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiRoTa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 34,
+                "styrka": 49,
+                "klass": 33,
+                "prispengar": 197,
+                "kusk": 79,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 10",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "NaKiLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 32,
+                "styrka": 10,
+                "klass": 85,
+                "prispengar": 156,
+                "kusk": 67,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 46,
+                "styrka": 93,
+                "klass": 85,
+                "prispengar": 188,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiBo",
+              "fourStarts": {
+                "analys": 38,
+                "fart": 20,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 121,
+                "kusk": 33,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 85,
+                "styrka": 79,
+                "klass": 95,
+                "prispengar": 173,
+                "kusk": 51,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLu",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 12,
+                "styrka": 82,
+                "klass": 84,
+                "prispengar": 103,
+                "kusk": 59,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 39,
+                "fart": 86,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 131,
+                "kusk": 59,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaRoNa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 96,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 144,
+                "kusk": 47,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiLuLi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 43,
+                "styrka": 15,
+                "klass": 10,
+                "prispengar": 19,
+                "kusk": 46,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiSi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 42,
+                "styrka": 41,
+                "klass": 97,
+                "prispengar": 84,
+                "kusk": 33,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiTa",
+              "fourStarts": {
+                "analys": 72,
+                "fart": 20,
+                "styrka": 61,
+                "klass": 13,
+                "prispengar": 199,
+                "kusk": 31,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHeLi",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 13,
+                "styrka": 76,
+                "klass": 63,
+                "prispengar": 78,
+                "kusk": 18,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoHe",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 94,
+                "styrka": 71,
+                "klass": 21,
+                "prispengar": 129,
+                "kusk": 39,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 86,
+                "styrka": 69,
+                "klass": 50,
+                "prispengar": 121,
+                "kusk": 59,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHe",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 61,
+                "styrka": 94,
+                "klass": 59,
+                "prispengar": 15,
+                "kusk": 41,
+                "spar": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2025-04-23T112550.201.txt
+
+###
+
+POST http://localhost:8080/travanalys/sendEverything
+Content-Type: application/json
+Content-Length: 42540
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nameOfTrack": "Kappaby",
+  "date": "2025-01-21",
+  "competitions": [
+    {
+      "nameOfCompetition": "v69",
+      "laps": [
+        {
+          "nameOfLap": "Lap 1",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "1. RoDoSi",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 81,
+                "styrka": 70,
+                "klass": 75,
+                "prispengar": 98,
+                "kusk": 73,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "2. HeNaFa",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 12,
+                "styrka": 99,
+                "klass": 91,
+                "prispengar": 157,
+                "kusk": 27,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "3. KiLu",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 59,
+                "styrka": 81,
+                "klass": 14,
+                "prispengar": 60,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "4. NaHeMi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 25,
+                "styrka": 52,
+                "klass": 24,
+                "prispengar": 66,
+                "kusk": 55,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "5. LiNa",
+              "fourStarts": {
+                "analys": 44,
+                "fart": 43,
+                "styrka": 17,
+                "klass": 73,
+                "prispengar": 147,
+                "kusk": 12,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "6. LiNaZo",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 96,
+                "klass": 73,
+                "prispengar": 100,
+                "kusk": 84,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "7. RoHoDo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 83,
+                "styrka": 51,
+                "klass": 86,
+                "prispengar": 114,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "8. HeTaKi",
+              "fourStarts": {
+                "analys": 77,
+                "fart": 37,
+                "styrka": 39,
+                "klass": 17,
+                "prispengar": 122,
+                "kusk": 45,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "9. HeBoZo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 94,
+                "styrka": 97,
+                "klass": 93,
+                "prispengar": 126,
+                "kusk": 76,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "10. FaRo",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 98,
+                "styrka": 60,
+                "klass": 82,
+                "prispengar": 22,
+                "kusk": 39,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "11. SiZo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 10,
+                "styrka": 38,
+                "klass": 40,
+                "prispengar": 102,
+                "kusk": 96,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "12. LuZo",
+              "fourStarts": {
+                "analys": 73,
+                "fart": 79,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 23,
+                "kusk": 38,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "13. DoSiHe",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 72,
+                "styrka": 21,
+                "klass": 62,
+                "prispengar": 27,
+                "kusk": 32,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 2",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "SiHoFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 65,
+                "styrka": 47,
+                "klass": 79,
+                "prispengar": 81,
+                "kusk": 79,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 64,
+                "fart": 63,
+                "styrka": 11,
+                "klass": 80,
+                "prispengar": 95,
+                "kusk": 76,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 22,
+                "styrka": 45,
+                "klass": 57,
+                "prispengar": 6,
+                "kusk": 65,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 19,
+                "fart": 13,
+                "styrka": 59,
+                "klass": 97,
+                "prispengar": 196,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiBoKi",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 32,
+                "styrka": 63,
+                "klass": 69,
+                "prispengar": 91,
+                "kusk": 16,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoZoTa",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 81,
+                "styrka": 23,
+                "klass": 59,
+                "prispengar": 57,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaDoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 87,
+                "styrka": 14,
+                "klass": 80,
+                "prispengar": 49,
+                "kusk": 99,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 52,
+                "styrka": 19,
+                "klass": 72,
+                "prispengar": 87,
+                "kusk": 42,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHeZo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 66,
+                "styrka": 21,
+                "klass": 19,
+                "prispengar": 103,
+                "kusk": 15,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 54,
+                "styrka": 14,
+                "klass": 44,
+                "prispengar": 151,
+                "kusk": 70,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHoMi",
+              "fourStarts": {
+                "analys": 69,
+                "fart": 21,
+                "styrka": 86,
+                "klass": 93,
+                "prispengar": 107,
+                "kusk": 28,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 3",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuTaHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 42,
+                "styrka": 57,
+                "klass": 89,
+                "prispengar": 71,
+                "kusk": 82,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 44,
+                "styrka": 56,
+                "klass": 60,
+                "prispengar": 77,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaZo",
+              "fourStarts": {
+                "analys": 35,
+                "fart": 100,
+                "styrka": 50,
+                "klass": 99,
+                "prispengar": 12,
+                "kusk": 69,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 77,
+                "styrka": 35,
+                "klass": 76,
+                "prispengar": 154,
+                "kusk": 99,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLi",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 20,
+                "styrka": 54,
+                "klass": 44,
+                "prispengar": 116,
+                "kusk": 41,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFa",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 10,
+                "styrka": 14,
+                "klass": 68,
+                "prispengar": 64,
+                "kusk": 20,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoFa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 53,
+                "styrka": 64,
+                "klass": 62,
+                "prispengar": 82,
+                "kusk": 17,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 95,
+                "styrka": 76,
+                "klass": 54,
+                "prispengar": 150,
+                "kusk": 16,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeDoHo",
+              "fourStarts": {
+                "analys": 34,
+                "fart": 67,
+                "styrka": 41,
+                "klass": 90,
+                "prispengar": 48,
+                "kusk": 29,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 68,
+                "fart": 11,
+                "styrka": 10,
+                "klass": 95,
+                "prispengar": 130,
+                "kusk": 44,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiHe",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 21,
+                "styrka": 27,
+                "klass": 11,
+                "prispengar": 143,
+                "kusk": 51,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLiFa",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 31,
+                "styrka": 44,
+                "klass": 76,
+                "prispengar": 118,
+                "kusk": 34,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHo",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 92,
+                "styrka": 80,
+                "klass": 74,
+                "prispengar": 55,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoRoLi",
+              "fourStarts": {
+                "analys": 14,
+                "fart": 51,
+                "styrka": 51,
+                "klass": 82,
+                "prispengar": 33,
+                "kusk": 90,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 4",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LiFa",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 52,
+                "styrka": 67,
+                "klass": 78,
+                "prispengar": 133,
+                "kusk": 25,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 54,
+                "fart": 20,
+                "styrka": 50,
+                "klass": 44,
+                "prispengar": 19,
+                "kusk": 77,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoMi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 15,
+                "styrka": 52,
+                "klass": 28,
+                "prispengar": 174,
+                "kusk": 84,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoLi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 33,
+                "styrka": 22,
+                "klass": 49,
+                "prispengar": 142,
+                "kusk": 72,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHo",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 34,
+                "styrka": 36,
+                "klass": 15,
+                "prispengar": 105,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoRoNa",
+              "fourStarts": {
+                "analys": 81,
+                "fart": 27,
+                "styrka": 20,
+                "klass": 55,
+                "prispengar": 91,
+                "kusk": 27,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 80,
+                "fart": 66,
+                "styrka": 35,
+                "klass": 64,
+                "prispengar": 181,
+                "kusk": 14,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "TaHeFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 84,
+                "styrka": 86,
+                "klass": 17,
+                "prispengar": 196,
+                "kusk": 57,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiDo",
+              "fourStarts": {
+                "analys": 21,
+                "fart": 93,
+                "styrka": 58,
+                "klass": 92,
+                "prispengar": 122,
+                "kusk": 44,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoMiLu",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 54,
+                "styrka": 48,
+                "klass": 32,
+                "prispengar": 130,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaRoZo",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 51,
+                "styrka": 61,
+                "klass": 72,
+                "prispengar": 189,
+                "kusk": 44,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiHo",
+              "fourStarts": {
+                "analys": 61,
+                "fart": 90,
+                "styrka": 98,
+                "klass": 43,
+                "prispengar": 181,
+                "kusk": 34,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaZoMi",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 59,
+                "styrka": 63,
+                "klass": 31,
+                "prispengar": 158,
+                "kusk": 50,
+                "spar": 1
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 5",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 65,
+                "styrka": 67,
+                "klass": 87,
+                "prispengar": 166,
+                "kusk": 95,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiBo",
+              "fourStarts": {
+                "analys": 95,
+                "fart": 73,
+                "styrka": 83,
+                "klass": 49,
+                "prispengar": 169,
+                "kusk": 19,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiLuTa",
+              "fourStarts": {
+                "analys": 57,
+                "fart": 100,
+                "styrka": 87,
+                "klass": 82,
+                "prispengar": 169,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuDo",
+              "fourStarts": {
+                "analys": 83,
+                "fart": 63,
+                "styrka": 10,
+                "klass": 54,
+                "prispengar": 127,
+                "kusk": 85,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLiZo",
+              "fourStarts": {
+                "analys": 92,
+                "fart": 30,
+                "styrka": 62,
+                "klass": 34,
+                "prispengar": 156,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuRoLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 53,
+                "styrka": 41,
+                "klass": 11,
+                "prispengar": 36,
+                "kusk": 53,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiFaSi",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 36,
+                "styrka": 34,
+                "klass": 33,
+                "prispengar": 163,
+                "kusk": 32,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiLuDo",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 88,
+                "styrka": 16,
+                "klass": 14,
+                "prispengar": 175,
+                "kusk": 87,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoBoMi",
+              "fourStarts": {
+                "analys": 17,
+                "fart": 75,
+                "styrka": 76,
+                "klass": 87,
+                "prispengar": 114,
+                "kusk": 50,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoFa",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 84,
+                "styrka": 98,
+                "klass": 74,
+                "prispengar": 161,
+                "kusk": 29,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHe",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 92,
+                "styrka": 50,
+                "klass": 91,
+                "prispengar": 144,
+                "kusk": 94,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiTaTa",
+              "fourStarts": {
+                "analys": 25,
+                "fart": 62,
+                "styrka": 65,
+                "klass": 48,
+                "prispengar": 85,
+                "kusk": 87,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 6",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "BoMiTa",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 87,
+                "styrka": 15,
+                "klass": 62,
+                "prispengar": 50,
+                "kusk": 31,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 83,
+                "styrka": 53,
+                "klass": 49,
+                "prispengar": 195,
+                "kusk": 32,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiKiNa",
+              "fourStarts": {
+                "analys": 47,
+                "fart": 71,
+                "styrka": 92,
+                "klass": 98,
+                "prispengar": 21,
+                "kusk": 87,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuNa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 66,
+                "styrka": 40,
+                "klass": 52,
+                "prispengar": 123,
+                "kusk": 68,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiTa",
+              "fourStarts": {
+                "analys": 87,
+                "fart": 78,
+                "styrka": 69,
+                "klass": 16,
+                "prispengar": 101,
+                "kusk": 57,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeHe",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 39,
+                "styrka": 82,
+                "klass": 48,
+                "prispengar": 197,
+                "kusk": 53,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHo",
+              "fourStarts": {
+                "analys": 94,
+                "fart": 73,
+                "styrka": 70,
+                "klass": 16,
+                "prispengar": 84,
+                "kusk": 31,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoFaDo",
+              "fourStarts": {
+                "analys": 26,
+                "fart": 30,
+                "styrka": 87,
+                "klass": 55,
+                "prispengar": 125,
+                "kusk": 36,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuTaDo",
+              "fourStarts": {
+                "analys": 28,
+                "fart": 37,
+                "styrka": 64,
+                "klass": 76,
+                "prispengar": 34,
+                "kusk": 86,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 56,
+                "styrka": 52,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 26,
+                "spar": 4
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 7",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "FaNa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 88,
+                "styrka": 62,
+                "klass": 51,
+                "prispengar": 162,
+                "kusk": 91,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaDo",
+              "fourStarts": {
+                "analys": 43,
+                "fart": 28,
+                "styrka": 11,
+                "klass": 92,
+                "prispengar": 54,
+                "kusk": 71,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoNa",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 97,
+                "styrka": 100,
+                "klass": 52,
+                "prispengar": 41,
+                "kusk": 15,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTaTa",
+              "fourStarts": {
+                "analys": 98,
+                "fart": 80,
+                "styrka": 88,
+                "klass": 39,
+                "prispengar": 89,
+                "kusk": 18,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiDo",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 61,
+                "styrka": 74,
+                "klass": 70,
+                "prispengar": 112,
+                "kusk": 20,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLuSi",
+              "fourStarts": {
+                "analys": 40,
+                "fart": 76,
+                "styrka": 18,
+                "klass": 49,
+                "prispengar": 69,
+                "kusk": 88,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSi",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 64,
+                "styrka": 20,
+                "klass": 42,
+                "prispengar": 37,
+                "kusk": 64,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeMi",
+              "fourStarts": {
+                "analys": 79,
+                "fart": 49,
+                "styrka": 24,
+                "klass": 68,
+                "prispengar": 86,
+                "kusk": 62,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoTa",
+              "fourStarts": {
+                "analys": 50,
+                "fart": 72,
+                "styrka": 65,
+                "klass": 72,
+                "prispengar": 103,
+                "kusk": 34,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 48,
+                "styrka": 67,
+                "klass": 33,
+                "prispengar": 156,
+                "kusk": 85,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaHoSi",
+              "fourStarts": {
+                "analys": 31,
+                "fart": 89,
+                "styrka": 72,
+                "klass": 43,
+                "prispengar": 81,
+                "kusk": 30,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHo",
+              "fourStarts": {
+                "analys": 37,
+                "fart": 62,
+                "styrka": 67,
+                "klass": 19,
+                "prispengar": 135,
+                "kusk": 33,
+                "spar": 5
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 8",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "LuHeDo",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 38,
+                "styrka": 100,
+                "klass": 73,
+                "prispengar": 45,
+                "kusk": 35,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiNa",
+              "fourStarts": {
+                "analys": 13,
+                "fart": 38,
+                "styrka": 79,
+                "klass": 89,
+                "prispengar": 56,
+                "kusk": 33,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoZoLu",
+              "fourStarts": {
+                "analys": 16,
+                "fart": 43,
+                "styrka": 55,
+                "klass": 34,
+                "prispengar": 169,
+                "kusk": 21,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "BoHoZo",
+              "fourStarts": {
+                "analys": 88,
+                "fart": 95,
+                "styrka": 46,
+                "klass": 97,
+                "prispengar": 104,
+                "kusk": 95,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaKi",
+              "fourStarts": {
+                "analys": 74,
+                "fart": 95,
+                "styrka": 70,
+                "klass": 84,
+                "prispengar": 142,
+                "kusk": 30,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiSi",
+              "fourStarts": {
+                "analys": 11,
+                "fart": 84,
+                "styrka": 63,
+                "klass": 73,
+                "prispengar": 117,
+                "kusk": 13,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiHo",
+              "fourStarts": {
+                "analys": 70,
+                "fart": 82,
+                "styrka": 56,
+                "klass": 85,
+                "prispengar": 99,
+                "kusk": 33,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaNa",
+              "fourStarts": {
+                "analys": 56,
+                "fart": 34,
+                "styrka": 91,
+                "klass": 33,
+                "prispengar": 69,
+                "kusk": 58,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuLu",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 11,
+                "styrka": 88,
+                "klass": 55,
+                "prispengar": 60,
+                "kusk": 27,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoMiBo",
+              "fourStarts": {
+                "analys": 89,
+                "fart": 90,
+                "styrka": 36,
+                "klass": 51,
+                "prispengar": 128,
+                "kusk": 56,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiLiDo",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 50,
+                "styrka": 98,
+                "klass": 68,
+                "prispengar": 172,
+                "kusk": 45,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "FaSiSi",
+              "fourStarts": {
+                "analys": 78,
+                "fart": 100,
+                "styrka": 59,
+                "klass": 13,
+                "prispengar": 20,
+                "kusk": 29,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHe",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 40,
+                "styrka": 85,
+                "klass": 55,
+                "prispengar": 136,
+                "kusk": 70,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiHoSi",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 69,
+                "styrka": 67,
+                "klass": 12,
+                "prispengar": 163,
+                "kusk": 98,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoHeHo",
+              "fourStarts": {
+                "analys": 65,
+                "fart": 61,
+                "styrka": 83,
+                "klass": 91,
+                "prispengar": 122,
+                "kusk": 76,
+                "spar": 7
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 9",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "KiRo",
+              "fourStarts": {
+                "analys": 53,
+                "fart": 38,
+                "styrka": 62,
+                "klass": 72,
+                "prispengar": 39,
+                "kusk": 47,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoDoKi",
+              "fourStarts": {
+                "analys": 18,
+                "fart": 96,
+                "styrka": 80,
+                "klass": 13,
+                "prispengar": 123,
+                "kusk": 49,
+                "spar": 7
+              }
+            },
+            {
+              "nameOfCompleteHorse": "RoTaHe",
+              "fourStarts": {
+                "analys": 63,
+                "fart": 81,
+                "styrka": 91,
+                "klass": 87,
+                "prispengar": 44,
+                "kusk": 73,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFaKi",
+              "fourStarts": {
+                "analys": 60,
+                "fart": 23,
+                "styrka": 99,
+                "klass": 87,
+                "prispengar": 70,
+                "kusk": 78,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiRoLu",
+              "fourStarts": {
+                "analys": 32,
+                "fart": 62,
+                "styrka": 71,
+                "klass": 76,
+                "prispengar": 193,
+                "kusk": 67,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoTaKi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 15,
+                "styrka": 48,
+                "klass": 95,
+                "prispengar": 51,
+                "kusk": 13,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaLiBo",
+              "fourStarts": {
+                "analys": 97,
+                "fart": 54,
+                "styrka": 56,
+                "klass": 86,
+                "prispengar": 83,
+                "kusk": 83,
+                "spar": 6
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HoSiSi",
+              "fourStarts": {
+                "analys": 75,
+                "fart": 97,
+                "styrka": 60,
+                "klass": 27,
+                "prispengar": 48,
+                "kusk": 47,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuBoTa",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 65,
+                "styrka": 63,
+                "klass": 61,
+                "prispengar": 125,
+                "kusk": 25,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoLi",
+              "fourStarts": {
+                "analys": 66,
+                "fart": 88,
+                "styrka": 55,
+                "klass": 62,
+                "prispengar": 133,
+                "kusk": 36,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 59,
+                "fart": 35,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 148,
+                "kusk": 22,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaNaBo",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 82,
+                "styrka": 91,
+                "klass": 11,
+                "prispengar": 15,
+                "kusk": 12,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiRoTa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 34,
+                "styrka": 49,
+                "klass": 33,
+                "prispengar": 197,
+                "kusk": 79,
+                "spar": 6
+              }
+            }
+          ]
+        },
+        {
+          "nameOfLap": "Lap 10",
+          "horses": [
+            {
+              "nameOfCompleteHorse": "NaKiLu",
+              "fourStarts": {
+                "analys": 15,
+                "fart": 32,
+                "styrka": 10,
+                "klass": 85,
+                "prispengar": 156,
+                "kusk": 67,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LuFa",
+              "fourStarts": {
+                "analys": 33,
+                "fart": 46,
+                "styrka": 93,
+                "klass": 85,
+                "prispengar": 188,
+                "kusk": 100,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiBo",
+              "fourStarts": {
+                "analys": 38,
+                "fart": 20,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 121,
+                "kusk": 33,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiHo",
+              "fourStarts": {
+                "analys": 71,
+                "fart": 85,
+                "styrka": 79,
+                "klass": 95,
+                "prispengar": 173,
+                "kusk": 51,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "HeLu",
+              "fourStarts": {
+                "analys": 91,
+                "fart": 12,
+                "styrka": 82,
+                "klass": 84,
+                "prispengar": 103,
+                "kusk": 59,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "ZoLu",
+              "fourStarts": {
+                "analys": 39,
+                "fart": 86,
+                "styrka": 76,
+                "klass": 83,
+                "prispengar": 131,
+                "kusk": 59,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "NaRoNa",
+              "fourStarts": {
+                "analys": 100,
+                "fart": 96,
+                "styrka": 31,
+                "klass": 83,
+                "prispengar": 144,
+                "kusk": 47,
+                "spar": 3
+              }
+            },
+            {
+              "nameOfCompleteHorse": "LiLuLi",
+              "fourStarts": {
+                "analys": 90,
+                "fart": 43,
+                "styrka": 15,
+                "klass": 10,
+                "prispengar": 19,
+                "kusk": 46,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiSiSi",
+              "fourStarts": {
+                "analys": 55,
+                "fart": 42,
+                "styrka": 41,
+                "klass": 97,
+                "prispengar": 84,
+                "kusk": 33,
+                "spar": 8
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiTa",
+              "fourStarts": {
+                "analys": 72,
+                "fart": 20,
+                "styrka": 61,
+                "klass": 13,
+                "prispengar": 199,
+                "kusk": 31,
+                "spar": 1
+              }
+            },
+            {
+              "nameOfCompleteHorse": "DoHeLi",
+              "fourStarts": {
+                "analys": 93,
+                "fart": 13,
+                "styrka": 76,
+                "klass": 63,
+                "prispengar": 78,
+                "kusk": 18,
+                "spar": 5
+              }
+            },
+            {
+              "nameOfCompleteHorse": "KiDoHe",
+              "fourStarts": {
+                "analys": 23,
+                "fart": 94,
+                "styrka": 71,
+                "klass": 21,
+                "prispengar": 129,
+                "kusk": 39,
+                "spar": 2
+              }
+            },
+            {
+              "nameOfCompleteHorse": "SiFa",
+              "fourStarts": {
+                "analys": 82,
+                "fart": 86,
+                "styrka": 69,
+                "klass": 50,
+                "prispengar": 121,
+                "kusk": 59,
+                "spar": 4
+              }
+            },
+            {
+              "nameOfCompleteHorse": "MiHe",
+              "fourStarts": {
+                "analys": 85,
+                "fart": 61,
+                "styrka": 94,
+                "klass": 59,
+                "prispengar": 15,
+                "kusk": 41,
+                "spar": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+<> 2025-04-23T112523.201.txt
+
+###
+
 GET http://localhost:8080/track/all
 Content-Type: application/json
 Connection: Keep-Alive
@@ -36659,182 +41453,6 @@ Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2025-01-09T110021.200.txt
-
-###
-
-POST http://localhost:8080/travanalys/sendEverything
-Content-Type: application/json
-Content-Length: 3569
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "nameOfTrack": "ok",
-  "date": "2024-11-21",
-  "competitions": [
-    {
-      "nameOfCompetition": "v75",
-      "laps": [
-        {
-          "nameOfLap": "Lap 1",
-          "horses": [
-            {
-              "nameOfCompleteHorse": "Apa",
-              "fourStarts": {
-                "analys": 90,
-                "fart": 85,
-                "styrka": 70,
-                "klass": 80,
-                "prispengar": 120,
-                "kusk": 95,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "bbbb",
-              "fourStarts": {
-                "analys": 11,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 125,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "aaa",
-              "fourStarts": {
-                "analys": 55,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 1,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "peppe",
-              "fourStarts": {
-                "analys": 55,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 3,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "awd123",
-              "fourStarts": {
-                "analys": 55,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 2,
-                "kusk": 55,
-                "spar": 4
-              }
-            }
-          ]
-        },
-        {
-          "nameOfLap": "Lap 2",
-          "horses": [
-            {
-              "nameOfCompleteHorse": "Lill-sången",
-              "fourStarts": {
-                "analys": 44,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 2,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "aw3",
-              "fourStarts": {
-                "analys": 44,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 3,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "123awd",
-              "fourStarts": {
-                "analys": 33,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 4,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "awd",
-              "fourStarts": {
-                "analys": 11,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 80,
-                "prispengar": 2,
-                "kusk": 55,
-                "spar": 4
-              }
-            },
-            {
-              "nameOfCompleteHorse": "Kekko",
-              "fourStarts": {
-                "analys": 22,
-                "fart": 85,
-                "styrka": 33,
-                "klass": 55,
-                "prispengar": 3,
-                "kusk": 55,
-                "spar": 4
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-<> 2025-01-09T105651.201.txt
-
-###
-
-GET http://localhost:8080/g-login/email?email=Simon_nordlund@hotmail.com
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-01-09T102508.200.txt
-
-###
-
-GET http://localhost:8080/g-login/email?email=user@example.com
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-01-09T102454.404.txt
 
 ###
 

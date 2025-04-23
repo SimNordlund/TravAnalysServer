@@ -27,7 +27,7 @@ public class TrackServiceImpl implements TrackService {
 
     @Override
     public List<DateTrackDTO> getAllDates() {
-        List<Track> tempTrackList = trackRepo.findAll();
+        List<Track> tempTrackList = trackRepo.findAllByOrderByDateAsc();
         List<DateTrackDTO> dateList = tempTrackList.stream().map(e -> TrackToDateTrackDTO(e)).toList();
         return dateList;
     }

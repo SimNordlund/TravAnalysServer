@@ -12,5 +12,7 @@ import java.util.Optional;
 public interface TrackRepo extends JpaRepository <Track, Long> {
     List<Track> findByDate(LocalDate date);
 
+    List<Track> findAllByOrderByDateAsc();
+
     Optional<Track> findByNameOfTrack(String nameOfTrack);
 }

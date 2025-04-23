@@ -24,6 +24,7 @@ repositories {
 }
 
 dependencies {
+	implementation ("org.hibernate.common:hibernate-commons-annotations:6.0.6.Final")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	compileOnly("org.projectlombok:lombok")
