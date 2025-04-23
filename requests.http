@@ -1446,7 +1446,7 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Pissnickehyttan",
+  "nameOfTrack": "Sångentown",
   "date": "2025-04-23",
   "competitions": [
     {
