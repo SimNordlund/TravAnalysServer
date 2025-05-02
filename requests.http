@@ -1453,11 +1453,11 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Nickeby",
-  "date": "2025-04-27",
+  "nameOfTrack": "KorvTown",
+  "date": "2025-04-28",
   "competitions": [
     {
-      "nameOfCompetition": "v86",
+      "nameOfCompetition": "v74",
       "laps": [
         {
           "nameOfLap": "Lopp 1",
