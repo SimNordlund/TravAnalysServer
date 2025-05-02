@@ -1433,25 +1433,31 @@ GET https://travanalyserver-latest.onrender.com/g-login/email1337?email=Simon_no
 Content-Type: application/json
 
 ###
+GET http://localhost:8080/completeHorse/getSkrallar?date=2025-04-27
+Content-Type: application/json
+###
 
-DELETE http://localhost:8080/travanalys/deleteTrackById/5
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
 Content-Type: application/json
 ###
 GET http://localhost:8080/track/all
 Content-Type: application/json
 ###
-### POST http://localhost:8080/travanalys/sendEverything
 ### PUT http://localhost:8080/travanalys/sendEverything/1
 ###PUT https://travanalyserver-latest.onrender.com/travanalys/sendEverything/1
-POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+###POST http://localhost:8080/travanalys/sendEverything
+
+###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "NisseTown",
-  "date": "2025-04-25",
+  "nameOfTrack": "Nickeby",
+  "date": "2025-04-27",
   "competitions": [
     {
-      "nameOfCompetition": "v74",
+      "nameOfCompetition": "v86",
       "laps": [
         {
           "nameOfLap": "Lopp 1",
