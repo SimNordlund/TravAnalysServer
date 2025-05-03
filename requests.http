@@ -1448,8 +1448,9 @@ Content-Type: application/json
 ###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
 ###POST http://localhost:8080/travanalys/sendEverything
 
-###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
-POST http://localhost:8080/travanalys/sendEverything
+
+###POST http://localhost:8080/travanalys/sendEverything
+POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
 Content-Type: application/json
 
 {
