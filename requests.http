@@ -1437,6 +1437,11 @@ GET http://localhost:8080/completeHorse/getSkrallar?date=2025-04-27
 Content-Type: application/json
 ###
 
+###
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+###
+
 DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
 Content-Type: application/json
 ###
@@ -1449,16 +1454,16 @@ Content-Type: application/json
 ###POST http://localhost:8080/travanalys/sendEverything
 
 
-###POST http://localhost:8080/travanalys/sendEverything
-POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+### POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
+POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "KorvTown",
-  "date": "2025-04-28",
+  "nameOfTrack": "Knuthöjda",
+  "date": "2025-04-29",
   "competitions": [
     {
-      "nameOfCompetition": "v74",
+      "nameOfCompetition": "v86",
       "laps": [
         {
           "nameOfLap": "Lopp 1",
