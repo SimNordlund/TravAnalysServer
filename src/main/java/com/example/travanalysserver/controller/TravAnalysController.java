@@ -22,9 +22,6 @@ public class TravAnalysController {
     private final CompleteHorseRepo completeHorseRepo;
     private final FourStartsRepo fourStartsRepo;
 
-    //Gör en put som känner igen Datum, Bana så skrivs det över
-    //Gör en delete som kan ta bort via bara att man ger Datum och Bana.
-
     @PostMapping("/sendEverything")
     public ResponseEntity<String> addEverything(@RequestBody SendEverythingDTO request) {
         // Save Track
@@ -38,6 +35,7 @@ public class TravAnalysController {
             Competition competition = new Competition();
             competition.setNameOfCompetition(competitionDTO.getNameOfCompetition());
             competition.setTrack(track);
+            track.getCompetitions().add(competition);             //Changed!
             competitionRepo.save(competition);
 
             // Save Laps
@@ -45,6 +43,7 @@ public class TravAnalysController {
                 Lap lap = new Lap();
                 lap.setNameOfLap(lapDTO.getNameOfLap());
                 lap.setCompetition(competition);
+                competition.getLaps().add(lap);                         //Changed!
                 lapRepo.save(lap);
 
                 // Save CompleteHorses
@@ -57,12 +56,17 @@ public class TravAnalysController {
                     fourStarts.setPrispengar(horseDTO.getFourStarts().getPrispengar());
                     fourStarts.setKusk(horseDTO.getFourStarts().getKusk());
                     fourStarts.setSpar(horseDTO.getFourStarts().getSpar());
-                    fourStartsRepo.save(fourStarts);
+                    // completeHorse reference set later
 
                     CompleteHorse horse = new CompleteHorse();
                     horse.setNameOfCompleteHorse(horseDTO.getNameOfCompleteHorse());
                     horse.setLap(lap);
+                    lap.getHorses().add(horse);                             //Changed!
+
                     horse.setFourStarts(fourStarts);
+                    fourStarts.setCompleteHorse(horse);                     //Changed!
+
+                    fourStartsRepo.save(fourStarts);
                     completeHorseRepo.save(horse);
                 }
             }
@@ -95,19 +99,20 @@ public class TravAnalysController {
             Competition competition = new Competition();                //Changed!
             competition.setNameOfCompetition(competitionDTO.getNameOfCompetition());
             competition.setTrack(track);                                //Changed!
+            track.getCompetitions().add(competition);                   //Changed!
             competitionRepo.save(competition);                          //Changed!
 
             for (SendEverythingDTO.CompetitionDTO.LapDTO lapDTO : competitionDTO.getLaps()) {
 
-                Lap lap = new Lap();
-                lap.setNameOfLap(lapDTO.getNameOfLap());
-                lap.setCompetition(competition);
-                lapRepo.save(lap);
+                Lap lap = new Lap();                                     //Changed!
+                lap.setNameOfLap(lapDTO.getNameOfLap());                //Changed!
+                lap.setCompetition(competition);                         //Changed!
+                competition.getLaps().add(lap);                         //Changed!
+                lapRepo.save(lap);                                      //Changed!
 
-                for (SendEverythingDTO.CompetitionDTO.LapDTO
-                        .CompleteHorseDTO horseDTO : lapDTO.getHorses()) {
+                for (SendEverythingDTO.CompetitionDTO.LapDTO.CompleteHorseDTO horseDTO : lapDTO.getHorses()) {
 
-                    FourStarts fourStarts = new FourStarts();           //Changed!
+                    FourStarts fourStarts = new FourStarts();            //Changed!
                     fourStarts.setAnalys(horseDTO.getFourStarts().getAnalys());
                     fourStarts.setFart(horseDTO.getFourStarts().getFart());
                     fourStarts.setStyrka(horseDTO.getFourStarts().getStyrka());
@@ -115,13 +120,17 @@ public class TravAnalysController {
                     fourStarts.setPrispengar(horseDTO.getFourStarts().getPrispengar());
                     fourStarts.setKusk(horseDTO.getFourStarts().getKusk());
                     fourStarts.setSpar(horseDTO.getFourStarts().getSpar());
-                    fourStartsRepo.save(fourStarts);
 
-                    CompleteHorse horse = new CompleteHorse();
+                    CompleteHorse horse = new CompleteHorse();             //Changed!
                     horse.setNameOfCompleteHorse(horseDTO.getNameOfCompleteHorse());
-                    horse.setLap(lap);
-                    horse.setFourStarts(fourStarts);
-                    completeHorseRepo.save(horse);
+                    horse.setLap(lap);                                     //Changed!
+                    lap.getHorses().add(horse);                           //Changed!
+
+                    horse.setFourStarts(fourStarts);                      //Changed!
+                    fourStarts.setCompleteHorse(horse);                   //Changed!
+
+                    fourStartsRepo.save(fourStarts);                      //Changed!
+                    completeHorseRepo.save(horse);                        //Changed!
                 }
             }
         }
@@ -145,8 +154,6 @@ public class TravAnalysController {
         return new ResponseEntity<>("Track and all connected entities deleted successfully", HttpStatus.OK);
     }
 
-
-
     @DeleteMapping("/deleteTrackByName")
     public ResponseEntity<String> deleteTrackByName(@RequestParam String nameOfTrack) {
         Optional<Track> trackOptional = trackRepo.findByNameOfTrack(nameOfTrack);
@@ -159,4 +166,3 @@ public class TravAnalysController {
         return new ResponseEntity<>("Track and all connected entities deleted successfully", HttpStatus.OK);
     }
 }
-

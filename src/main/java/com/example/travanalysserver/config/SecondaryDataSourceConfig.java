@@ -16,6 +16,7 @@ import org.springframework.orm.jpa.*;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.Map;
+import java.util.Objects;
 
 @Configuration
 @EnableTransactionManagement
@@ -53,8 +54,8 @@ public class SecondaryDataSourceConfig {
                 .packages("com.example.travanalysserver.entitysec")
                 .persistenceUnit("secondary")
                 .properties(Map.of(
-                        "hibernate.hbm2ddl.auto",       env.getProperty("secondary.jpa.hibernate.ddl-auto"),
-                        "hibernate.dialect",            env.getProperty("secondary.jpa.database-platform")
+                        "hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("secondary.jpa.hibernate.ddl-auto")),
+                        "hibernate.dialect", Objects.requireNonNull(env.getProperty("secondary.jpa.database-platform"))
                 ))
                 .build();
     }

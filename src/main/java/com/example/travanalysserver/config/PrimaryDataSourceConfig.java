@@ -15,6 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Map;
+import java.util.Objects;
 
 @Configuration
 @EnableTransactionManagement
@@ -51,8 +52,8 @@ public class PrimaryDataSourceConfig {
                 .packages("com.example.travanalysserver.entity")               // your primary entity package
                 .persistenceUnit("primary")
                 .properties(Map.of(
-                        "hibernate.hbm2ddl.auto",       env.getProperty("spring.jpa.hibernate.ddl-auto"),
-                        "hibernate.dialect",            env.getProperty("spring.jpa.database-platform")
+                        "hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("spring.jpa.hibernate.ddl-auto")),
+                        "hibernate.dialect", Objects.requireNonNull(env.getProperty("spring.jpa.database-platform"))
                 ))
                 .build();
     }
