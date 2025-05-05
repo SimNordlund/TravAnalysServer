@@ -1,16 +1,14 @@
 package com.example.travanalysserver.entitysec;
 
-import java.time.LocalDate;
-
 public interface RankHorseView {
-    Long      getId();
-    Integer getDateRankedHorse(); //Ändra sen jao
-    String    getTrackRankedHorse();
-    String    getCompetitionRankedHorse();
-    String    getLapRankedHorse();
-    String    getNameRankedHorse();
-    String    getAnalysRankedHorse();
-    String    getTidRankedHorse();
-    String    getPrestationRankedHorse();
-    String    getMotstandRankedHorse();
+        Long getId();
+        Integer getDateRankedHorse();      // Changed!: Integer, not LocalDate
+        String getTrackRankedHorse();
+        String getLapRankedHorse();
+        Integer getNr();
+        String getNameRankedHorse();
+        String getAnalysRankedHorse();
+        String getTidRankedHorse();
+        String getPrestationRankedHorse();
+        String getMotstandRankedHorse();
 }

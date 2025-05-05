@@ -1438,11 +1438,10 @@ Content-Type: application/json
 ###
 
 ###
-###GET http://localhost:8080/ranked/print
-GET https://travanalyserver-latest.onrender.com/ranked/print
+###GET https://travanalyserver-latest.onrender.com/ranked/print
+GET http://localhost:8080/ranked/print
 Accept: text/plain
 ###
-
 
 ###DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
 DELETE http://localhost:8080/travanalys/deleteTrackById/2
@@ -1467,7 +1466,7 @@ Content-Type: application/json
   "date": "2025-05-02",
   "competitions": [
     {
-      "nameOfCompetition": "v71",
+      "nameOfCompetition": "v74",
       "laps": [
         {
           "nameOfLap": "Lopp 1",

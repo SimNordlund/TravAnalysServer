@@ -7,14 +7,9 @@ import jakarta.persistence.Table;
 import lombok.*;
 import org.hibernate.annotations.Immutable;
 
-
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "\"Rank\"")         // UNQUOTED GÅR HA INSTÄLLNING I PROPERTY MEN GÖR SÅ HÄR SÅ LÄNGE
+@Table(name = "rank")
 @Immutable
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -22,35 +17,33 @@ import java.time.LocalDate;
 @Builder
 public class RankHorse {
     @Id
-    @Column(name = "\"Nr\"")
-    private Long id; // KOLLA MED FAR VAR ÄR ID?
+    @Column(name = "id")
+    private Long id;  // Changed!: raw bigint → Long
 
-    @Column(name = "\"Startdatum\"")
-    private Integer dateRankedHorse;
+    @Column(name = "startdatum")
+    private Integer dateRankedHorse;  // Changed!: raw integer → Integer
 
-    @Column(name = "\"Bankod\"")
-    private String trackRankedHorse;
+    @Column(name = "bankod")
+    private String trackRankedHorse;  // Changed!: varchar → String
 
-    @Column(name = "\"Typ\"")
-    private String competitionRankedHorse;
+    @Column(name = "lopp")
+    private String lapRankedHorse;    // Changed!: varchar → String
 
-    @Column(name = "\"Lopp\"")
-    private String lapRankedHorse;
+    @Column(name = "nr")
+    private Integer nr;               // raw integer → Integer
 
-    @Column(name = "\"Namn\"")
-    private String nameRankedHorse;
+    @Column(name = "namn")
+    private String nameRankedHorse;   // Changed!: varchar → String
 
-    @Column(name = "\"Rank\"")
-    private String analysRankedHorse;
+    @Column(name = "procentanalys")
+    private String analysRankedHorse; // Changed!: varchar → String
 
-    @Column(name = "\"Tid\"")
-    private String tidRankedHorse;
+    @Column(name = "procenttid")
+    private String tidRankedHorse;    // Changed!: varchar → String
 
-    @Column(name = "\"Procent\"")
-    private String prestationRankedHorse;
+    @Column(name = "procentprestation")
+    private String prestationRankedHorse; // Changed!: varchar → String
 
-    @Column(name = "\"Odds\"")
-    private String motstandRankedHorse;
-
+    @Column(name = "procentmotstand")
+    private String motstandRankedHorse;   // Changed!: varchar → String
 }
-
