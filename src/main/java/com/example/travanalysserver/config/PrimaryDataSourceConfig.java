@@ -52,8 +52,8 @@ public class PrimaryDataSourceConfig {
                 .packages("com.example.travanalysserver.entity")               // your primary entity package
                 .persistenceUnit("primary")
                 .properties(Map.of(
-                        "hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("spring.jpa.hibernate.ddl-auto")),
-                        "hibernate.dialect", Objects.requireNonNull(env.getProperty("spring.jpa.database-platform"))
+                        "jakarta.persistence.schema-generation.database.action", "update",  //drop-and-create vs update
+                        "hibernate.dialect", env.getProperty("spring.jpa.database-platform")
                 ))
                 .build();
     }

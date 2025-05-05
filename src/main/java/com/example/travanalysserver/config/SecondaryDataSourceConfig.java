@@ -53,9 +53,9 @@ public class SecondaryDataSourceConfig {
                 .dataSource(secondaryDataSource())
                 .packages("com.example.travanalysserver.entitysec")
                 .persistenceUnit("secondary")
-                .properties(Map.of(
-                        "hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("secondary.jpa.hibernate.ddl-auto")),
-                        "hibernate.dialect", Objects.requireNonNull(env.getProperty("secondary.jpa.database-platform"))
+                .properties(Map.of( //drop-and-create vs update
+                        "jakarta.persistence.schema-generation.database.action", "update",
+                        "hibernate.dialect", env.getProperty("secondary.jpa.database-platform")
                 ))
                 .build();
     }

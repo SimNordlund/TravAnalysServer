@@ -1463,11 +1463,11 @@ POST http://localhost:8080/travanalys/sendEverything
 Content-Type: application/json
 
 {
-  "nameOfTrack": "Yopp",
-  "date": "2025-05-03",
+  "nameOfTrack": "Topp",
+  "date": "2025-05-02",
   "competitions": [
     {
-      "nameOfCompetition": "v75",
+      "nameOfCompetition": "v71",
       "laps": [
         {
           "nameOfLap": "Lopp 1",
