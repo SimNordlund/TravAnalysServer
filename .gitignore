@@ -38,6 +38,7 @@ out/
 
 ### Logs ###
 http-requests-log-http
+http-requests-log.http
 
 ### Environment variables ##
 .env

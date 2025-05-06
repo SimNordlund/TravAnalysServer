@@ -1439,8 +1439,8 @@ Content-Type: application/json
 
 ###
 ###GET https://travanalyserver-latest.onrender.com/ranked/print
-###GET http://localhost:8080/ranked/print
-GET https://travanalyserver-latest.onrender.com/ranked/print
+###GET https://travanalyserver-latest.onrender.com/ranked/print
+GET http://localhost:8080//ranked/print
 Accept: text/plain
 ###
 
@@ -1464,7 +1464,7 @@ Content-Type: application/json
 
 {
   "nameOfTrack": "Topp",
-  "date": "2025-05-02",
+  "date": "2025-05-03",
   "competitions": [
     {
       "nameOfCompetition": "v74",
