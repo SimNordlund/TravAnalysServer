@@ -46,4 +46,7 @@ public class RankHorse {
 
     @Column(name = "procentmotstand")
     private String motstandRankedHorse;   // Changed!: varchar → String
+
+    @Column(name = "procentklass")
+    private String prispengarRankedHorse;
 }

@@ -25,36 +25,33 @@ public class RankHorseController {
     /* ───────────────────────────────── Repositories ──────────────────────*/
     private final RankHorseRepo rankHorseRepo;
     private final TrackRepo trackRepo;
-    private final CompetitionRepo competitionRepo;
-    private final LapRepo lapRepo;
-    private final CompleteHorseRepo completeHorseRepo;
-    private final FourStartsRepo fourStartsRepo;
+    // competitionRepo, lapRepo, completeHorseRepo and fourStartsRepo
+    // are no longer needed in this controller – Hibernate cascades do the work. //Changed!
 
-    private static final DateTimeFormatter BASIC =
-            DateTimeFormatter.BASIC_ISO_DATE;
+    private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;
 
     /* ─────────────────────────── Persist instead of print ─────────*/
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
+
         List<RankHorseView> list = rankHorseRepo.findAllProjectedBy();
 
         /* de‑dupe caches: Track ▸ Competition(v75) ▸ Lap ------------------- */
-        Map<String, Track>        trackMap = new HashMap<>();
-        Map<String, Competition>  compMap  = new HashMap<>();
-        Map<String, Lap>          lapMap   = new HashMap<>();
+        Map<String, Track>       trackMap = new HashMap<>();
+        Map<String, Competition> compMap  = new HashMap<>();
+        Map<String, Lap>         lapMap   = new HashMap<>();
 
         list.forEach(v -> {
             /* ---- 1. Track ---- */
-            LocalDate date = toLocalDate(v.getDateRankedHorse());
-            String trackKey = date + "|" + v.getTrackRankedHorse();
+            LocalDate date     = toLocalDate(v.getDateRankedHorse());
+            String    trackKey = date + "|" + v.getTrackRankedHorse();
 
             Track track = trackMap.computeIfAbsent(trackKey, k -> {
                 Track t = new Track();
                 t.setDate(date);
                 t.setNameOfTrack(v.getTrackRankedHorse());
-                trackRepo.save(t);
-                return t;
+                return t;                           // no save here            //Changed!
             });
 
             /* ---- 2. Competition (always “v75”) ---- */
@@ -64,8 +61,7 @@ public class RankHorseController {
                 c.setNameOfCompetition("v75");
                 c.setTrack(track);
                 track.getCompetitions().add(c);
-                competitionRepo.save(c);
-                return c;
+                return c;                           // no save here            //Changed!
             });
 
             /* ---- 3. Lap ---- */
@@ -75,32 +71,34 @@ public class RankHorseController {
                 l.setNameOfLap(v.getLapRankedHorse());
                 l.setCompetition(competition);
                 competition.getLaps().add(l);
-                lapRepo.save(l);
-                return l;
+                return l;                           // no save here            //Changed!
             });
 
             /* ---- 4. FourStarts ---- */
             FourStarts fs = new FourStarts();
-            fs.setAnalys  (toInt(v.getTidRankedHorse()));
-            fs.setFart    (toInt(v.getMotstandRankedHorse()));
-            fs.setStyrka  (toInt(v.getAnalysRankedHorse()));
-            fs.setKlass   (toInt(v.getPrestationRankedHorse()));
-            fs.setPrispengar(rand100());
-            fs.setKusk     (rand100());
-            fs.setSpar     (rand100());
+            fs.setAnalys     (toInt(v.getAnalysRankedHorse()));
+            fs.setFart       (toInt(v.getTidRankedHorse()));
+            fs.setStyrka     (toInt(v.getPrestationRankedHorse()));
+            fs.setKlass      (toInt(v.getMotstandRankedHorse()));
+            fs.setPrispengar (toInt(v.getPrispengarRankedHorse()));
+            fs.setKusk       (rand100());
+            fs.setSpar       (rand100());
 
             /* ---- 5. CompleteHorse ---- */
             CompleteHorse horse = new CompleteHorse();
-            horse.setNameOfCompleteHorse(v.getNr() + " " + v.getNameRankedHorse());
+            horse.setNumberOfCompleteHorse(v.getNr());
+            horse.setNameOfCompleteHorse(v.getNameRankedHorse());
             horse.setLap(lap);
             lap.getHorses().add(horse);
 
             horse.setFourStarts(fs);
             fs.setCompleteHorse(horse);
 
-            fourStartsRepo.save(fs);
-            completeHorseRepo.save(horse);
+            // No explicit saves needed – cascade handles them all           //Changed!
         });
+
+        /* ---- One single flush does it all ------------------------------- */
+        trackRepo.saveAll(trackMap.values());                              //Changed!
 
         return new ResponseEntity<>(
                 "Saved " + list.size() + " ranked horses to database",
@@ -116,7 +114,8 @@ public class RankHorseController {
 
     private static int toInt(String s) {
         if (s == null) return 0;
-        s = s.trim().replace("%", "")
+        s = s.trim()
+                .replace("%", "")
                 .replace(",", ".");
         try {
             double d = Double.parseDouble(s);

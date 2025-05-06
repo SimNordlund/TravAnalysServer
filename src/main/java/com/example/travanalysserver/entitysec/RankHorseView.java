@@ -11,4 +11,5 @@ public interface RankHorseView {
         String getTidRankedHorse();
         String getPrestationRankedHorse();
         String getMotstandRankedHorse();
+        String getPrispengarRankedHorse();
 }

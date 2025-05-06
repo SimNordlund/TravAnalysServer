@@ -23,6 +23,7 @@ public class TravAnalysController {
     private final FourStartsRepo fourStartsRepo;
 
     @PostMapping("/sendEverything")
+    @Transactional
     public ResponseEntity<String> addEverything(@RequestBody SendEverythingDTO request) {
         // Save Track
         Track track = new Track();
