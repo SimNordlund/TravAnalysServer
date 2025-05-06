@@ -28,6 +28,29 @@ public class RankHorseController {
     // competitionRepo, lapRepo, completeHorseRepo and fourStartsRepo
     // are no longer needed in this controller – Hibernate cascades do the work.
 
+    /* ──────────────── bankod  →  full track name map ─────────────────── */             //Changed!
+    private static final Map<String, String> BANKOD_TO_TRACK = Map.ofEntries(              //Changed!
+            Map.entry("Ar", "Arvika"),     Map.entry("Ax", "Axevalla"),                   //Changed!
+            Map.entry("B",  "Bergsåker"),  Map.entry("Bo", "Boden"),                     //Changed!
+            Map.entry("Bs", "Bollnäs"),    Map.entry("D",  "Dannero"),                   //Changed!
+            Map.entry("Dj", "Dala Järna"), Map.entry("E",  "Eskilstuna"),                //Changed!
+            Map.entry("J",  "Jägersro"),   Map.entry("F",  "Färjestad"),                 //Changed!
+            Map.entry("G",  "Gävle"),      Map.entry("Gt", "Göteborg trav"),             //Changed!
+            Map.entry("H",  "Hagmyren"),   Map.entry("Hd", "Halmstad"),                  //Changed!
+            Map.entry("Hg", "Hoting"),     Map.entry("Kh", "Karlshamn"),                 //Changed!
+            Map.entry("Kr", "Kalmar"),     Map.entry("L",  "Lindesberg"),                //Changed!
+            Map.entry("Ly", "Lycksele"),   Map.entry("Mp", "Mantorp"),                   //Changed!
+            Map.entry("Ov", "Oviken"),     Map.entry("Ro", "Romme"),                     //Changed!
+            Map.entry("Rä", "Rättvik"),    Map.entry("S",  "Solvalla"),                  //Changed!
+            Map.entry("Sk", "Skellefteå"), Map.entry("Sä", "Solänget"),                  //Changed!
+            Map.entry("Ti", "Tingsryd"),   Map.entry("Tt", "Täby Trav"),                 //Changed!
+            Map.entry("U",  "Umåker"),     Map.entry("Vd", "Vemdalen"),                  //Changed!
+            Map.entry("Vg", "Vaggeryd"),   Map.entry("Vi", "Visby"),                     //Changed!
+            Map.entry("Å",  "Åby"),        Map.entry("Åm", "Åmål"),                      //Changed!
+            Map.entry("År", "Årjäng"),     Map.entry("Ö",  "Örebro"),                    //Changed!
+            Map.entry("Ös", "Östersund")                                                //Changed!
+    );                                                                                   //Changed!
+
     private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;
 
     /* ─────────────────────────── Persist instead of print ─────────*/
@@ -44,14 +67,16 @@ public class RankHorseController {
 
         list.forEach(v -> {
             /* ---- 1. Track ---- */
-            LocalDate date     = toLocalDate(v.getDateRankedHorse());
-            String    trackKey = date + "|" + v.getTrackRankedHorse();
+            LocalDate date      = toLocalDate(v.getDateRankedHorse());
+            String bankod       = v.getTrackRankedHorse();                                   //Changed!
+            String trackName    = BANKOD_TO_TRACK.getOrDefault(bankod, bankod);              //Changed!
+            String trackKey     = date + "|" + trackName;                                    //Changed!
 
             Track track = trackMap.computeIfAbsent(trackKey, k -> {
                 Track t = new Track();
                 t.setDate(date);
-                t.setNameOfTrack(v.getTrackRankedHorse());
-                return t;                           // no save here            //Changed!
+                t.setNameOfTrack(trackName);                                                 //Changed!
+                return t;
             });
 
             /* ---- 2. Competition (always “v75”) ---- */
@@ -61,7 +86,7 @@ public class RankHorseController {
                 c.setNameOfCompetition("v75");
                 c.setTrack(track);
                 track.getCompetitions().add(c);
-                return c;                           // no save here            //Changed!
+                return c;
             });
 
             /* ---- 3. Lap ---- */
@@ -71,7 +96,7 @@ public class RankHorseController {
                 l.setNameOfLap(v.getLapRankedHorse());
                 l.setCompetition(competition);
                 competition.getLaps().add(l);
-                return l;                           // no save here            //Changed!
+                return l;
             });
 
             /* ---- 4. FourStarts ---- */
@@ -93,12 +118,10 @@ public class RankHorseController {
 
             horse.setFourStarts(fs);
             fs.setCompleteHorse(horse);
-
-            // No explicit saves needed – cascade handles them all           //Changed!
         });
 
         /* ---- One single flush does it all ------------------------------- */
-        trackRepo.saveAll(trackMap.values());                              //Changed!
+        trackRepo.saveAll(trackMap.values());
 
         return new ResponseEntity<>(
                 "Saved " + list.size() + " ranked horses to database",
