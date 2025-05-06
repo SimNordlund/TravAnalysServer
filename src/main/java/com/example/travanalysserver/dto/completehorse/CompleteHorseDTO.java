@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CompleteHorseDTO {
     private Long id;
+    private int numberOfCompleteHorse;
     private String nameOfCompleteHorse;
 }

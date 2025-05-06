@@ -13,7 +13,7 @@ public class CompleteHorse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int numberOfHorse;
+    private int numberOfCompleteHorse;
     private String nameOfCompleteHorse;
 
     @ManyToOne

@@ -34,6 +34,7 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
     public CompleteHorseDTO completeHorseToCompleteHorseDTO (CompleteHorse completeHorse) {
         return CompleteHorseDTO.builder()
                 .id(completeHorse.getId())
+                .numberOfCompleteHorse(completeHorse.getNumberOfCompleteHorse())
                 .nameOfCompleteHorse(completeHorse.getNameOfCompleteHorse())
                 .build();
     }

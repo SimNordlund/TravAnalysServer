@@ -18,7 +18,7 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
     @Query(value = """
     SELECT new com.example.travanalysserver.dto.skrallar.SkrallarHorseDto(
         ch.id,
-        ch.numberOfHorse,
+        ch.numberOfCompleteHorse,
         ch.nameOfCompleteHorse,
         fs.analys,
         fs.fart,
