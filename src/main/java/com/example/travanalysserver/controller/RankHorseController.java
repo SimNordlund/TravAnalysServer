@@ -26,7 +26,7 @@ public class RankHorseController {
     private final RankHorseRepo rankHorseRepo;
     private final TrackRepo trackRepo;
     // competitionRepo, lapRepo, completeHorseRepo and fourStartsRepo
-    // are no longer needed in this controller – Hibernate cascades do the work. //Changed!
+    // are no longer needed in this controller – Hibernate cascades do the work.
 
     private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;
 
