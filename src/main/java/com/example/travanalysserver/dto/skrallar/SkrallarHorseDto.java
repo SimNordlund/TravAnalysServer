@@ -17,4 +17,5 @@ public class SkrallarHorseDto {
     private int klass;
     private int prispengar;
     private String lap;
+    private String nameOfTrack;
 }

@@ -25,7 +25,8 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
         fs.styrka,
         fs.klass,
         fs.prispengar,
-        l.nameOfLap
+        l.nameOfLap,
+        t.nameOfTrack
     )
     FROM CompleteHorse ch
     JOIN ch.lap l
