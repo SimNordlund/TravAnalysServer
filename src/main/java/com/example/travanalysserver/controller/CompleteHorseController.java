@@ -45,7 +45,6 @@ public class CompleteHorseController {
         return new ResponseEntity<>("Häst sparad", HttpStatus.CREATED);
     }
 
-    // Changed!
     @GetMapping("/getSkrallar")
     public ResponseEntity<List<SkrallarHorseDto>> getTop5HorsesByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {

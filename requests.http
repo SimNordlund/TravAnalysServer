@@ -1439,8 +1439,8 @@ Content-Type: application/json
 
 ###
 ###GET https://travanalyserver-latest.onrender.com/ranked/print
-###GET https://travanalyserver-latest.onrender.com/ranked/print
-GET http://localhost:8080//ranked/print
+###GET http://localhost:8080//ranked/print
+GET https://travanalyserver-latest.onrender.com/ranked/print
 Accept: text/plain
 ###
 
@@ -1474,6 +1474,7 @@ Content-Type: application/json
           "horses": [
             {
               "nameOfCompleteHorse": "RoDoSi",
+              "numberOfCompleteHorse": 12,
               "fourStarts": {
                 "analys": 83,
                 "fart": 81,

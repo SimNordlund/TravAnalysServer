@@ -40,7 +40,9 @@ public class SendEverythingDTO {
             @Builder
             public static class CompleteHorseDTO {
                 private String nameOfCompleteHorse;
+                private int numberOfCompleteHorse;
                 private FourStartsDTO fourStarts;
+
 
                 @Getter
                 @Setter

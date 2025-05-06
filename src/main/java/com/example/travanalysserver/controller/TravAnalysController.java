@@ -60,9 +60,9 @@ public class TravAnalysController {
 
                     CompleteHorse horse = new CompleteHorse();
                     horse.setNameOfCompleteHorse(horseDTO.getNameOfCompleteHorse());
+                    horse.setNumberOfHorse(horseDTO.getNumberOfCompleteHorse());
                     horse.setLap(lap);
                     lap.getHorses().add(horse);                             //Changed!
-
                     horse.setFourStarts(fourStarts);
                     fourStarts.setCompleteHorse(horse);                     //Changed!
 
