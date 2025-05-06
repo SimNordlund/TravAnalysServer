@@ -50,7 +50,7 @@ public class CompleteHorseController {
     public ResponseEntity<List<SkrallarHorseDto>> getTop5HorsesByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 
-        Pageable topFive = PageRequest.of(0, 5);
+        Pageable topFive = PageRequest.of(0, 10);
         List<SkrallarHorseDto> topHorses = completeHorseRepo.findTop5ByDate(date, topFive);
 
         return new ResponseEntity<>(topHorses, HttpStatus.OK);
