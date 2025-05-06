@@ -28,7 +28,7 @@ import java.util.Objects;
 public class PrimaryDataSourceConfig {
 
     @Bean
-    @Primary                                                                    //Changed!
+    @Primary
     @ConfigurationProperties("spring.datasource")
     public DataSourceProperties primaryDataSourceProperties() {
         return new DataSourceProperties();
