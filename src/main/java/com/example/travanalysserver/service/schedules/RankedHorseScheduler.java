@@ -18,7 +18,7 @@ public class RankedHorseScheduler {
         this.controller = controller;
     }
 
-    @Scheduled(cron = "0 0/15 * * * *")
+    @Scheduled(cron = "0 0/30 * * * *")
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
         controller.saveAllRanked();
