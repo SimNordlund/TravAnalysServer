@@ -23,5 +23,4 @@ public class RankedHorseScheduler {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
         controller.saveAllRanked();
     }
-
 }

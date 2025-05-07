@@ -3,6 +3,8 @@ package com.example.travanalysserver.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,6 +24,18 @@ public class FourStarts {
     private int prispengar;
     private int kusk;
     private int spar;
+
+    @Column(name = "roi_totalt",  precision = 12, scale = 2)   //Changed!
+    private BigDecimal roiTotalt;                               //Changed!
+
+    @Column(name = "roi_vinnare", precision = 12, scale = 2)   //Changed!
+    private BigDecimal roiVinnare;                              //Changed!
+
+    @Column(name = "roi_plats",   precision = 12, scale = 2)   //Changed!
+    private BigDecimal roiPlats;                                //Changed!
+
+    @Column(name = "roi_trio",    precision = 12, scale = 2)   //Changed!
+    private BigDecimal roiTrio;                                 //Changed!
 
     @OneToOne(mappedBy = "fourStarts", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompleteHorse completeHorse;

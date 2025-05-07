@@ -21,10 +21,10 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
         ch.numberOfCompleteHorse,
         ch.nameOfCompleteHorse,
         fs.analys,
-        fs.fart,
-        fs.styrka,
-        fs.klass,
-        fs.prispengar,
+        fs.roiTotalt,                   
+        fs.roiVinnare,                  
+        fs.roiPlats,                       
+        fs.roiTrio,                       
         l.nameOfLap,
         t.nameOfTrack
     )

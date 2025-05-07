@@ -3,6 +3,7 @@ package com.example.travanalysserver.repositorysec;  // Changed!: ensure this ma
 import com.example.travanalysserver.entitysec.RankHorse;
 import com.example.travanalysserver.entitysec.RankHorseView;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
