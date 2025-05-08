@@ -96,7 +96,7 @@ public class RankHorseController {
             String       compKey     = trackKey; /* only one per track */
             Competition  competition = compMap.computeIfAbsent(compKey, k -> {
                 Competition c = new Competition();
-                c.setNameOfCompetition("v75");
+                c.setNameOfCompetition("Vinnare");
                 c.setTrack(track);
                 track.getCompetitions().add(c);
                 return c;
