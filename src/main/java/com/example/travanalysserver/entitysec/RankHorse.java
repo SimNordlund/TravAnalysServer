@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.*;
 import org.hibernate.annotations.Immutable;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "rank")
 @Immutable
@@ -49,4 +51,7 @@ public class RankHorse {
 
     @Column(name = "procentklass")
     private String prispengarRankedHorse;
+
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt;
 }

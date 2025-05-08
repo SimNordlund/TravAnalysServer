@@ -1,5 +1,7 @@
 package com.example.travanalysserver.entitysec;
 
+import java.time.LocalDateTime;
+
 public interface RankHorseView {
         Long getId();
         Integer getDateRankedHorse();      // Changed!: Integer, not LocalDate
@@ -12,4 +14,5 @@ public interface RankHorseView {
         String getPrestationRankedHorse();
         String getMotstandRankedHorse();
         String getPrispengarRankedHorse();
+        LocalDateTime getUpdatedAt();
 }
