@@ -34,10 +34,26 @@ public class RankHorseController {
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
 
-    private static final Map<String,String> BANKOD_TO_TRACK = Map.ofEntries(
-            Map.entry("Ar","Arvika"), Map.entry("Ax","Axevalla"),
-            /* … rest of your map … */
-            Map.entry("Ös","Östersund")
+    private static final Map<String, String> BANKOD_TO_TRACK = Map.ofEntries(
+            Map.entry("Ar", "Arvika"),     Map.entry("Ax", "Axevalla"),
+            Map.entry("B",  "Bergsåker"),  Map.entry("Bo", "Boden"),
+            Map.entry("Bs", "Bollnäs"),    Map.entry("D",  "Dannero"),
+            Map.entry("Dj", "Dala Järna"), Map.entry("E",  "Eskilstuna"),
+            Map.entry("J",  "Jägersro"),   Map.entry("F",  "Färjestad"),
+            Map.entry("G",  "Gävle"),      Map.entry("Gt", "Göteborg trav"),
+            Map.entry("H",  "Hagmyren"),   Map.entry("Hd", "Halmstad"),
+            Map.entry("Hg", "Hoting"),     Map.entry("Kh", "Karlshamn"),
+            Map.entry("Kr", "Kalmar"),     Map.entry("L",  "Lindesberg"),
+            Map.entry("Ly", "Lycksele"),   Map.entry("Mp", "Mantorp"),
+            Map.entry("Ov", "Oviken"),     Map.entry("Ro", "Romme"),
+            Map.entry("Rä", "Rättvik"),    Map.entry("S",  "Solvalla"),
+            Map.entry("Sk", "Skellefteå"), Map.entry("Sä", "Solänget"),
+            Map.entry("Ti", "Tingsryd"),   Map.entry("Tt", "Täby Trav"),
+            Map.entry("U",  "Umåker"),     Map.entry("Vd", "Vemdalen"),
+            Map.entry("Vg", "Vaggeryd"),   Map.entry("Vi", "Visby"),
+            Map.entry("Å",  "Åby"),        Map.entry("Åm", "Åmål"),
+            Map.entry("År", "Årjäng"),     Map.entry("Ö",  "Örebro"),
+            Map.entry("Ös", "Östersund")
     );
 
     private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;

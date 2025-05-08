@@ -1442,14 +1442,13 @@ Content-Type: application/json
 ###GET http://localhost:8080//ranked/print
 ###GET http://localhost:8080//ranked/print
 ###GET http://localhost:8080//ranked/print
-###GET https://travanalyserver-latest.onrender.com/ranked/print
-GET http://localhost:8080//ranked/print
+GET https://travanalyserver-latest.onrender.com/ranked/print
 Accept: text/plain
 ###
 
 
 ###DELETE http://localhost:8080/travanalys/deleteTrackById/2
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/24
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/25
 Content-Type: application/json
 
 ###
