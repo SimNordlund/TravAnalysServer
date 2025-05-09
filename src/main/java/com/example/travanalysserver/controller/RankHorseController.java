@@ -61,86 +61,85 @@ public class RankHorseController {
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
-        // 1) Load lastRun
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
                 .orElse(LocalDateTime.of(1970,1,1,0,0));
 
-        // 2) Fetch delta
         List<RankHorseView> list = rankHorseRepo.findAllByUpdatedAtAfter(lastRun);
         if (list.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
                     .body("No new or changed rows since " + lastRun);
         }
 
-        // 3) ROI lookup
-        List<RoiView> roiRows = roiRepo.findAllProjectedBy();
-        Map<Long,RoiView> roiMap = roiRows.stream()
+        // ROI lookup
+        Map<Long,RoiView> roiMap = roiRepo.findAllProjectedBy().stream()
                 .collect(Collectors.toMap(RoiView::getRankId, Function.identity()));
 
-        // 4) Preload existing Tracks
+        // Preload existing Tracks -> Competitions -> Laps -> Horses
         Set<LocalDate> dates = list.stream()
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
-        Set<String> trackNames = list.stream()
+        Set<String> names = list.stream()
                 .map(v -> BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
                 .collect(Collectors.toSet());
-        List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, trackNames);
-        Map<String,Track> trackMap = existing.stream()
-                .collect(Collectors.toMap(
-                        t -> t.getDate()+"|"+t.getNameOfTrack(),
-                        Function.identity()
-                ));
 
-        // 5) Seed existing Competitions
+        List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, names);
+        Map<String,Track> trackMap = new HashMap<>();
         Map<String,Competition> compMap = new HashMap<>();
-        trackMap.forEach((trackKey, track) -> {
-            track.getCompetitions().stream()
-                    .filter(c -> "Vinnare".equals(c.getNameOfCompetition()))
-                    .findFirst()
-                    .ifPresent(c -> compMap.put(trackKey, c));
-        });
-
-        // 6) Seed existing Laps to avoid duplicates
         Map<String,Lap> lapMap = new HashMap<>();
-        compMap.forEach((trackKey, comp) -> {
-            comp.getLaps().forEach(l -> {
-                String lapKey = trackKey + "|" + l.getNameOfLap();
-                lapMap.put(lapKey, l);
-            });
-        });
+        Map<String,CompleteHorse> horseMap = new HashMap<>();
 
-        // 7) Build graph
-        for (RankHorseView v : list) {
-            LocalDate date      = toLocalDate(v.getDateRankedHorse());
-            String    trackName = BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
-            String    trackKey  = date + "|" + trackName;
+        // seed existing hierarchy in maps
+        for (Track t: existing) {
+            String tKey = t.getDate() + "|" + t.getNameOfTrack();
+            trackMap.put(tKey, t);
+            for (Competition c: t.getCompetitions()) {
+                if (!"Vinnare".equals(c.getNameOfCompetition())) continue;
+                compMap.put(tKey, c);
+                for (Lap l: c.getLaps()) {
+                    String lKey = tKey + "|" + l.getNameOfLap();
+                    lapMap.put(lKey, l);
+                    for (CompleteHorse h: l.getHorses()) {
+                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();
+                        horseMap.put(hKey, h);
+                    }
+                }
+            }
+        }
 
-            Track track = trackMap.computeIfAbsent(trackKey, k -> {
-                Track t = new Track();
-                t.setDate(date);
-                t.setNameOfTrack(trackName);
-                return t;
-            });
+        // Build or update
+        for (RankHorseView v: list) {
+            LocalDate date = toLocalDate(v.getDateRankedHorse());
+            String trackName = BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
+            String tKey = date + "|" + trackName;
 
-            Competition comp = compMap.computeIfAbsent(trackKey, k -> {
-                Competition c = new Competition();
-                c.setNameOfCompetition("Vinnare");
-                c.setTrack(track);
-                track.getCompetitions().add(c);
-                return c;
-            });
-
-            String lapKey = trackKey + "|" + v.getLapRankedHorse();
-            Lap lap = lapMap.computeIfAbsent(lapKey, k -> {
-                Lap l = new Lap();
-                l.setNameOfLap(v.getLapRankedHorse());
-                l.setCompetition(comp);
-                comp.getLaps().add(l);
-                return l;
+            Track track = trackMap.computeIfAbsent(tKey, k -> {
+                Track tr = new Track(); tr.setDate(date); tr.setNameOfTrack(trackName); return tr;
             });
 
-            FourStarts fs = new FourStarts();
+            Competition comp = compMap.computeIfAbsent(tKey, k -> {
+                Competition c = new Competition(); c.setNameOfCompetition("Vinnare");
+                c.setTrack(track); track.getCompetitions().add(c); return c;
+            });
+
+            String lKey = tKey + "|" + v.getLapRankedHorse();
+            Lap lap = lapMap.computeIfAbsent(lKey, k -> {
+                Lap l = new Lap(); l.setNameOfLap(v.getLapRankedHorse());
+                l.setCompetition(comp); comp.getLaps().add(l); return l;
+            });
+
+            String hKey = lKey + "|" + v.getNr();
+            CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
+                CompleteHorse h = new CompleteHorse();
+                h.setNumberOfCompleteHorse(v.getNr());
+                h.setLap(lap); lap.getHorses().add(h);
+                return h;
+            });
+            // update horse name
+            horse.setNameOfCompleteHorse(v.getNameRankedHorse());
+
+            // FourStarts upsert
+            FourStarts fs = horse.getFourStarts() != null ? horse.getFourStarts() : new FourStarts();
             fs.setAnalys    (toInt(v.getAnalysRankedHorse()));
             fs.setFart      (toInt(v.getTidRankedHorse()));
             fs.setStyrka    (toInt(v.getPrestationRankedHorse()));
@@ -157,20 +156,14 @@ public class RankHorseController {
                 fs.setRoiTrio   (roi.getRoiTrio());
             }
 
-            CompleteHorse horse = new CompleteHorse();
-            horse.setNumberOfCompleteHorse(v.getNr());
-            horse.setNameOfCompleteHorse(v.getNameRankedHorse());
-            horse.setLap(lap);
-            lap.getHorses().add(horse);
-
-            horse.setFourStarts(fs);
-            fs.setCompleteHorse(horse);
+            if (horse.getFourStarts() == null) {
+                horse.setFourStarts(fs);
+                fs.setCompleteHorse(horse);
+            }
         }
 
-        // 8) Persist
+        // save all new or updated
         trackRepo.saveAll(trackMap.values());
-
-        // 9) Update lastRun
         syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
 
         return new ResponseEntity<>(
@@ -181,19 +174,13 @@ public class RankHorseController {
 
     private static LocalDate toLocalDate(Integer yyyymmdd) {
         if (yyyymmdd == null) return LocalDate.MIN;
-        String s = String.format("%08d", yyyymmdd);
-        return LocalDate.parse(s, BASIC);
+        return LocalDate.parse(String.format("%08d", yyyymmdd), BASIC);
     }
 
     private static int toInt(String s) {
         if (s == null) return 0;
-        s = s.trim().replace("%",""
-        ).replace(",",".");
-        try {
-            return (int) Math.round(Double.parseDouble(s));
-        } catch (NumberFormatException e) {
-            return 0;
-        }
+        String t = s.trim().replace("%", "").replace(",", ".");
+        try { return (int) Math.round(Double.parseDouble(t)); } catch (Exception e) { return 0; }
     }
 
     private static int rand100() {
