@@ -1,3 +1,143 @@
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-09T130046.201.txt
+
+###
+
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/30
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-09T123550.200.txt
+
+###
+
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/29
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-09T123545.200.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T233151.201.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/completeHorse/getSkrallar?date=2025-05-03
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T232513.200.json
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T232107.201.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T225321.201.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T221340.201.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T221108.201.txt
+
+###
+
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/28
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T220549.200.txt
+
+###
+
+GET https://travanalyserver-latest.onrender.com/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T220243.201.txt
+
+###
+
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/27
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T220207.200.txt
+
+###
+
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/26
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-08T220201.200.txt
+
+###
+
 GET https://travanalyserver-latest.onrender.com/ranked/print
 Accept: text/plain
 Connection: Keep-Alive
@@ -362,146 +502,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2025-05-08T161418.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/7
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161413.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/6
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161408.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/5
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161403.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/4
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161357.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161351.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/2
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161346.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/1
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T161340.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/21
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T215901.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/20
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T215856.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/19
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T215849.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/18
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T215844.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/17
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T212702.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/16
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T212655.200.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/15
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-07T212646.200.txt
 
 ###
 

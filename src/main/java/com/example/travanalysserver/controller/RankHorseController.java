@@ -61,24 +61,24 @@ public class RankHorseController {
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
-        // 1) lastRun
+        // 1) Load lastRun
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
                 .orElse(LocalDateTime.of(1970,1,1,0,0));
 
-        // 2) fetch delta
+        // 2) Fetch delta
         List<RankHorseView> list = rankHorseRepo.findAllByUpdatedAtAfter(lastRun);
         if (list.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
                     .body("No new or changed rows since " + lastRun);
         }
 
-        // 3) ROI
+        // 3) ROI lookup
         List<RoiView> roiRows = roiRepo.findAllProjectedBy();
         Map<Long,RoiView> roiMap = roiRows.stream()
                 .collect(Collectors.toMap(RoiView::getRankId, Function.identity()));
 
-        // 4) preload existing Tracks
+        // 4) Preload existing Tracks
         Set<LocalDate> dates = list.stream()
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
@@ -92,7 +92,7 @@ public class RankHorseController {
                         Function.identity()
                 ));
 
-        // 5) seed existing Competitions
+        // 5) Seed existing Competitions
         Map<String,Competition> compMap = new HashMap<>();
         trackMap.forEach((trackKey, track) -> {
             track.getCompetitions().stream()
@@ -101,13 +101,20 @@ public class RankHorseController {
                     .ifPresent(c -> compMap.put(trackKey, c));
         });
 
+        // 6) Seed existing Laps to avoid duplicates
         Map<String,Lap> lapMap = new HashMap<>();
+        compMap.forEach((trackKey, comp) -> {
+            comp.getLaps().forEach(l -> {
+                String lapKey = trackKey + "|" + l.getNameOfLap();
+                lapMap.put(lapKey, l);
+            });
+        });
 
-        // 6) build graph
+        // 7) Build graph
         for (RankHorseView v : list) {
             LocalDate date      = toLocalDate(v.getDateRankedHorse());
             String    trackName = BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
-            String    trackKey  = date+"|"+trackName;
+            String    trackKey  = date + "|" + trackName;
 
             Track track = trackMap.computeIfAbsent(trackKey, k -> {
                 Track t = new Track();
@@ -124,7 +131,7 @@ public class RankHorseController {
                 return c;
             });
 
-            String lapKey = trackKey+"|"+v.getLapRankedHorse();
+            String lapKey = trackKey + "|" + v.getLapRankedHorse();
             Lap lap = lapMap.computeIfAbsent(lapKey, k -> {
                 Lap l = new Lap();
                 l.setNameOfLap(v.getLapRankedHorse());
@@ -160,10 +167,10 @@ public class RankHorseController {
             fs.setCompleteHorse(horse);
         }
 
-        // 7) persist
+        // 8) Persist
         trackRepo.saveAll(trackMap.values());
 
-        // 8) update lastRun
+        // 9) Update lastRun
         syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
 
         return new ResponseEntity<>(
@@ -180,7 +187,8 @@ public class RankHorseController {
 
     private static int toInt(String s) {
         if (s == null) return 0;
-        s = s.trim().replace("%","").replace(",","." );
+        s = s.trim().replace("%",""
+        ).replace(",",".");
         try {
             return (int) Math.round(Double.parseDouble(s));
         } catch (NumberFormatException e) {
