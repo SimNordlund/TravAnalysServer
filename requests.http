@@ -1441,7 +1441,7 @@ Content-Type: application/json
 ###GET https://travanalyserver-latest.onrender.com/ranked/print
 ###GET http://localhost:8080//ranked/print
 ###
-GET http://localhost:8080//ranked/print
+GET https://travanalyserver-latest.onrender.com/ranked/print
 Accept: text/plain
 ###
 
