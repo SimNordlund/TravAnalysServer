@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "roi")
@@ -37,5 +38,8 @@ public class Roi {
 
     @Column(name = "roitrio")
     private BigDecimal roiTrio;
+
+    @Column(name = "updated_at", nullable = false)   //Changed!
+    private LocalDateTime updatedAt;
 
 }

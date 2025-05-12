@@ -4,10 +4,12 @@ import com.example.travanalysserver.entitysec.Roi;
 import com.example.travanalysserver.entitysec.RoiView;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
 public interface RoiRepo extends JpaRepository<Roi, Long> {
     List<RoiView> findAllProjectedBy();
-    List<RoiView> findAllByRankIdIn(Collection<Long> rankIds);
+
+    List<RoiView> findAllByUpdatedAtAfter(LocalDateTime cutoff);
 }

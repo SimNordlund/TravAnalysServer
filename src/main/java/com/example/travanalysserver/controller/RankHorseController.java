@@ -61,35 +61,70 @@ public class RankHorseController {
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
+
+    /* ──────────────────────────────────────────────────────────
+       0️⃣  Get the checkpoint                                     */
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
                 .orElse(LocalDateTime.of(1970,1,1,0,0));
 
-        List<RankHorseView> list = rankHorseRepo.findAllByUpdatedAtAfter(lastRun);
-        if (list.isEmpty()) {
+    /* ──────────────────────────────────────────────────────────
+       1️⃣  Rank + ROI deltas                                     */
+        List<RankHorseView> rankDelta =                  //Changed!
+                rankHorseRepo.findAllByUpdatedAtAfter(lastRun);      //Changed!
+        List<RoiView> roiDelta =                        //Changed!
+                roiRepo.findAllByUpdatedAtAfter(lastRun);            //Changed!
+
+        if (rankDelta.isEmpty() && roiDelta.isEmpty()) {             //Changed!
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
                     .body("No new or changed rows since " + lastRun);
         }
 
-        // ROI lookup
-        Map<Long,RoiView> roiMap = roiRepo.findAllProjectedBy().stream()
-                .collect(Collectors.toMap(RoiView::getRankId, Function.identity()));
+    /* ──────────────────────────────────────────────────────────
+       2️⃣  Build a map Rank‑ID → latest ROI (if any)             */
+        // take ONLY the latest roi per rankId in case multiple updates
+        Map<Long,RoiView> roiMap = roiDelta.stream()                 //Changed!
+                .collect(Collectors.toMap(RoiView::getRankId,
+                        Function.identity(),
+                        (a,b) -> b));              //Changed!
 
-        // Preload existing Tracks -> Competitions -> Laps -> Horses
-        Set<LocalDate> dates = list.stream()
+        roiMap.putAll(                                              //Changed!
+                roiRepo.findAllProjectedBy().stream()
+                        .filter(r -> !roiMap.containsKey(r.getRankId())) // keep existing ones
+                        .collect(Collectors.toMap(RoiView::getRankId, Function.identity()))
+        );
+
+    /* ──────────────────────────────────────────────────────────
+       3️⃣  Collect ALL rank rows we must touch                   */
+        Set<Long> idsFromRoiDelta =                                 //Changed!
+                roiDelta.stream().map(RoiView::getRankId).collect(Collectors.toSet());
+
+        // union of rankDelta + rows whose ROI changed
+        List<RankHorseView> workList = new ArrayList<>(rankDelta);   //Changed!
+        if (!idsFromRoiDelta.isEmpty()) {                            //Changed!
+            workList.addAll(                                         //Changed!
+                    rankHorseRepo.findAllProjectedBy().stream()          //Changed!
+                            .filter(v -> idsFromRoiDelta.contains(v.getId()))//Changed!
+                            .toList());                                      //Changed!
+        }
+
+    /* ──────────────────────────────────────────────────────────
+       4️⃣  Pre‑load the existing object graph (same as before)   */
+        Set<LocalDate> dates = workList.stream()                     //Changed!
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
-        Set<String> names = list.stream()
-                .map(v -> BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
+
+        Set<String> names = workList.stream()                        //Changed!
+                .map(v -> BANKOD_TO_TRACK
+                        .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
                 .collect(Collectors.toSet());
 
         List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, names);
-        Map<String,Track> trackMap = new HashMap<>();
-        Map<String,Competition> compMap = new HashMap<>();
-        Map<String,Lap> lapMap = new HashMap<>();
+        Map<String,Track>        trackMap = new HashMap<>();
+        Map<String,Competition>  compMap  = new HashMap<>();
+        Map<String,Lap>          lapMap   = new HashMap<>();
         Map<String,CompleteHorse> horseMap = new HashMap<>();
 
-        // seed existing hierarchy in maps
         for (Track t: existing) {
             String tKey = t.getDate() + "|" + t.getNameOfTrack();
             trackMap.put(tKey, t);
@@ -107,14 +142,19 @@ public class RankHorseController {
             }
         }
 
-        // Build or update
-        for (RankHorseView v: list) {
+    /* ──────────────────────────────────────────────────────────
+       5️⃣  Upsert everything                                     */
+        int processed = 0;                                           //Changed!
+
+        for (RankHorseView v: workList) {
             LocalDate date = toLocalDate(v.getDateRankedHorse());
-            String trackName = BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
+            String trackName = BANKOD_TO_TRACK
+                    .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
             String tKey = date + "|" + trackName;
 
             Track track = trackMap.computeIfAbsent(tKey, k -> {
-                Track tr = new Track(); tr.setDate(date); tr.setNameOfTrack(trackName); return tr;
+                Track tr = new Track(); tr.setDate(date); tr.setNameOfTrack(trackName);
+                return tr;
             });
 
             Competition comp = compMap.computeIfAbsent(tKey, k -> {
@@ -132,14 +172,15 @@ public class RankHorseController {
             CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
                 CompleteHorse h = new CompleteHorse();
                 h.setNumberOfCompleteHorse(v.getNr());
-                h.setLap(lap); lap.getHorses().add(h);
-                return h;
+                h.setLap(lap); lap.getHorses().add(h); return h;
             });
-            // update horse name
+
             horse.setNameOfCompleteHorse(v.getNameRankedHorse());
 
-            // FourStarts upsert
-            FourStarts fs = horse.getFourStarts() != null ? horse.getFourStarts() : new FourStarts();
+            FourStarts fs = horse.getFourStarts() != null
+                    ? horse.getFourStarts()
+                    : new FourStarts();
+
             fs.setAnalys    (toInt(v.getAnalysRankedHorse()));
             fs.setFart      (toInt(v.getTidRankedHorse()));
             fs.setStyrka    (toInt(v.getPrestationRankedHorse()));
@@ -148,6 +189,7 @@ public class RankHorseController {
             fs.setKusk      (rand100());
             fs.setSpar      (rand100());
 
+            /* ── ROI update (only if we have a fresh one) ───────────*/
             RoiView roi = roiMap.get(v.getId());
             if (roi != null) {
                 fs.setRoiTotalt (roi.getRoiTotalt());
@@ -160,17 +202,20 @@ public class RankHorseController {
                 horse.setFourStarts(fs);
                 fs.setCompleteHorse(horse);
             }
+            processed++;                                            //Changed!
         }
 
-        // save all new or updated
+    /* ──────────────────────────────────────────────────────────
+       6️⃣  Persist & checkpoint                                  */
         trackRepo.saveAll(trackMap.values());
         syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
 
         return new ResponseEntity<>(
-                "Processed " + list.size() + " new/changed since " + lastRun,
+                "Processed " + processed + " horses since " + lastRun, //Changed!
                 HttpStatus.CREATED
         );
     }
+
 
     private static LocalDate toLocalDate(Integer yyyymmdd) {
         if (yyyymmdd == null) return LocalDate.MIN;
