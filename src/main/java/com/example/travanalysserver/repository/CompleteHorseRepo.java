@@ -24,7 +24,8 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
         fs.roiTotalt,                   
         fs.roiVinnare,                  
         fs.roiPlats,                       
-        fs.roiTrio,                       
+        fs.roiTrio,
+        fs.resultat,                       
         l.nameOfLap,
         t.nameOfTrack
     )

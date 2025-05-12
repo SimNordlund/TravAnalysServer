@@ -18,6 +18,7 @@ public class SkrallarHorseDto {
     private BigDecimal roiVinnare;
     private BigDecimal roiPlats;
     private BigDecimal roiTrio;
+    private int resultat;
     private String lap;
     private String nameOfTrack;
 }

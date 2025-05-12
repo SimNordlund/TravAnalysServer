@@ -1,3 +1,14 @@
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-12T150704.201.txt
+
+###
+
 DELETE http://localhost:8080/travanalys/deleteTrackById/4
 Content-Type: application/json
 Connection: Keep-Alive
@@ -501,17 +512,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2025-05-08T210252.200.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-05-08T210132.201.txt
 
 ###
 

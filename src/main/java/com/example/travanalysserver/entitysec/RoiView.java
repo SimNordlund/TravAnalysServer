@@ -11,6 +11,6 @@ public interface RoiView {
     BigDecimal getRoiVinnare();
     BigDecimal  getRoiPlats();
     BigDecimal  getRoiTrio();
-
     LocalDateTime getUpdatedAt();
+    int getResultat();
 }

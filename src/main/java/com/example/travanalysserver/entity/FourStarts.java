@@ -25,17 +25,20 @@ public class FourStarts {
     private int kusk;
     private int spar;
 
-    @Column(name = "roi_totalt",  precision = 12, scale = 2)   //Changed!
-    private BigDecimal roiTotalt;                               //Changed!
+    @Column(name = "roi_totalt",  precision = 12, scale = 2)
+    private BigDecimal roiTotalt;
 
-    @Column(name = "roi_vinnare", precision = 12, scale = 2)   //Changed!
-    private BigDecimal roiVinnare;                              //Changed!
+    @Column(name = "roi_vinnare", precision = 12, scale = 2)
+    private BigDecimal roiVinnare;
 
-    @Column(name = "roi_plats",   precision = 12, scale = 2)   //Changed!
-    private BigDecimal roiPlats;                                //Changed!
+    @Column(name = "roi_plats",   precision = 12, scale = 2)
+    private BigDecimal roiPlats;
 
-    @Column(name = "roi_trio",    precision = 12, scale = 2)   //Changed!
-    private BigDecimal roiTrio;                                 //Changed!
+    @Column(name = "roi_trio",    precision = 12, scale = 2)
+    private BigDecimal roiTrio;
+
+    @Column(name = "resultat")
+    private int resultat;
 
     @OneToOne(mappedBy = "fourStarts", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompleteHorse completeHorse;

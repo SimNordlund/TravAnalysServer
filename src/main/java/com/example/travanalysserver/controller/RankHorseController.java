@@ -196,6 +196,7 @@ public class RankHorseController {
                 fs.setRoiVinnare(roi.getRoiVinnare());
                 fs.setRoiPlats  (roi.getRoiPlats());
                 fs.setRoiTrio   (roi.getRoiTrio());
+                fs.setResultat(roi.getResultat());
             }
 
             if (horse.getFourStarts() == null) {

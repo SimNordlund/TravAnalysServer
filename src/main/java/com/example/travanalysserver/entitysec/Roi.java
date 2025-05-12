@@ -42,4 +42,7 @@ public class Roi {
     @Column(name = "updated_at", nullable = false)   //Changed!
     private LocalDateTime updatedAt;
 
+    @Column(name = "resultat")
+    private int resultat;
+
 }
