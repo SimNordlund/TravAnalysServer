@@ -54,4 +54,7 @@ public class RankHorse {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    @Column(name ="tips")
+    private int tipsRankedHorse;
 }

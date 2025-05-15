@@ -56,7 +56,7 @@ public class TravAnalysController {
                     fourStarts.setKlass(horseDTO.getFourStarts().getKlass());
                     fourStarts.setPrispengar(horseDTO.getFourStarts().getPrispengar());
                     fourStarts.setKusk(horseDTO.getFourStarts().getKusk());
-                    fourStarts.setSpar(horseDTO.getFourStarts().getSpar());
+                    fourStarts.setTips(horseDTO.getFourStarts().getTips());
                     // completeHorse reference set later
 
                     CompleteHorse horse = new CompleteHorse();
@@ -120,7 +120,7 @@ public class TravAnalysController {
                     fourStarts.setKlass(horseDTO.getFourStarts().getKlass());
                     fourStarts.setPrispengar(horseDTO.getFourStarts().getPrispengar());
                     fourStarts.setKusk(horseDTO.getFourStarts().getKusk());
-                    fourStarts.setSpar(horseDTO.getFourStarts().getSpar());
+                    fourStarts.setTips(horseDTO.getFourStarts().getTips());
 
                     CompleteHorse horse = new CompleteHorse();             //Changed!
                     horse.setNameOfCompleteHorse(horseDTO.getNameOfCompleteHorse());

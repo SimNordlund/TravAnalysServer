@@ -187,7 +187,7 @@ public class RankHorseController {
             fs.setKlass     (toInt(v.getMotstandRankedHorse()));
             fs.setPrispengar(toInt(v.getPrispengarRankedHorse()));
             fs.setKusk      (rand100());
-            fs.setSpar      (rand100());
+            fs.setTips(toInt(v.getTipsRankedHorse()));
 
             /* ── ROI update (only if we have a fresh one) ───────────*/
             RoiView roi = roiMap.get(v.getId());

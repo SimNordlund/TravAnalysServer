@@ -1,7 +1,6 @@
 package com.example.travanalysserver.service.impl;
 
 import com.example.travanalysserver.dto.starts.FourStartsDTO;
-import com.example.travanalysserver.entity.CompleteHorse;
 import com.example.travanalysserver.entity.FourStarts;
 import com.example.travanalysserver.repository.FourStartsRepo;
 import com.example.travanalysserver.service.interfaces.FourStartsService;
@@ -36,7 +35,7 @@ public class FourStartsServiceImpl implements FourStartsService {
                 .klass(fourStarts.getKlass())
                 .prispengar(fourStarts.getPrispengar())
                 .kusk(fourStarts.getKusk())
-                .spar(fourStarts.getSpar())
+                .tips(fourStarts.getTips())
                 .build();
     }
 

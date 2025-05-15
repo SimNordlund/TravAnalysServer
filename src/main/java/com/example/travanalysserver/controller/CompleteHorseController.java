@@ -46,13 +46,15 @@ public class CompleteHorseController {
     }
 
     @GetMapping("/getSkrallar")
-    public ResponseEntity<List<SkrallarHorseDto>> getTop5HorsesByDate(
-            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+    public ResponseEntity<List<SkrallarHorseDto>> getHorsesByDate(
+            @RequestParam("date")
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate date) {
 
-        Pageable topFive = PageRequest.of(0, 10);
-        List<SkrallarHorseDto> topHorses = completeHorseRepo.findTop5ByDate(date, topFive);
+        List<SkrallarHorseDto> horses =
+                completeHorseRepo.findByDateAndMinTips(date, 1);   // tips over one is a "skräll"
 
-        return new ResponseEntity<>(topHorses, HttpStatus.OK);
+        return ResponseEntity.ok(horses);
     }
 
 

@@ -17,5 +17,5 @@ public class FourStartsDTO {
     private int klass;
     private int prispengar;
     private int kusk;
-    private int spar;
+    private int tips;
 }

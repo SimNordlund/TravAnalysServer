@@ -23,7 +23,9 @@ public class FourStarts {
     private int klass;
     private int prispengar;
     private int kusk;
-    private int spar;
+
+    @Column(name = "tips")
+    private int tips;
 
     @Column(name = "roi_totalt",  precision = 12, scale = 2)
     private BigDecimal roiTotalt;

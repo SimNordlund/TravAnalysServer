@@ -25,7 +25,8 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
         fs.roiVinnare,                  
         fs.roiPlats,                       
         fs.roiTrio,
-        fs.resultat,                       
+        fs.resultat,         
+        fs.tips,              
         l.nameOfLap,
         t.nameOfTrack
     )
@@ -35,8 +36,10 @@ public interface CompleteHorseRepo extends JpaRepository <CompleteHorse, Long> {
     JOIN c.track t
     JOIN ch.fourStarts fs
     WHERE t.date = :date
-    ORDER BY fs.analys DESC
-    """)
-    List<SkrallarHorseDto> findTop5ByDate(@Param("date") LocalDate date, Pageable pageable);
+    AND  fs.tips >= :minTips           
+    ORDER BY fs.analys DESC 
+    """) //Ändra DESC ovan om vi ska sortera på annat.
+    List<SkrallarHorseDto> findByDateAndMinTips(@Param("date")     LocalDate date,
+                                                @Param("minTips")  int       minTips);
 
 }
