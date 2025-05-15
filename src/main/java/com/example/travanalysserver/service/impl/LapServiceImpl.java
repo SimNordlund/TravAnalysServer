@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -23,6 +24,7 @@ public class LapServiceImpl implements LapService {
     @Override
     public List<LapDTO> findAllByCompetition_Id(Long competitionId){
         List <Lap> tempList = lapRepo.findAllByCompetition_Id(competitionId);
+        tempList.sort(Comparator.comparingInt(l -> Integer.parseInt(l.getNameOfLap()))); //Sorts the laps.
         List <LapDTO> lapsByFKList = tempList.stream().map(e -> LapToLapDTO(e)).toList();
         return lapsByFKList;
     }

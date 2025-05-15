@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -25,10 +26,10 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
     @Override
     public List<CompleteHorseDTO> findCompleteHorseByCompetitionId(Long competitionId) {
         List <CompleteHorse> tempList = completeHorseRepo.findAllByLap_Id(competitionId);
+        tempList.sort(Comparator.comparingInt(l -> l.getNumberOfCompleteHorse()));
         List <CompleteHorseDTO> completeHorseByFKList = tempList.stream()
                 .map(e -> completeHorseToCompleteHorseDTO(e)).toList();
         return completeHorseByFKList;
-
     }
 
     public CompleteHorseDTO completeHorseToCompleteHorseDTO (CompleteHorse completeHorse) {
@@ -42,9 +43,9 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
     @Override
     public List<CompleteHorseDTOAnalys> getAllCompleteHorsesAnalysFromDB (Long competitionId) {
         List <CompleteHorse> tempList = completeHorseRepo.findAllByLap_Id(competitionId);
-        List <CompleteHorseDTOAnalys> kukhorse = tempList.stream()
+        List <CompleteHorseDTOAnalys> horse = tempList.stream()
                 .map(e -> completeHorseToCompleteHorseDTOAnalys(e)).toList();
-        return kukhorse; //For forskning
+        return horse; //For forskning
     }
 
     public CompleteHorseDTOAnalys completeHorseToCompleteHorseDTOAnalys (CompleteHorse completeHorse) {
