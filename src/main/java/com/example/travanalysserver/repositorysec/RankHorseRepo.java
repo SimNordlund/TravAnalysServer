@@ -1,4 +1,4 @@
-package com.example.travanalysserver.repositorysec;  // Changed!: ensure this matches your controller import
+package com.example.travanalysserver.repositorysec;
 
 import com.example.travanalysserver.entitysec.RankHorse;
 import com.example.travanalysserver.entitysec.RankHorseView;
@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface RankHorseRepo extends JpaRepository<RankHorse, Long> {
-    List<RankHorseView> findAllProjectedBy(); // Changed!: projection method name
+    List<RankHorseView> findAllProjectedBy();
 
     List<RankHorseView> findAllByUpdatedAtAfter(LocalDateTime cutoff);
 }

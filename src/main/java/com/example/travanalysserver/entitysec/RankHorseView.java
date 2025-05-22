@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public interface RankHorseView {
         Long getId();
-        Integer getDateRankedHorse();      // Changed!: Integer, not LocalDate
+        Integer getDateRankedHorse();
         String getTrackRankedHorse();
         String getLapRankedHorse();
         Integer getNr();

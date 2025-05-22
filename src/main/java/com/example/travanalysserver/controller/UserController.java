@@ -7,27 +7,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor //Dependency Injection
+@RequiredArgsConstructor
 @RequestMapping(path = "/user")
 //@PreAuthorize("hasAuthority('Admin')")
 public class UserController {
 
     private final UserRepo userRepo;
 
-    // Define a request body class for authentication
     static class AuthRequest {
         public String username;
         public String password;
     }
 
-    // Method to authenticate a user
+
     @PostMapping("/authenticate")
     public ResponseEntity<User> authenticateUser(@RequestBody AuthRequest request) {
         User user = userRepo.findByUsernameAndPassword(request.username, request.password);
         if (user != null) {
             return ResponseEntity.ok(user);
         } else {
-            return ResponseEntity.status(401).body(null); // or use .notFound().build() if you prefer not to send 401 directly
+            return ResponseEntity.status(401).body(null);
 
         }
     }

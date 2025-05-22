@@ -16,19 +16,17 @@ public class ReducedSystemController {
 
     private final ReducedSystemRepo reducedSystemRepo;
 
-    //Patch vs Put
-
     @GetMapping(value = "/s1", produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> getSystemOne(@RequestParam Long id) {
         return reducedSystemRepo.findById(id)
-                .map(system -> ResponseEntity.ok(system.getRd())) // "rd" is presumably your string field
+                .map(system -> ResponseEntity.ok(system.getRd()))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping(value = "/save/system/one", consumes = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> addReducedSystem(@RequestBody String rawXml) {
         ReducedSystem reducedSystem = new ReducedSystem();
-        reducedSystem.setRd(rawXml); // Save the raw XML as a string in the database
+        reducedSystem.setRd(rawXml);
         reducedSystemRepo.save(reducedSystem);
 
         return new ResponseEntity<>("Reduced system added successfully", HttpStatus.CREATED);
@@ -41,8 +39,8 @@ public class ReducedSystemController {
         if (optionalReducedSystem.isPresent()) {
 
             ReducedSystem reducedSystem = optionalReducedSystem.get();
-            reducedSystem.setRd(rawXml); // Update the "rd" field with the new raw XML
-            reducedSystemRepo.save(reducedSystem); // Save the updated entity
+            reducedSystem.setRd(rawXml);
+            reducedSystemRepo.save(reducedSystem);
 
             return new ResponseEntity<>("Reduced system updated successfully", HttpStatus.ACCEPTED);
         }

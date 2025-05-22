@@ -20,7 +20,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages            = "com.example.travanalysserver.repository",          // your primary repo package
+        basePackages            = "com.example.travanalysserver.repository",
         entityManagerFactoryRef = "primaryEntityManagerFactory",
         transactionManagerRef   = "primaryTransactionManager"
 )
@@ -35,7 +35,7 @@ public class PrimaryDataSourceConfig {
     }
 
     @Bean
-    @Primary                                                                    //Changed!
+    @Primary
     public DataSource primaryDataSource() {
         return primaryDataSourceProperties()
                 .initializeDataSourceBuilder()
@@ -43,13 +43,13 @@ public class PrimaryDataSourceConfig {
     }
 
     @Bean(name = "primaryEntityManagerFactory")
-    @Primary                                                                    //Changed!
+    @Primary
     public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(
             EntityManagerFactoryBuilder builder,
             Environment env) {
         return builder
                 .dataSource(primaryDataSource())
-                .packages("com.example.travanalysserver.entity")               // your primary entity package
+                .packages("com.example.travanalysserver.entity")
                 .persistenceUnit("primary")
                 .properties(Map.of(
                         "jakarta.persistence.schema-generation.database.action", "update",  //drop-and-create vs update

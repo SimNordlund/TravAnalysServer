@@ -39,7 +39,7 @@ public class Roi {
     @Column(name = "roitrio")
     private BigDecimal roiTrio;
 
-    @Column(name = "updated_at", nullable = false)   //Changed!
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
     @Column(name = "resultat")

@@ -21,7 +21,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages        = "com.example.travanalysserver.repositorysec", //Får lägga till här sen för andra db saker
+        basePackages        = "com.example.travanalysserver.repositorysec",
         entityManagerFactoryRef = "secondaryEntityManagerFactory",
         transactionManagerRef   = "secondaryTransactionManager"
 )
@@ -53,7 +53,7 @@ public class SecondaryDataSourceConfig {
                 .dataSource(secondaryDataSource())
                 .packages("com.example.travanalysserver.entitysec")
                 .persistenceUnit("secondary")
-                .properties(Map.of( //drop-and-create vs update
+                .properties(Map.of(
                         "jakarta.persistence.schema-generation.database.action", "update",
                         "hibernate.dialect", env.getProperty("secondary.jpa.database-platform")
                 ))

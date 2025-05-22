@@ -24,7 +24,7 @@ public class LapServiceImpl implements LapService {
     @Override
     public List<LapDTO> findAllByCompetition_Id(Long competitionId){
         List <Lap> tempList = lapRepo.findAllByCompetition_Id(competitionId);
-        tempList.sort(Comparator.comparingInt(l -> Integer.parseInt(l.getNameOfLap()))); //Sorts the laps.
+        tempList.sort(Comparator.comparingInt(l -> Integer.parseInt(l.getNameOfLap())));
         List <LapDTO> lapsByFKList = tempList.stream().map(e -> LapToLapDTO(e)).toList();
         return lapsByFKList;
     }

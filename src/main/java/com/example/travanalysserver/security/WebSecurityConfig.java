@@ -60,16 +60,16 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/", "/login/**", "/oauth2/**").permitAll() // Allow public access
+                        .requestMatchers("/", "/login/**", "/oauth2/**").permitAll()
                         .anyRequest().permitAll() //Tillåter allt just nu. Ändra sen.
                 )
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl(frontendUrl, true) // Redirect to React app after successful login
+                        .defaultSuccessUrl(frontendUrl, true)
                         .userInfoEndpoint(userInfo -> userInfo
                                 .userAuthoritiesMapper(this.userAuthoritiesMapper())
                         )
                 )
-                .csrf(AbstractHttpConfigurer::disable); // Disable CSRF for development
+                .csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
     }

@@ -20,34 +20,34 @@ import java.time.LocalDateTime;
 public class RankHorse {
     @Id
     @Column(name = "id")
-    private Long id;  // Changed!: raw bigint → Long
+    private Long id;
 
     @Column(name = "startdatum")
-    private Integer dateRankedHorse;  // Changed!: raw integer → Integer
+    private Integer dateRankedHorse;
 
     @Column(name = "bankod")
-    private String trackRankedHorse;  // Changed!: varchar → String
+    private String trackRankedHorse;
 
     @Column(name = "lopp")
-    private String lapRankedHorse;    // Changed!: varchar → String
+    private String lapRankedHorse;
 
     @Column(name = "nr")
-    private Integer nr;               // raw integer → Integer
+    private Integer nr;
 
     @Column(name = "namn")
-    private String nameRankedHorse;   // Changed!: varchar → String
+    private String nameRankedHorse;
 
     @Column(name = "procentanalys")
-    private String analysRankedHorse; // Changed!: varchar → String
+    private String analysRankedHorse;
 
     @Column(name = "procenttid")
-    private String tidRankedHorse;    // Changed!: varchar → String
+    private String tidRankedHorse;
 
     @Column(name = "procentprestation")
-    private String prestationRankedHorse; // Changed!: varchar → String
+    private String prestationRankedHorse;
 
     @Column(name = "procentmotstand")
-    private String motstandRankedHorse;   // Changed!: varchar → String
+    private String motstandRankedHorse;
 
     @Column(name = "procentklass")
     private String prispengarRankedHorse;

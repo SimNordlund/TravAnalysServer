@@ -52,7 +52,7 @@ public class CompleteHorseController {
             LocalDate date) {
 
         List<SkrallarHorseDto> horses =
-                completeHorseRepo.findByDateAndMinTips(date, 1);   // tips over one is a "skräll"
+                completeHorseRepo.findByDateAndMinTips(date, 1);
 
         return ResponseEntity.ok(horses);
     }
