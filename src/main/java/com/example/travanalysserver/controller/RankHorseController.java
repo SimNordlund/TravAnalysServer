@@ -33,7 +33,7 @@ public class RankHorseController {
     private final RoiRepo        roiRepo;
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
-
+    //Testing
     private static final Map<String, String> BANKOD_TO_TRACK = Map.ofEntries(
             Map.entry("Ar", "Arvika"),     Map.entry("Ax", "Axevalla"),
             Map.entry("B",  "Bergsåker"),  Map.entry("Bo", "Boden"),
