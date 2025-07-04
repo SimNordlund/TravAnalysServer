@@ -22,5 +22,6 @@ public class EmailController {
     } */
 
 
-    //SKAPA DTO OCKSÅ!!
+    //SKAPA DTO OCKSÅ
+    //använda mejl eller bara dumpa in allt?
 }
