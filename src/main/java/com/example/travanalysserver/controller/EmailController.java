@@ -1,6 +1,8 @@
 package com.example.travanalysserver.controller;
 
+import com.example.travanalysserver.entity.EmailAdress;
 import com.example.travanalysserver.repository.EmailAdressRepo;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,16 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/emailToBeStored")
+@RequestMapping("/contact")
 public class EmailController {
 
      private final EmailAdressRepo emailAdressRepo;
 
- /*   @PostMapping("/storeEmail")
-    public ResponseEntity<String> storeEmail(@RequestBody UserEmail userEmail) {
-        //spara repo
-        //returnera responsentity, se completehorsecontroller
-    } */
+    @PostMapping("/storeInfo")
+    public ResponseEntity<Void> storeEmailOrPhone(@RequestBody @Valid EmailAdress emailAdress) {
+        if (emailAdress.getEmail() == null && emailAdress.getPhone() == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        emailAdressRepo.save(emailAdress);
+        return ResponseEntity.ok().build();
+    }
 
     //TODO
     //SKAPA DTO OCKSÅ

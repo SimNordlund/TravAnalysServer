@@ -3,6 +3,7 @@ package com.example.travanalysserver.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 @Entity
@@ -17,7 +18,10 @@ public class EmailAdress {
     private Long id;
 
     @Email(message = "Ogiltig mejladress")
-    @NotNull(message = "Mejladress får inte vara null")
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
+
+    @Pattern(regexp = "^[0-9+\\- ]{6,20}$")
+    @Column(unique = true)
+    private String phone;
 }
