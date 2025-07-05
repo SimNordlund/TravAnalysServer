@@ -1,5 +1,6 @@
 package com.example.travanalysserver.controller;
 
+import com.example.travanalysserver.repository.EmailAdressRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/emailToBeStored")
 public class EmailController {
 
-    // private final EmailService emailService
-    // private final EmailRepo emailRepo
+     private final EmailAdressRepo emailAdressRepo;
 
  /*   @PostMapping("/storeEmail")
     public ResponseEntity<String> storeEmail(@RequestBody UserEmail userEmail) {
@@ -21,7 +21,7 @@ public class EmailController {
         //returnera responsentity, se completehorsecontroller
     } */
 
-
+    //TODO
     //SKAPA DTO OCKSÅ
-    //använda mejl eller bara dumpa in allt?
+    //SERVICELAGER
 }
