@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface LikesRepo extends JpaRepository<Likes, Long> {
 
-    /** Öka räknaren (ingen RETURNING) */
     @Modifying
     @Transactional         // behövs för update-queryn
     @Query(value = """
@@ -20,7 +19,6 @@ public interface LikesRepo extends JpaRepository<Likes, Long> {
             """, nativeQuery = true)
     void increment();
 
-    /** Hämta aktuellt värde */
     @Query(value = """
             SELECT total
             FROM likes
