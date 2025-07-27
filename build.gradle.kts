@@ -58,6 +58,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 	testImplementation("org.springframework.security:spring-security-test:6.3.0")
+
+	implementation("io.smallrye:jandex:3.3.1")
 }
 
 tasks.withType<Test> {
