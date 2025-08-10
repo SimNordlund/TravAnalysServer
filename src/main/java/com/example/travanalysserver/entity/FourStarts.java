@@ -42,6 +42,8 @@ public class FourStarts {
     @Column(name = "resultat")
     private int resultat;
 
+    //Lägg tbx Prispengar samt hästskri (två nya)
+
     @OneToOne(mappedBy = "fourStarts", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompleteHorse completeHorse;
 }
