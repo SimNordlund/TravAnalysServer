@@ -17,6 +17,6 @@ public interface RankHorseView {
         LocalDateTime getUpdatedAt();
         String getTipsRankedHorse();
         String getStallSkrikRankedHorse();
-        String getPlaceringRankedHorse(); //ändrat efter rH
+        String getPlaceringRankedHorse(); //ändrat efter
         String getFormRankedHorse(); //änrat efter rh allltså RankHorse
 }
