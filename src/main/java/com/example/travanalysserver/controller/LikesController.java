@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("/api/likes")
 public class LikesController {
 
-    private final LikesRepo repo;
+    /* private final LikesRepo repo;
 
     @GetMapping
     public Map<String,Integer> get() {
@@ -23,11 +23,11 @@ public class LikesController {
     }
 
     @PostMapping
-    @Transactional          // samma transaktion för båda anropen
+    @Transactional// samma transaktion för båda anropen
     public Map<String,Integer> like() {
         repo.increment();       // öka
         Integer total = repo.getTotal(); // hämta nya värdet
         return Map.of("total", total);
-    }
+    } */
 }
 
