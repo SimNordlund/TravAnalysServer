@@ -55,6 +55,12 @@ public class RankHorse {
     @Column(name ="procentskrik")
     private String stallSkrikRankedHorse;
 
+    @Column(name = "procentplacering" ) //jag ändrat nyss
+    private String placeringRankedHorse;
+
+    @Column(name = "procentform") //jag ändrat nyss
+    private String formRankedHorse;
+
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 

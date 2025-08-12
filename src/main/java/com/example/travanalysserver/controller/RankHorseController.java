@@ -174,8 +174,9 @@ public class RankHorseController {
             fs.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
             fs.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
             fs.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
-            //fs.setKusk      (rand100()); //Sätter inte kusk just nu istället är random jao
-            fs.setTips(toInt(rankHorseView.getTipsRankedHorse()));
+            fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse())); //ändring för 7
+            fs.setForm      (toInt(rankHorseView.getFormRankedHorse())); // ändring för 7 jao
+            fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
 
             RoiView roi = roiMap.get(rankHorseView.getId());
             if (roi != null) {

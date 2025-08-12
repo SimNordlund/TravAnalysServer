@@ -22,7 +22,9 @@ public class FourStarts {
     private int styrka;
     private int klass;
     private int prispengar;
-    private int kusk; //HÄSTSKRI???
+    private int kusk;
+    private int placering; // vi lägger till
+    private int form; // vi lägg jao till
 
     @Column(name = "tips")
     private int tips;
