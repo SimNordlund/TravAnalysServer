@@ -55,10 +55,10 @@ public class RankHorse {
     @Column(name ="procentskrik")
     private String stallSkrikRankedHorse;
 
-    @Column(name = "procentplacering" ) //jag ändrat nyss
+    @Column(name = "procentplacering" ) //jag ändrat
     private String placeringRankedHorse;
 
-    @Column(name = "procentform") //jag ändrat nyss
+    @Column(name = "procentform") //jag ändrat
     private String formRankedHorse;
 
     @Column(name = "updated_at", nullable = false)
