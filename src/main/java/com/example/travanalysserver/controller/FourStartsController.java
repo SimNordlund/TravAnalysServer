@@ -28,5 +28,4 @@ public class FourStartsController {
         fourStartsRepo.save(fourStarts);
         return new ResponseEntity<>("Data för fyra starter sparad", HttpStatus.CREATED);
     }
-
 }

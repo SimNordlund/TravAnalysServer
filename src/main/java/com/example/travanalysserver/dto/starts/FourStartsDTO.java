@@ -16,6 +16,7 @@ public class FourStartsDTO {
     private int styrka;
     private int klass;
     private int prispengar;
-    private int kusk;
+    private int kusk; // KUSKEN FÅR VARA STALLSKRIK
     private int tips;
+    //private int travskrik? Eller använda kusk? Kommer behöva fler jao!!
 }

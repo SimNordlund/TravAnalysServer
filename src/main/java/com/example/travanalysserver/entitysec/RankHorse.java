@@ -52,6 +52,9 @@ public class RankHorse {
     @Column(name = "procentklass")
     private String prispengarRankedHorse;
 
+    @Column(name ="procentskrik")
+    private String stallSkrikRankedHorse;
+
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 

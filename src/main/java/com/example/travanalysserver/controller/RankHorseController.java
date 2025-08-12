@@ -133,10 +133,10 @@ public class RankHorseController {
 
         int processed = 0;
 
-        for (RankHorseView v: workList) {
-            LocalDate date = toLocalDate(v.getDateRankedHorse());
+        for (RankHorseView rankHorseView: workList) {
+            LocalDate date = toLocalDate(rankHorseView.getDateRankedHorse());
             String trackName = BANKOD_TO_TRACK
-                    .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
+                    .getOrDefault(rankHorseView.getTrackRankedHorse(), rankHorseView.getTrackRankedHorse());
             String tKey = date + "|" + trackName;
 
             Track track = trackMap.computeIfAbsent(tKey, k -> {
@@ -149,34 +149,35 @@ public class RankHorseController {
                 c.setTrack(track); track.getCompetitions().add(c); return c;
             });
 
-            String lKey = tKey + "|" + v.getLapRankedHorse();
+            String lKey = tKey + "|" + rankHorseView.getLapRankedHorse();
             Lap lap = lapMap.computeIfAbsent(lKey, k -> {
-                Lap l = new Lap(); l.setNameOfLap(v.getLapRankedHorse());
+                Lap l = new Lap(); l.setNameOfLap(rankHorseView.getLapRankedHorse());
                 l.setCompetition(comp); comp.getLaps().add(l); return l;
             });
 
-            String hKey = lKey + "|" + v.getNr();
+            String hKey = lKey + "|" + rankHorseView.getNr();
             CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
                 CompleteHorse h = new CompleteHorse();
-                h.setNumberOfCompleteHorse(v.getNr());
+                h.setNumberOfCompleteHorse(rankHorseView.getNr());
                 h.setLap(lap); lap.getHorses().add(h); return h;
             });
 
-            horse.setNameOfCompleteHorse(v.getNameRankedHorse());
+            horse.setNameOfCompleteHorse(rankHorseView.getNameRankedHorse());
 
             FourStarts fs = horse.getFourStarts() != null
                     ? horse.getFourStarts()
                     : new FourStarts();
 
-            fs.setAnalys    (toInt(v.getAnalysRankedHorse()));
-            fs.setFart      (toInt(v.getTidRankedHorse()));
-            fs.setStyrka    (toInt(v.getPrestationRankedHorse()));
-            fs.setKlass     (toInt(v.getMotstandRankedHorse()));
-            fs.setPrispengar(toInt(v.getPrispengarRankedHorse()));
-            fs.setKusk      (rand100());
-            fs.setTips(toInt(v.getTipsRankedHorse()));
+            fs.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
+            fs.setFart      (toInt(rankHorseView.getTidRankedHorse()));
+            fs.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
+            fs.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
+            fs.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
+            fs.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
+            //fs.setKusk      (rand100()); //Sätter inte kusk just nu istället är random jao
+            fs.setTips(toInt(rankHorseView.getTipsRankedHorse()));
 
-            RoiView roi = roiMap.get(v.getId());
+            RoiView roi = roiMap.get(rankHorseView.getId());
             if (roi != null) {
                 fs.setRoiTotalt (roi.getRoiTotalt());
                 fs.setRoiVinnare(roi.getRoiVinnare());

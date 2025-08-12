@@ -34,7 +34,7 @@ public class FourStartsServiceImpl implements FourStartsService {
                 .styrka(fourStarts.getStyrka())
                 .klass(fourStarts.getKlass())
                 .prispengar(fourStarts.getPrispengar())
-                .kusk(fourStarts.getKusk())
+                .kusk(fourStarts.getKusk()) //HÄSTSKRI?
                 .tips(fourStarts.getTips())
                 .build();
     }
