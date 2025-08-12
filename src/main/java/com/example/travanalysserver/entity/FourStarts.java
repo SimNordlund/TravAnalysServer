@@ -24,7 +24,7 @@ public class FourStarts {
     private int prispengar;
     private int kusk;
     private int placering; // vi lägger till
-    private int form; // vi lägg jao till
+    private int form; // vi lägg jao till KCK KEK
 
     @Column(name = "tips")
     private int tips;
