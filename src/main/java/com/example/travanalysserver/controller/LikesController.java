@@ -1,12 +1,10 @@
 package com.example.travanalysserver.controller;
 
+import com.example.travanalysserver.entity.Likes;
 import com.example.travanalysserver.repository.LikesRepo;
-import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -15,19 +13,27 @@ import java.util.Map;
 @RequestMapping("/api/likes")
 public class LikesController {
 
-    /* private final LikesRepo repo;
+    private final LikesRepo repo;
+
+    /** Hämta raden med id=1 eller skapa den (total=0) om den saknas */
+    private Likes getOrCreate() {
+        return repo.findById(1L)
+                .orElseGet(() -> repo.save(new Likes(1L, 0)));
+    }
 
     @GetMapping
-    public Map<String,Integer> get() {
-        return Map.of("total", repo.findById(1L).orElseThrow().getTotal());
+    @Transactional
+    public Map<String, Integer> get() {
+        Likes row = getOrCreate();
+        return Map.of("total", row.getTotal());
     }
 
     @PostMapping
-    @Transactional// samma transaktion för båda anropen
-    public Map<String,Integer> like() {
-        repo.increment();       // öka
-        Integer total = repo.getTotal(); // hämta nya värdet
-        return Map.of("total", total);
-    } */
+    @Transactional
+    public Map<String, Integer> like() {
+        Likes row = getOrCreate();
+        Integer current = row.getTotal() == null ? 0 : row.getTotal();
+        row.setTotal(current + 1);   // JPA sparar vid commit (dirty checking)
+        return Map.of("total", row.getTotal());
+    }
 }
-
