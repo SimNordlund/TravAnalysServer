@@ -4,6 +4,7 @@ import com.example.travanalysserver.entity.EmailAdress;
 import com.example.travanalysserver.repository.EmailAdressRepo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +23,20 @@ public class EmailController {
         if (emailAdress.getEmail() == null && emailAdress.getPhone() == null) {
             return ResponseEntity.badRequest().build();
         }
-        emailAdressRepo.save(emailAdress);
-        return ResponseEntity.ok().build();
+
+        // Idempotent beteende: svara OK om e-post eller telefon redan finns
+        if ((emailAdress.getEmail() != null && emailAdressRepo.existsByEmail(emailAdress.getEmail()))
+                || (emailAdress.getPhone() != null && emailAdressRepo.existsByPhone(emailAdress.getPhone()))) {
+            return ResponseEntity.ok().build();
+        }
+
+        try {
+            emailAdressRepo.save(emailAdress);
+            return ResponseEntity.ok().build();
+        } catch (DataIntegrityViolationException ex) {
+            // Skydda mot race condition: behandla som lyckat
+            return ResponseEntity.ok().build();
+        }
     }
 
     //TODO
