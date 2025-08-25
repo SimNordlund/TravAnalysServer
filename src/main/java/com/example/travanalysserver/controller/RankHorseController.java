@@ -223,8 +223,8 @@ public class RankHorseController {
         return ThreadLocalRandom.current().nextInt(1,101);
     }
 
-    private static String normalizeCompetition(String s) {                 //Changed!
-        if (s == null) return "Vinnare";                                   //Changed!
+    private static String normalizeCompetition(String s) {
+        if (s == null) return "Vinnare";
         String v = s.trim();                                                //Changed!
         return v.isEmpty() ? "Vinnare" : v;                                 //Changed!
     }                                                                       //Changed!
