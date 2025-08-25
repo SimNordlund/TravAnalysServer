@@ -98,7 +98,6 @@ public class RankHorseController {
                             .toList());
         }
 
-
         Set<LocalDate> dates = workList.stream()
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
@@ -118,14 +117,15 @@ public class RankHorseController {
             String tKey = t.getDate() + "|" + t.getNameOfTrack();
             trackMap.put(tKey, t);
             for (Competition c: t.getCompetitions()) {
-                if (!"Vinnare".equals(c.getNameOfCompetition())) continue;
-                compMap.put(tKey, c);
+                String compName = normalizeCompetition(c.getNameOfCompetition());               //Changed!
+                String compKey  = tKey + "|" + compName;                                       //Changed!
+                compMap.put(compKey, c);                                                       //Changed!
                 for (Lap l: c.getLaps()) {
-                    String lKey = tKey + "|" + l.getNameOfLap();
-                    lapMap.put(lKey, l);
+                    String lKey = compKey + "|" + l.getNameOfLap();                            //Changed!
+                    lapMap.put(lKey, l);                                                       //Changed!
                     for (CompleteHorse h: l.getHorses()) {
-                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();
-                        horseMap.put(hKey, h);
+                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();               //Changed!
+                        horseMap.put(hKey, h);                                                 //Changed!
                     }
                 }
             }
@@ -144,18 +144,23 @@ public class RankHorseController {
                 return tr;
             });
 
-            Competition comp = compMap.computeIfAbsent(tKey, k -> {
-                Competition c = new Competition(); c.setNameOfCompetition("Vinnare");
+            String compName = normalizeCompetition(                                           //Changed!
+                    rankHorseView.getCompetitionRankedHorse());                               //Changed!
+            String compKey = tKey + "|" + compName;                                           //Changed!
+
+            Competition comp = compMap.computeIfAbsent(compKey, k -> {                        //Changed!
+                Competition c = new Competition();
+                c.setNameOfCompetition(compName);                                             //Changed!
                 c.setTrack(track); track.getCompetitions().add(c); return c;
             });
 
-            String lKey = tKey + "|" + rankHorseView.getLapRankedHorse();
+            String lKey = compKey + "|" + rankHorseView.getLapRankedHorse();                  //Changed!
             Lap lap = lapMap.computeIfAbsent(lKey, k -> {
                 Lap l = new Lap(); l.setNameOfLap(rankHorseView.getLapRankedHorse());
                 l.setCompetition(comp); comp.getLaps().add(l); return l;
             });
 
-            String hKey = lKey + "|" + rankHorseView.getNr();
+            String hKey = lKey + "|" + rankHorseView.getNr();                                 //Changed!
             CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
                 CompleteHorse h = new CompleteHorse();
                 h.setNumberOfCompleteHorse(rankHorseView.getNr());
@@ -203,7 +208,6 @@ public class RankHorseController {
         );
     }
 
-
     private static LocalDate toLocalDate(Integer yyyymmdd) {
         if (yyyymmdd == null) return LocalDate.MIN;
         return LocalDate.parse(String.format("%08d", yyyymmdd), BASIC);
@@ -218,4 +222,10 @@ public class RankHorseController {
     private static int rand100() {
         return ThreadLocalRandom.current().nextInt(1,101);
     }
+
+    private static String normalizeCompetition(String s) {                 //Changed!
+        if (s == null) return "Vinnare";                                   //Changed!
+        String v = s.trim();                                                //Changed!
+        return v.isEmpty() ? "Vinnare" : v;                                 //Changed!
+    }                                                                       //Changed!
 }
