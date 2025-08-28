@@ -52,7 +52,7 @@ public class PrimaryDataSourceConfig {
                 .packages("com.example.travanalysserver.entity")
                 .persistenceUnit("primary")
                 .properties(Map.of(
-                        "jakarta.persistence.schema-generation.database.action", "drop-and-create", //drop-and-create vs update
+                        "jakarta.persistence.schema-generation.database.action", "update", //drop-and-create vs update
                         "hibernate.dialect", env.getProperty("spring.jpa.database-platform")
                 ))
                 .build();
