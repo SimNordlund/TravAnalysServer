@@ -4,11 +4,13 @@ import com.example.travanalysserver.dto.travanalys.SendEverythingDTO;
 import com.example.travanalysserver.entity.*;
 import com.example.travanalysserver.repository.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -21,6 +23,7 @@ public class TravAnalysController {
     private final LapRepo lapRepo;
     private final CompleteHorseRepo completeHorseRepo;
     private final FourStartsRepo fourStartsRepo;
+    private final SyncMetaRepo syncMetaRepo;
 
     @PostMapping("/sendEverything")
     @Transactional
@@ -150,7 +153,25 @@ public class TravAnalysController {
             return new ResponseEntity<>("Track not found", HttpStatus.NOT_FOUND);
         }
 
+        syncMetaRepo.truncateAll();
         trackRepo.delete(trackOptional.get());
+
+        return new ResponseEntity<>("Track and all connected entities deleted successfully", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteTrackByNameAndDate")
+    @Transactional
+    public ResponseEntity<String> deleteTrackByNameAndDate(
+            @RequestParam String nameOfTrack,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
+    ) {
+        Optional<Track> trackOpt = trackRepo.findByNameOfTrackAndDate(nameOfTrack, date);
+        if (trackOpt.isEmpty()) {
+            return new ResponseEntity<>("Track not found", HttpStatus.NOT_FOUND);
+        }
+
+        syncMetaRepo.truncateAll();
+        trackRepo.delete(trackOpt.get());
 
         return new ResponseEntity<>("Track and all connected entities deleted successfully", HttpStatus.OK);
     }

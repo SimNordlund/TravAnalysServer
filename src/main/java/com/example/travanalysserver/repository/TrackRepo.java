@@ -21,4 +21,6 @@ public interface TrackRepo extends JpaRepository <Track, Long> {
             Collection<LocalDate> dates,
             Collection<String>    names
     );
+
+    Optional<Track> findByNameOfTrackAndDate(String nameOfTrack, LocalDate date);
 }
