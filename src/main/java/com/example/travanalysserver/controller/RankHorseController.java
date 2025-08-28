@@ -182,6 +182,11 @@ public class RankHorseController {
             fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse())); //ändring för 7
             fs.setForm      (toInt(rankHorseView.getFormRankedHorse())); // ändring för 7 jao
             fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
+            fs.setA1        (toInt(rankHorseView.getA1RankedHorse()));
+            fs.setA2        (toInt(rankHorseView.getA2RankedHorse()));
+            fs.setA3        (toInt(rankHorseView.getA3RankedHorse()));
+            fs.setA4        (toInt(rankHorseView.getA4RankedHorse()));
+            fs.setA5        (toInt(rankHorseView.getA5RankedHorse()));
 
             RoiView roi = roiMap.get(rankHorseView.getId());
             if (roi != null) {

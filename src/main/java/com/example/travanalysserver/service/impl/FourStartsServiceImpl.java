@@ -38,6 +38,11 @@ public class FourStartsServiceImpl implements FourStartsService {
                 .placering(fourStarts.getPlacering())
                 .form(fourStarts.getForm())
                 .tips(fourStarts.getTips())
+                .a1(fourStarts.getA1())
+                .a2(fourStarts.getA2())
+                .a3(fourStarts.getA3())
+                .a4(fourStarts.getA4())
+                .a5(fourStarts.getA5())
                 .build();
     }
 
