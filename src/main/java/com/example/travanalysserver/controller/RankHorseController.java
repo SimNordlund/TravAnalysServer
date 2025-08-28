@@ -117,15 +117,15 @@ public class RankHorseController {
             String tKey = t.getDate() + "|" + t.getNameOfTrack();
             trackMap.put(tKey, t);
             for (Competition c: t.getCompetitions()) {
-                String compName = normalizeCompetition(c.getNameOfCompetition());               //Changed!
-                String compKey  = tKey + "|" + compName;                                       //Changed!
-                compMap.put(compKey, c);                                                       //Changed!
+                String compName = normalizeCompetition(c.getNameOfCompetition());
+                String compKey  = tKey + "|" + compName;
+                compMap.put(compKey, c);
                 for (Lap l: c.getLaps()) {
-                    String lKey = compKey + "|" + l.getNameOfLap();                            //Changed!
-                    lapMap.put(lKey, l);                                                       //Changed!
+                    String lKey = compKey + "|" + l.getNameOfLap();
+                    lapMap.put(lKey, l);
                     for (CompleteHorse h: l.getHorses()) {
-                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();               //Changed!
-                        horseMap.put(hKey, h);                                                 //Changed!
+                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();
+                        horseMap.put(hKey, h);
                     }
                 }
             }
@@ -144,23 +144,23 @@ public class RankHorseController {
                 return tr;
             });
 
-            String compName = normalizeCompetition(                                           //Changed!
-                    rankHorseView.getCompetitionRankedHorse());                               //Changed!
-            String compKey = tKey + "|" + compName;                                           //Changed!
+            String compName = normalizeCompetition(
+                    rankHorseView.getCompetitionRankedHorse());
+            String compKey = tKey + "|" + compName;
 
-            Competition comp = compMap.computeIfAbsent(compKey, k -> {                        //Changed!
+            Competition comp = compMap.computeIfAbsent(compKey, k -> {
                 Competition c = new Competition();
-                c.setNameOfCompetition(compName);                                             //Changed!
+                c.setNameOfCompetition(compName);
                 c.setTrack(track); track.getCompetitions().add(c); return c;
             });
 
-            String lKey = compKey + "|" + rankHorseView.getLapRankedHorse();                  //Changed!
+            String lKey = compKey + "|" + rankHorseView.getLapRankedHorse();
             Lap lap = lapMap.computeIfAbsent(lKey, k -> {
                 Lap l = new Lap(); l.setNameOfLap(rankHorseView.getLapRankedHorse());
                 l.setCompetition(comp); comp.getLaps().add(l); return l;
             });
 
-            String hKey = lKey + "|" + rankHorseView.getNr();                                 //Changed!
+            String hKey = lKey + "|" + rankHorseView.getNr();
             CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
                 CompleteHorse h = new CompleteHorse();
                 h.setNumberOfCompleteHorse(rankHorseView.getNr());
@@ -225,7 +225,7 @@ public class RankHorseController {
 
     private static String normalizeCompetition(String s) {
         if (s == null) return "Vinnare";
-        String v = s.trim();                                                //Changed!
-        return v.isEmpty() ? "Vinnare" : v;                                 //Changed!
-    }                                                                       //Changed!
+        String v = s.trim();
+        return v.isEmpty() ? "Vinnare" : v;
+    }
 }

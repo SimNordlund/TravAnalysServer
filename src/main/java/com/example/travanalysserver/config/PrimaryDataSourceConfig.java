@@ -56,7 +56,7 @@ public class PrimaryDataSourceConfig {
                         "hibernate.dialect", env.getProperty("spring.jpa.database-platform")
                 ))
                 .build();
-    }
+}
 
     @Bean(name = "primaryTransactionManager")
     @Primary
