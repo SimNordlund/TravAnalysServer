@@ -85,4 +85,7 @@ public class RankHorse {
     @Column(name = "a5")
     private String a5RankedHorse;
 
+    @Column(name = "a6")
+    private String a6RankedHorse;
+
 }

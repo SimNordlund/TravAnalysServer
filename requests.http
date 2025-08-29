@@ -1438,19 +1438,20 @@ Content-Type: application/json
 ###
 
 ###SKICKA IN DATA IFRÅN RANK
-###GET https://travanalyserver-latest.onrender.com/ranked/print
+### GET https://travanalyserver-latest.onrender.com/ranked/print
 GET http://localhost:8080//ranked/print
 Accept: text/plain
 ###
 
 ### TA BORT LOPP VIA TRACK ID
-###DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/10
-DELETE http://localhost:8080/travanalys/deleteTrackById/3
+###DELETE http://localhost:8080/travanalys/deleteTrackById/3
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
 Content-Type: application/json
 
 ###
-### https://travanalyserver-latest.onrender.com/travanalys/deleteTrackByNameAndDate?nameOfTrack=Tingsryd&date=2025-05-01
-DELETE http://localhost:8080/travanalys/deleteTrackByNameAndDate?nameOfTrack=Tingsryd&date=2025-05-01
+### TAR BOR VIA ID OCH DATUM JAO
+###DELETE http://localhost:8080/travanalys/deleteTrackByNameAndDate?nameOfTrack=Tingsryd&date=2025-05-01
+DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackByNameAndDate?nameOfTrack=Tingsryd&date=2025-05-01
 Content-Type: application/json
 
 ###

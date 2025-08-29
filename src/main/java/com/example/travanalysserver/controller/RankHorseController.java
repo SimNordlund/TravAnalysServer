@@ -179,14 +179,15 @@ public class RankHorseController {
             fs.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
             fs.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
             fs.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
-            fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse())); //ändring för 7
-            fs.setForm      (toInt(rankHorseView.getFormRankedHorse())); // ändring för 7 jao
+            fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
+            fs.setForm      (toInt(rankHorseView.getFormRankedHorse()));
             fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
             fs.setA1        (toInt(rankHorseView.getA1RankedHorse()));
             fs.setA2        (toInt(rankHorseView.getA2RankedHorse()));
             fs.setA3        (toInt(rankHorseView.getA3RankedHorse()));
             fs.setA4        (toInt(rankHorseView.getA4RankedHorse()));
             fs.setA5        (toInt(rankHorseView.getA5RankedHorse()));
+            fs.setA6        (toInt(rankHorseView.getA6RankedHorse()));
 
             RoiView roi = roiMap.get(rankHorseView.getId());
             if (roi != null) {

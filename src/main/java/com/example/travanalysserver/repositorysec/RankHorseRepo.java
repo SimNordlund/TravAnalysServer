@@ -10,6 +10,5 @@ import java.util.List;
 
 public interface RankHorseRepo extends JpaRepository<RankHorse, Long> {
     List<RankHorseView> findAllProjectedBy();
-
     List<RankHorseView> findAllByUpdatedAtAfter(LocalDateTime cutoff);
 }

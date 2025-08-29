@@ -43,6 +43,7 @@ public class FourStartsServiceImpl implements FourStartsService {
                 .a3(fourStarts.getA3())
                 .a4(fourStarts.getA4())
                 .a5(fourStarts.getA5())
+                .a6(fourStarts.getA6())
                 .build();
     }
 

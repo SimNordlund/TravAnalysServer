@@ -31,6 +31,7 @@ public class FourStarts {
     private int a3;
     private int a4;
     private int a5;
+    private int a6;
 
     @Column(name = "tips")
     private int tips;

@@ -26,4 +26,5 @@ public interface RankHorseView {
         String getA3RankedHorse();
         String getA4RankedHorse();
         String getA5RankedHorse();
+        String getA6RankedHorse();
 }
