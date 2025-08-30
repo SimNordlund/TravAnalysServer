@@ -70,6 +70,9 @@ public class RankHorse {
     @Column(name = "spelform")
     private String competitionRankedHorse;
 
+    @Column(name ="starter")
+    private String starterRankedHorse;
+
     @Column(name = "a1")
     private String a1RankedHorse;
 

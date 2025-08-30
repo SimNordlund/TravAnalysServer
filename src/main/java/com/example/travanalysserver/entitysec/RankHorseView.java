@@ -20,6 +20,7 @@ public interface RankHorseView {
         String getPlaceringRankedHorse();
         String getFormRankedHorse();
         String getCompetitionRankedHorse();
+        String getStarterRankedHorse();
 
         String getA1RankedHorse();
         String getA2RankedHorse();

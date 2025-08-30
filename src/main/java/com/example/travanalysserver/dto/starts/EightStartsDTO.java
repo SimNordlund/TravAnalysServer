@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FourStartsDTO {
+public class EightStartsDTO {
     private Long id;
     private int analys;
     private int fart;
@@ -28,4 +28,5 @@ public class FourStartsDTO {
     private int a4;
     private int a5;
     private int a6;
+
 }
