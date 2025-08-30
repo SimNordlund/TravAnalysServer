@@ -25,6 +25,7 @@ public class FourStarts {
     private int kusk;
     private int placering;
     private int form;
+    private int starter;
 
     private int a1;
     private int a2;
