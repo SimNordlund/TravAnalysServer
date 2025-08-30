@@ -169,6 +169,11 @@ public class RankHorseController {
 
             horse.setNameOfCompleteHorse(rankHorseView.getNameRankedHorse());
 
+            //TODO
+            //IF SATS HÄR FÖR ATT SE HUR MÅNGA STARTER? SEN KÖRA 4STARTS eller 8STARTS
+            //BEHÖVS ENS ALLT JAG SKAPAT XD?
+            // IF rank.repo starter == 4 -> 4 start om 8 -> 8 starts osv
+
             FourStarts fs = horse.getFourStarts() != null
                     ? horse.getFourStarts()
                     : new FourStarts();
@@ -182,6 +187,7 @@ public class RankHorseController {
             fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
             fs.setForm      (toInt(rankHorseView.getFormRankedHorse()));
             fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
+            fs.setStarter   (toInt(rankHorseView.getStarterRankedHorse()));
             fs.setA1        (toInt(rankHorseView.getA1RankedHorse()));
             fs.setA2        (toInt(rankHorseView.getA2RankedHorse()));
             fs.setA3        (toInt(rankHorseView.getA3RankedHorse()));
@@ -223,10 +229,6 @@ public class RankHorseController {
         if (s == null) return 0;
         String t = s.trim().replace("%", "").replace(",", ".");
         try { return (int) Math.round(Double.parseDouble(t)); } catch (Exception e) { return 0; }
-    }
-
-    private static int rand100() {
-        return ThreadLocalRandom.current().nextInt(1,101);
     }
 
     private static String normalizeCompetition(String s) {
