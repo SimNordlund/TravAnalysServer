@@ -20,7 +20,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -169,44 +168,71 @@ public class RankHorseController {
 
             horse.setNameOfCompleteHorse(rankHorseView.getNameRankedHorse());
 
-            //TODO
-            //IF SATS HÄR FÖR ATT SE HUR MÅNGA STARTER? SEN KÖRA 4STARTS eller 8STARTS
-            //BEHÖVS ENS ALLT JAG SKAPAT XD?
-            // IF rank.repo starter == 4 -> 4 start om 8 -> 8 starts osv
+            //TODO LOgging ist för syst print
 
-            FourStarts fs = horse.getFourStarts() != null
-                    ? horse.getFourStarts()
-                    : new FourStarts();
+            int starts = toInt(rankHorseView.getStarterRankedHorse());
 
-            fs.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
-            fs.setFart      (toInt(rankHorseView.getTidRankedHorse()));
-            fs.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
-            fs.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
-            fs.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
-            fs.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
-            fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
-            fs.setForm      (toInt(rankHorseView.getFormRankedHorse()));
-            fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
-            fs.setStarter   (toInt(rankHorseView.getStarterRankedHorse()));
-            fs.setA1        (toInt(rankHorseView.getA1RankedHorse()));
-            fs.setA2        (toInt(rankHorseView.getA2RankedHorse()));
-            fs.setA3        (toInt(rankHorseView.getA3RankedHorse()));
-            fs.setA4        (toInt(rankHorseView.getA4RankedHorse()));
-            fs.setA5        (toInt(rankHorseView.getA5RankedHorse()));
-            fs.setA6        (toInt(rankHorseView.getA6RankedHorse()));
+            if (starts == 9) {
+                FourStarts fs = horse.getFourStarts();
+                if (fs == null) {
+                    fs = new FourStarts();
+                    fs.setCompleteHorse(horse);
+                    horse.setFourStarts(fs);
+                }
 
-            RoiView roi = roiMap.get(rankHorseView.getId());
-            if (roi != null) {
-                fs.setRoiTotalt (roi.getRoiTotalt());
-                fs.setRoiVinnare(roi.getRoiVinnare());
-                fs.setRoiPlats  (roi.getRoiPlats());
-                fs.setRoiTrio   (roi.getRoiTrio());
-                fs.setResultat(roi.getResultat());
+                fs.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
+                fs.setFart      (toInt(rankHorseView.getTidRankedHorse()));
+                fs.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
+                fs.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
+                fs.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
+                fs.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
+                fs.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
+                fs.setForm      (toInt(rankHorseView.getFormRankedHorse()));
+                fs.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
+                fs.setStarter   (starts);
+                fs.setA1        (toInt(rankHorseView.getA1RankedHorse()));
+                fs.setA2        (toInt(rankHorseView.getA2RankedHorse()));
+                fs.setA3        (toInt(rankHorseView.getA3RankedHorse()));
+                fs.setA4        (toInt(rankHorseView.getA4RankedHorse()));
+                fs.setA5        (toInt(rankHorseView.getA5RankedHorse()));
+                fs.setA6        (toInt(rankHorseView.getA6RankedHorse()));
+
+                RoiView roi = roiMap.get(rankHorseView.getId());
+                if (roi != null) {
+                    fs.setRoiTotalt (roi.getRoiTotalt());
+                    fs.setRoiVinnare(roi.getRoiVinnare());
+                    fs.setRoiPlats  (roi.getRoiPlats());
+                    fs.setRoiTrio   (roi.getRoiTrio());
+                    fs.setResultat  (roi.getResultat());
+                }
+
+            } else if (starts == 8) {
+                EightStarts es = horse.getEightStarts();
+                if (es == null) {
+                    es = new EightStarts();
+                    es.setCompleteHorse(horse);
+                    horse.setEightStarts(es);
+                }
+
+                es.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
+                es.setFart      (toInt(rankHorseView.getTidRankedHorse()));
+                es.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
+                es.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
+                es.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
+                es.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
+                es.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
+                es.setForm      (toInt(rankHorseView.getFormRankedHorse()));
+                es.setStarter   (starts);
+                es.setA1        (toInt(rankHorseView.getA1RankedHorse()));
+                es.setA2        (toInt(rankHorseView.getA2RankedHorse()));
+                es.setA3        (toInt(rankHorseView.getA3RankedHorse()));
+                es.setA4        (toInt(rankHorseView.getA4RankedHorse()));
+                es.setA5        (toInt(rankHorseView.getA5RankedHorse()));
+                es.setA6        (toInt(rankHorseView.getA6RankedHorse()));
+
             }
-
-            if (horse.getFourStarts() == null) {
-                horse.setFourStarts(fs);
-                fs.setCompleteHorse(horse);
+            else {
+                System.out.println("Något stämmer inte just nu");
             }
             processed++;
         }
