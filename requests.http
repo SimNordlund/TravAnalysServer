@@ -1438,7 +1438,7 @@ Content-Type: application/json
 ###
 
 ###
-GET http://localhost:8080/eightStarts/findData?completeHorseId=44
+GET http://localhost:8080/twelveStarts/findData?completeHorseId=8
 Content-Type: text/plain
 ###
 

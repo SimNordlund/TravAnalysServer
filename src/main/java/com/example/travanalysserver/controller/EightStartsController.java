@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class EightStartsController {
 
     private final EightStartsService eightStartsService;
-    private final EightStartsRepo eightStartsRepo;
 
     @GetMapping("/findData")
     public EightStartsDTO getEightStartsData (@RequestParam Long completeHorseId){

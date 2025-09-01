@@ -230,9 +230,29 @@ public class RankHorseController {
                 es.setA5        (toInt(rankHorseView.getA5RankedHorse()));
                 es.setA6        (toInt(rankHorseView.getA6RankedHorse()));
 
-            }
-            else {
-                System.out.println("Något stämmer inte just nu");
+            } if (starts == 4) {
+                TwelveStarts ts = horse.getTwelveStarts();
+                if (ts == null) {
+                    ts = new TwelveStarts();
+                    ts.setCompleteHorse(horse);
+                    horse.setTwelveStarts(ts);
+                }
+
+                ts.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
+                ts.setFart      (toInt(rankHorseView.getTidRankedHorse()));
+                ts.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
+                ts.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
+                ts.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
+                ts.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
+                ts.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
+                ts.setForm      (toInt(rankHorseView.getFormRankedHorse()));
+                ts.setStarter   (starts);
+                ts.setA1        (toInt(rankHorseView.getA1RankedHorse()));
+                ts.setA2        (toInt(rankHorseView.getA2RankedHorse()));
+                ts.setA3        (toInt(rankHorseView.getA3RankedHorse()));
+                ts.setA4        (toInt(rankHorseView.getA4RankedHorse()));
+                ts.setA5        (toInt(rankHorseView.getA5RankedHorse()));
+                ts.setA6        (toInt(rankHorseView.getA6RankedHorse()));
             }
             processed++;
         }
