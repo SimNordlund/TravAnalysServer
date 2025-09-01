@@ -206,7 +206,7 @@ public class RankHorseController {
                     fs.setResultat  (roi.getResultat());
                 }
 
-            } else if (starts == 8) {
+            }  if (starts == 2) {
                 EightStarts es = horse.getEightStarts();
                 if (es == null) {
                     es = new EightStarts();

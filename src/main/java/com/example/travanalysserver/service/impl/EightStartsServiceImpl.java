@@ -4,22 +4,24 @@ import com.example.travanalysserver.dto.starts.EightStartsDTO;
 import com.example.travanalysserver.entity.EightStarts;
 import com.example.travanalysserver.repository.EightStartsRepo;
 import com.example.travanalysserver.service.interfaces.EightStartsService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class EightStartsServiceImpl implements EightStartsService {
 
-    private EightStartsRepo eightStartsRepo;
+    private final EightStartsRepo eightStartsRepo;
 
     @Override
-    public EightStartsDTO findEightStartsSingleData (Long completeHorseId){
-        EightStartsDTO eightStartsData = eightStartsToEightStartsDTO(eightStartsRepo.findByCompleteHorse_Id(completeHorseId));
-        return eightStartsData;
+    public EightStartsDTO findEightStartsSingleData(Long completeHorseId) {
+        return eightStartsRepo.findByCompleteHorse_Id(completeHorseId)
+                .map(this::eightStartsToEightStartsDTO)
+                .orElseGet(this::emptyDto);
     }
 
-    public EightStartsDTO eightStartsToEightStartsDTO (EightStarts eightStarts){
+    private EightStartsDTO eightStartsToEightStartsDTO(EightStarts eightStarts){
+        if (eightStarts == null) return emptyDto();
         return EightStartsDTO.builder()
                 .id(eightStarts.getId())
                 .analys(eightStarts.getAnalys())
@@ -30,7 +32,8 @@ public class EightStartsServiceImpl implements EightStartsService {
                 .kusk(eightStarts.getKusk())
                 .placering(eightStarts.getPlacering())
                 .form(eightStarts.getForm())
-                //.tips(eightStarts.getTips())
+                .starter(eightStarts.getStarter())
+                // .tips(eightStarts.getTips()) // saknas i entiteten
                 .a1(eightStarts.getA1())
                 .a2(eightStarts.getA2())
                 .a3(eightStarts.getA3())
@@ -40,4 +43,12 @@ public class EightStartsServiceImpl implements EightStartsService {
                 .build();
     }
 
+    private EightStartsDTO emptyDto() {
+        return EightStartsDTO.builder()
+                .analys(0).fart(0).styrka(0).klass(0)
+                .prispengar(0).kusk(0).placering(0).form(0)
+                .starter(0)
+                .a1(0).a2(0).a3(0).a4(0).a5(0).a6(0)
+                .build();
+    }
 }

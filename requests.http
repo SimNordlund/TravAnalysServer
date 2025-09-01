@@ -1437,9 +1437,13 @@ GET https://travanalyserver-latest.onrender.com/completeHorse/getSkrallar?date=2
 Content-Type: application/json
 ###
 
+###
+GET http://localhost:8080/eightStarts/findData?completeHorseId=44
+Content-Type: text/plain
+###
+
 ###SKICKA IN DATA IFRÅN RANK
-###GET http://localhost:8080//ranked/print
-GET https://travanalyserver-latest.onrender.com/ranked/print
+GET http://localhost:8080//ranked/print
 Accept: text/plain
 ###
 
@@ -1458,6 +1462,11 @@ Content-Type: application/json
 GET http://localhost:8080/track/all
 Content-Type: application/json
 ###
+
+GET http://localhost:8080/track/all
+Content-Type: application/json
+###
+
 ### PUT http://localhost:8080/travanalys/sendEverything/1
 ###PUT https://travanalyserver-latest.onrender.com/travanalys/sendEverything/1
 ###POST https://travanalyserver-latest.onrender.com/travanalys/sendEverything
