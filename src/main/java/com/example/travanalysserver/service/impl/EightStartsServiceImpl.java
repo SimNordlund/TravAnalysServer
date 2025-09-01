@@ -33,7 +33,7 @@ public class EightStartsServiceImpl implements EightStartsService {
                 .placering(eightStarts.getPlacering())
                 .form(eightStarts.getForm())
                 .starter(eightStarts.getStarter())
-                // .tips(eightStarts.getTips()) // saknas i entiteten
+                // .tips(eightStarts.getTips())
                 .a1(eightStarts.getA1())
                 .a2(eightStarts.getA2())
                 .a3(eightStarts.getA3())
