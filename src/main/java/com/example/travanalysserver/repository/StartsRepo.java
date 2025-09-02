@@ -1,4 +1,3 @@
-//Changed!
 package com.example.travanalysserver.repository;
 
 import com.example.travanalysserver.entity.Starts;
