@@ -172,7 +172,7 @@ public class RankHorseController {
 
             int starts = toInt(rankHorseView.getStarterRankedHorse());
 
-            if (starts == 9) {
+            if (starts == 4) {
                 FourStarts fs = horse.getFourStarts();
                 if (fs == null) {
                     fs = new FourStarts();
@@ -206,7 +206,7 @@ public class RankHorseController {
                     fs.setResultat  (roi.getResultat());
                 }
 
-            }  if (starts == 2) {
+            }  if (starts == 8) {
                 EightStarts es = horse.getEightStarts();
                 if (es == null) {
                     es = new EightStarts();
@@ -230,7 +230,7 @@ public class RankHorseController {
                 es.setA5        (toInt(rankHorseView.getA5RankedHorse()));
                 es.setA6        (toInt(rankHorseView.getA6RankedHorse()));
 
-            } if (starts == 4) {
+            } if (starts == 12) {
                 TwelveStarts ts = horse.getTwelveStarts();
                 if (ts == null) {
                     ts = new TwelveStarts();
