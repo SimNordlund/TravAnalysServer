@@ -20,6 +20,9 @@ public class CompleteHorse {
     @JoinColumn(name = "lap_id")
     private Lap lap;
 
+    @OneToMany(mappedBy = "completeHorse", cascade = CascadeType.ALL, orphanRemoval = true)
+    private java.util.List<Starts> starts = new java.util.ArrayList<>();
+
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "four_starts_id")
     private FourStarts fourStarts;

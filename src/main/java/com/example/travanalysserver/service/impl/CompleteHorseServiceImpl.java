@@ -45,7 +45,7 @@ public class CompleteHorseServiceImpl implements CompleteHorseService {
         List <CompleteHorse> tempList = completeHorseRepo.findAllByLap_Id(competitionId);
         List <CompleteHorseDTOAnalys> horse = tempList.stream()
                 .map(e -> completeHorseToCompleteHorseDTOAnalys(e)).toList();
-        return horse; //For forskning
+        return horse;
     }
 
     public CompleteHorseDTOAnalys completeHorseToCompleteHorseDTOAnalys (CompleteHorse completeHorse) {

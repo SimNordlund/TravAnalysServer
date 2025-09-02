@@ -6,20 +6,26 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Data @NoArgsConstructor @AllArgsConstructor
 public class SkrallarHorseDto {
-    private Long horseId;
-    private int numberOfHorse;
+    private Long trackId;
+    private String nameOfTrack;
+
+    private Long competitionId;
+    private String nameOfCompetition;
+
+    private Long lapId;
+    private String lap;
+
+    private Long completeHorseId;
+    private Integer numberOfHorse;
     private String nameOfHorse;
-    private int analys;
+
+    private Integer tips;
+    private Integer analys;
+    private Integer resultat;
+
     private BigDecimal roiTotalt;
     private BigDecimal roiVinnare;
     private BigDecimal roiPlats;
-    private BigDecimal roiTrio;
-    private int resultat;
-    private int tips;
-    private String lap;
-    private String nameOfTrack;
 }

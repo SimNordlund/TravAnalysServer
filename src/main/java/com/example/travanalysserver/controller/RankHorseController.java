@@ -8,6 +8,8 @@ import com.example.travanalysserver.repository.SyncMetaRepo;
 import com.example.travanalysserver.repository.TrackRepo;
 import com.example.travanalysserver.repositorysec.RankHorseRepo;
 import com.example.travanalysserver.repositorysec.RoiRepo;
+import com.example.travanalysserver.entity.Starts;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -107,9 +109,9 @@ public class RankHorseController {
                 .collect(Collectors.toSet());
 
         List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, names);
-        Map<String,Track>        trackMap = new HashMap<>();
-        Map<String,Competition>  compMap  = new HashMap<>();
-        Map<String,Lap>          lapMap   = new HashMap<>();
+        Map<String,Track>         trackMap = new HashMap<>();
+        Map<String,Competition>   compMap  = new HashMap<>();
+        Map<String,Lap>           lapMap   = new HashMap<>();
         Map<String,CompleteHorse> horseMap = new HashMap<>();
 
         for (Track t: existing) {
@@ -170,30 +172,34 @@ public class RankHorseController {
 
             int starts = toInt(rankHorseView.getStarterRankedHorse());
 
+
+            Starts s = getOrCreateStarts(horse, starts);
+
+            s.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
+            s.setFart      (toInt(rankHorseView.getTidRankedHorse()));
+            s.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
+            s.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
+            s.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
+            s.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
+            s.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
+            s.setForm      (toInt(rankHorseView.getFormRankedHorse()));
+            s.setA1        (toInt(rankHorseView.getA1RankedHorse()));
+            s.setA2        (toInt(rankHorseView.getA2RankedHorse()));
+            s.setA3        (toInt(rankHorseView.getA3RankedHorse()));
+            s.setA4        (toInt(rankHorseView.getA4RankedHorse()));
+            s.setA5        (toInt(rankHorseView.getA5RankedHorse()));
+            s.setA6        (toInt(rankHorseView.getA6RankedHorse()));
+            s.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
+
+
+
             RoiView roi = roiMap.get(rankHorseView.getId());
-
-
-            FourStarts fs = horse.getFourStarts();
-            EightStarts es = horse.getEightStarts();
-            TwelveStarts ts = horse.getTwelveStarts();
-
-            if (fs == null) {
-                fs = new FourStarts();
-                fs.setCompleteHorse(horse);
-                horse.setFourStarts(fs);
-                fillFourStarts(fs, rankHorseView, roi, starts);
-            } else if (es == null) {
-                es = new EightStarts();
-                es.setCompleteHorse(horse);
-                horse.setEightStarts(es);
-                fillEightStarts(es, rankHorseView, starts);
-            } else if (ts == null) {
-                ts = new TwelveStarts();
-                ts.setCompleteHorse(horse);
-                horse.setTwelveStarts(ts);
-                fillTwelveStarts(ts, rankHorseView, starts);
-            } else {
-
+            if (roi != null) {
+                s.setRoiTotalt (roi.getRoiTotalt());
+                s.setRoiVinnare(roi.getRoiVinnare());
+                s.setRoiPlats  (roi.getRoiPlats());
+                s.setRoiTrio   (roi.getRoiTrio());
+                s.setResultat  (roi.getResultat());
             }
 
             processed++;
@@ -206,6 +212,20 @@ public class RankHorseController {
                 "Processed " + processed + " horses since " + lastRun,
                 HttpStatus.CREATED
         );
+    }
+
+
+    private static Starts getOrCreateStarts(CompleteHorse horse, int starter) {
+        return horse.getStarts().stream()
+                .filter(s -> s.getStarter() == starter)
+                .findFirst()
+                .orElseGet(() -> {
+                    Starts s = new Starts();
+                    s.setStarter(starter);
+                    s.setCompleteHorse(horse);
+                    horse.getStarts().add(s);
+                    return s;
+                });
     }
 
     private static LocalDate toLocalDate(Integer yyyymmdd) {
@@ -223,69 +243,5 @@ public class RankHorseController {
         if (s == null) return "Vinnare";
         String v = s.trim();
         return v.isEmpty() ? "Vinnare" : v;
-    }
-
-
-    private static void fillFourStarts(FourStarts fs, RankHorseView v, RoiView roi, int starts) {
-        fs.setAnalys    (toInt(v.getAnalysRankedHorse()));
-        fs.setFart      (toInt(v.getTidRankedHorse()));
-        fs.setStyrka    (toInt(v.getPrestationRankedHorse()));
-        fs.setKlass     (toInt(v.getMotstandRankedHorse()));
-        fs.setPrispengar(toInt(v.getPrispengarRankedHorse()));
-        fs.setKusk      (toInt(v.getStallSkrikRankedHorse()));
-        fs.setPlacering (toInt(v.getPlaceringRankedHorse()));
-        fs.setForm      (toInt(v.getFormRankedHorse()));
-        fs.setTips      (toInt(v.getTipsRankedHorse()));
-        fs.setStarter   (starts);
-        fs.setA1        (toInt(v.getA1RankedHorse()));
-        fs.setA2        (toInt(v.getA2RankedHorse()));
-        fs.setA3        (toInt(v.getA3RankedHorse()));
-        fs.setA4        (toInt(v.getA4RankedHorse()));
-        fs.setA5        (toInt(v.getA5RankedHorse()));
-        fs.setA6        (toInt(v.getA6RankedHorse()));
-
-        if (roi != null) {
-            fs.setRoiTotalt (roi.getRoiTotalt());
-            fs.setRoiVinnare(roi.getRoiVinnare());
-            fs.setRoiPlats  (roi.getRoiPlats());
-            fs.setRoiTrio   (roi.getRoiTrio());
-            fs.setResultat  (roi.getResultat());
-        }
-    }
-
-    private static void fillEightStarts(EightStarts es, RankHorseView v, int starts) {
-        es.setAnalys    (toInt(v.getAnalysRankedHorse()));
-        es.setFart      (toInt(v.getTidRankedHorse()));
-        es.setStyrka    (toInt(v.getPrestationRankedHorse()));
-        es.setKlass     (toInt(v.getMotstandRankedHorse()));
-        es.setPrispengar(toInt(v.getPrispengarRankedHorse()));
-        es.setKusk      (toInt(v.getStallSkrikRankedHorse()));
-        es.setPlacering (toInt(v.getPlaceringRankedHorse()));
-        es.setForm      (toInt(v.getFormRankedHorse()));
-        es.setStarter   (starts);
-        es.setA1        (toInt(v.getA1RankedHorse()));
-        es.setA2        (toInt(v.getA2RankedHorse()));
-        es.setA3        (toInt(v.getA3RankedHorse()));
-        es.setA4        (toInt(v.getA4RankedHorse()));
-        es.setA5        (toInt(v.getA5RankedHorse()));
-        es.setA6        (toInt(v.getA6RankedHorse()));
-    }
-
-    private static void fillTwelveStarts(TwelveStarts ts, RankHorseView v, int starts) {
-        ts.setAnalys    (toInt(v.getAnalysRankedHorse()));
-        ts.setFart      (toInt(v.getTidRankedHorse()));
-        ts.setStyrka    (toInt(v.getPrestationRankedHorse()));
-        ts.setKlass     (toInt(v.getMotstandRankedHorse()));
-        ts.setPrispengar(toInt(v.getPrispengarRankedHorse()));
-        ts.setKusk      (toInt(v.getStallSkrikRankedHorse()));
-        ts.setPlacering (toInt(v.getPlaceringRankedHorse()));
-        ts.setForm      (toInt(v.getFormRankedHorse()));
-        ts.setStarter   (starts);
-        ts.setA1        (toInt(v.getA1RankedHorse()));
-        ts.setA2        (toInt(v.getA2RankedHorse()));
-        ts.setA3        (toInt(v.getA3RankedHorse()));
-        ts.setA4        (toInt(v.getA4RankedHorse()));
-        ts.setA5        (toInt(v.getA5RankedHorse()));
-        ts.setA6        (toInt(v.getA6RankedHorse()));
     }
 }
