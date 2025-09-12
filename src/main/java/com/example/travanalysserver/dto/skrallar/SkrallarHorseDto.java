@@ -26,6 +26,7 @@ public class SkrallarHorseDto {
     private Integer resultat;
 
     private BigDecimal roiTotalt;
+    private BigDecimal roiSinceDayOne;
     private BigDecimal roiVinnare;
     private BigDecimal roiPlats;
 }

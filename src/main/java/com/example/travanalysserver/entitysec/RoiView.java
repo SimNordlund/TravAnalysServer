@@ -8,6 +8,7 @@ public interface RoiView {
     Long getId();
     Long        getRankId();
     BigDecimal  getRoiTotalt();
+    BigDecimal  getRoiSinceDayOne();
     BigDecimal getRoiVinnare();
     BigDecimal  getRoiPlats();
     BigDecimal  getRoiTrio();

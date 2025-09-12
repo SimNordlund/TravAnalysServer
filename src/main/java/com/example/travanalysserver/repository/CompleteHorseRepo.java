@@ -21,7 +21,7 @@ public interface CompleteHorseRepo extends JpaRepository<CompleteHorse, Long> {
           c.id, c.nameOfCompetition,
           l.id, l.nameOfLap,
           h.id, h.numberOfCompleteHorse, h.nameOfCompleteHorse,
-          s.tips, s.analys, s.resultat, s.roiTotalt, s.roiVinnare, s.roiPlats
+          s.tips, s.analys, s.resultat, s.roiTotalt, s.roiSinceDayOne, s.roiVinnare, s.roiPlats
       )
       from Track t
         join t.competitions c

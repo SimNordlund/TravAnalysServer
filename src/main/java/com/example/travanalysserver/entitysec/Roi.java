@@ -27,8 +27,11 @@ public class Roi {
     @Column(name = "rankid")
     private Long rankId;
 
-    @Column(name = "roitotalt")
+    @Column(name = "roihast")
     private BigDecimal roiTotalt;
+
+    @Column(name = "roitotalt")
+    private BigDecimal roiSinceDayOne;
 
     @Column(name = "roivinnare")
     private BigDecimal roiVinnare;

@@ -24,7 +24,6 @@ public class EmailController {
             return ResponseEntity.badRequest().build();
         }
 
-        // Idempotent beteende: svara OK om e-post eller telefon redan finns
         if ((emailAdress.getEmail() != null && emailAdressRepo.existsByEmail(emailAdress.getEmail()))
                 || (emailAdress.getPhone() != null && emailAdressRepo.existsByPhone(emailAdress.getPhone()))) {
             return ResponseEntity.ok().build();

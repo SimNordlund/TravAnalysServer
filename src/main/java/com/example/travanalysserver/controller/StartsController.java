@@ -24,6 +24,7 @@ public class StartsController {
                         .placering(s.getPlacering()).form(s.getForm()).starter(s.getStarter())
                         .a1(s.getA1()).a2(s.getA2()).a3(s.getA3()).a4(s.getA4()).a5(s.getA5()).a6(s.getA6())
                         .roiTotalt(s.getRoiTotalt()).roiVinnare(s.getRoiVinnare())
+                        .roiSinceDayOne(s.getRoiSinceDayOne())
                         .roiPlats(s.getRoiPlats()).roiTrio(s.getRoiTrio()).resultat(s.getResultat())
                         .build())
                 .orElseGet(() -> StartsDTO.builder()

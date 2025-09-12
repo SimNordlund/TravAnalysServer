@@ -31,6 +31,7 @@ public class Starts {
     private int tips;
 
     private BigDecimal roiTotalt;
+    private BigDecimal roiSinceDayOne;
     private BigDecimal roiVinnare;
     private BigDecimal roiPlats;
     private BigDecimal roiTrio;

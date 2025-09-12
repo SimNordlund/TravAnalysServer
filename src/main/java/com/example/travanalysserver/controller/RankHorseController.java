@@ -196,6 +196,7 @@ public class RankHorseController {
             RoiView roi = roiMap.get(rankHorseView.getId());
             if (roi != null) {
                 s.setRoiTotalt (roi.getRoiTotalt());
+                s.setRoiSinceDayOne(roi.getRoiSinceDayOne());
                 s.setRoiVinnare(roi.getRoiVinnare());
                 s.setRoiPlats  (roi.getRoiPlats());
                 s.setRoiTrio   (roi.getRoiTrio());
