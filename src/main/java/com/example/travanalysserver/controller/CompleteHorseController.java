@@ -1,16 +1,12 @@
 package com.example.travanalysserver.controller;
 
-import com.example.travanalysserver.dto.competition.CompetitionDTO;
 import com.example.travanalysserver.dto.completehorse.CompleteHorseDTO;
 import com.example.travanalysserver.dto.completehorse.CompleteHorseDTOAnalys;
 import com.example.travanalysserver.dto.skrallar.SkrallarHorseDto;
-import com.example.travanalysserver.entity.Competition;
 import com.example.travanalysserver.entity.CompleteHorse;
 import com.example.travanalysserver.repository.CompleteHorseRepo;
 import com.example.travanalysserver.service.interfaces.CompleteHorseService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -11,21 +11,21 @@ import org.springframework.stereotype.Component;
 public class RankedHorseScheduler {
 
     private final RankHorseController controller;
-    private final PrimaryDbCleanupService cleanup; //Changed!
+    private final PrimaryDbCleanupService cleanup;
 
     private static final Logger logger =
             LoggerFactory.getLogger(RankedHorseScheduler.class);
 
     public RankedHorseScheduler(RankHorseController controller,
-                                PrimaryDbCleanupService cleanup) { //Changed!
+                                PrimaryDbCleanupService cleanup) {
         this.controller = controller;
-        this.cleanup = cleanup; //Changed!
+        this.cleanup = cleanup;
     }
 
     @Scheduled(cron = "0 0/10 * * * *")
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
-        cleanup.truncateAllExceptEmailAndSyncMeta(); //Changed!
-        controller.saveAllRanked(); // importerar från sekundär -> primär
+        cleanup.truncateAllExceptEmailAndSyncMeta();
+        controller.saveAllRanked();
     }
 }

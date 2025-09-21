@@ -10,6 +10,7 @@ import com.example.travanalysserver.repositorysec.RankHorseRepo;
 import com.example.travanalysserver.repositorysec.RoiRepo;
 import com.example.travanalysserver.entity.Starts;
 
+import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +35,8 @@ public class RankHorseController {
     private final RoiRepo        roiRepo;
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
+
+    private final PrimaryDbCleanupService cleanup; //temp lösning
 
     private static final Map<String, String> BANKOD_TO_TRACK = Map.ofEntries(
             Map.entry("Ar", "Arvika"),     Map.entry("Ax", "Axevalla"),
@@ -62,6 +65,7 @@ public class RankHorseController {
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
+        cleanup.truncateAllExceptEmailAndSyncMeta(); //temp truncate lösning
 
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
