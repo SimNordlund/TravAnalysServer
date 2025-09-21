@@ -1,6 +1,7 @@
 package com.example.travanalysserver.service.schedules;
 
 import com.example.travanalysserver.controller.RankHorseController;
+import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -10,17 +11,21 @@ import org.springframework.stereotype.Component;
 public class RankedHorseScheduler {
 
     private final RankHorseController controller;
+    private final PrimaryDbCleanupService cleanup; //Changed!
 
     private static final Logger logger =
             LoggerFactory.getLogger(RankedHorseScheduler.class);
 
-    public RankedHorseScheduler(RankHorseController controller) {
+    public RankedHorseScheduler(RankHorseController controller,
+                                PrimaryDbCleanupService cleanup) { //Changed!
         this.controller = controller;
+        this.cleanup = cleanup; //Changed!
     }
 
     @Scheduled(cron = "0 0/10 * * * *")
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
-        controller.saveAllRanked();
+        cleanup.truncateAllExceptEmailAndSyncMeta(); //Changed!
+        controller.saveAllRanked(); // importerar från sekundär -> primär
     }
 }
