@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "rank")
-@Immutable
+@Immutable //read only
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
