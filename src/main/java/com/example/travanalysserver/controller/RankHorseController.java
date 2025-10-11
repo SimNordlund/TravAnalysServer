@@ -14,10 +14,10 @@ import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -25,6 +25,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,6 +37,9 @@ public class RankHorseController {
     private final RoiRepo        roiRepo;
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
+
+    @PersistenceContext
+    private EntityManager em;
 
     private final PrimaryDbCleanupService cleanup; //temp lösning
 
@@ -65,7 +70,8 @@ public class RankHorseController {
     @GetMapping("/print")
     @Transactional
     public ResponseEntity<String> saveAllRanked() {
-        cleanup.truncateAllExceptEmailAndSyncMeta(); //temp truncate lösning
+
+         cleanup.truncateAllExceptEmailAndSyncMeta(); // trunkering sker i schedulern
 
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
@@ -103,114 +109,124 @@ public class RankHorseController {
                             .toList());
         }
 
+        // Gruppindela per (datum|bana) så vi kan spara och flush/clear per gru
+        Map<String, List<RankHorseView>> byTrack = workList.stream()
+                .collect(Collectors.groupingBy(v -> {
+                    LocalDate d = toLocalDate(v.getDateRankedHorse());
+                    String trackName = BANKOD_TO_TRACK
+                            .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
+                    return d + "|" + trackName;
+                }));
+
+        int processed = 0;
+
+
         Set<LocalDate> dates = workList.stream()
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
 
         Set<String> names = workList.stream()
-                .map(v -> BANKOD_TO_TRACK
-                        .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
+                .map(v -> BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
                 .collect(Collectors.toSet());
 
         List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, names);
-        Map<String,Track>         trackMap = new HashMap<>();
-        Map<String,Competition>   compMap  = new HashMap<>();
-        Map<String,Lap>           lapMap   = new HashMap<>();
-        Map<String,CompleteHorse> horseMap = new HashMap<>();
+        Map<String, Track> existingTrackMap = new HashMap<>();
+        for (Track t : existing) {
+            String k = t.getDate() + "|" + t.getNameOfTrack();
+            existingTrackMap.put(k, t);
+        }
 
-        for (Track t: existing) {
-            String tKey = t.getDate() + "|" + t.getNameOfTrack();
-            trackMap.put(tKey, t);
-            for (Competition c: t.getCompetitions()) {
-                String compName = normalizeCompetition(c.getNameOfCompetition());
-                String compKey  = tKey + "|" + compName;
-                compMap.put(compKey, c);
-                for (Lap l: c.getLaps()) {
-                    String lKey = compKey + "|" + l.getNameOfLap();
-                    lapMap.put(lKey, l);
-                    for (CompleteHorse h: l.getHorses()) {
-                        String hKey = lKey + "|" + h.getNumberOfCompleteHorse();
-                        horseMap.put(hKey, h);
-                    }
+        // Jobba grupp för grupp: håll liten graf i minnet och flush/clear direkt efter
+        for (Map.Entry<String, List<RankHorseView>> entry : byTrack.entrySet()) {
+            String key = entry.getKey(); //
+            String[] parts = key.split("\\|", 2);
+            LocalDate date = LocalDate.parse(parts[0]);
+            String trackName = parts[1];
+
+            // Lokala mappar för att inte växa heapen
+            Map<String,Competition>   compMap  = new HashMap<>();
+            Map<String,Lap>           lapMap   = new HashMap<>();
+            Map<String,CompleteHorse> horseMap = new HashMap<>();
+
+            // Återanvänd befintlig Track om den finns
+            Track track = existingTrackMap.getOrDefault(key, null);
+            if (track == null) {
+                track = new Track();
+                track.setDate(date);
+                track.setNameOfTrack(trackName);
+                existingTrackMap.put(key, track);
+            }
+
+            for (RankHorseView v : entry.getValue()) {
+                String compName = normalizeCompetition(v.getCompetitionRankedHorse());
+                String compKey  = key + "|" + compName;
+                Track finalTrack = track;
+                Competition comp = compMap.computeIfAbsent(compKey, k -> {
+                    Competition c = new Competition();
+                    c.setNameOfCompetition(compName);
+                    c.setTrack(finalTrack);
+                    finalTrack.getCompetitions().add(c);
+                    return c;
+                });
+
+                String lKey = compKey + "|" + v.getLapRankedHorse();
+                Lap lap = lapMap.computeIfAbsent(lKey, k -> {
+                    Lap l = new Lap();
+                    l.setNameOfLap(v.getLapRankedHorse());
+                    l.setCompetition(comp);
+                    comp.getLaps().add(l);
+                    return l;
+                });
+
+                String hKey = lKey + "|" + v.getNr();
+                CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
+                    CompleteHorse h = new CompleteHorse();
+                    h.setNumberOfCompleteHorse(v.getNr());
+                    h.setLap(lap);
+                    lap.getHorses().add(h);
+                    return h;
+                });
+
+                horse.setNameOfCompleteHorse(v.getNameRankedHorse());
+
+                int starts = toInt(v.getStarterRankedHorse());
+                Starts s = getOrCreateStarts(horse, starts);
+
+                s.setAnalys    (toInt(v.getAnalysRankedHorse()));
+                s.setFart      (toInt(v.getTidRankedHorse()));
+                s.setStyrka    (toInt(v.getPrestationRankedHorse()));
+                s.setKlass     (toInt(v.getMotstandRankedHorse()));
+                s.setPrispengar(toInt(v.getPrispengarRankedHorse()));
+                s.setKusk      (toInt(v.getStallSkrikRankedHorse()));
+                s.setPlacering (toInt(v.getPlaceringRankedHorse()));
+                s.setForm      (toInt(v.getFormRankedHorse()));
+                s.setA1        (toInt(v.getA1RankedHorse()));
+                s.setA2        (toInt(v.getA2RankedHorse()));
+                s.setA3        (toInt(v.getA3RankedHorse()));
+                s.setA4        (toInt(v.getA4RankedHorse()));
+                s.setA5        (toInt(v.getA5RankedHorse()));
+                s.setA6        (toInt(v.getA6RankedHorse()));
+                s.setTips      (toInt(v.getTipsRankedHorse()));
+
+                RoiView roi = roiMap.get(v.getId());
+                if (roi != null) {
+                    s.setRoiTotalt (roi.getRoiTotalt());
+                    s.setRoiSinceDayOne(roi.getRoiSinceDayOne());
+                    s.setRoiVinnare(roi.getRoiVinnare());
+                    s.setRoiPlats  (roi.getRoiPlats());
+                    s.setRoiTrio   (roi.getRoiTrio());
+                    s.setResultat  (roi.getResultat());
                 }
-            }
-        }
 
-        int processed = 0;
-
-        for (RankHorseView rankHorseView: workList) {
-            LocalDate date = toLocalDate(rankHorseView.getDateRankedHorse());
-            String trackName = BANKOD_TO_TRACK
-                    .getOrDefault(rankHorseView.getTrackRankedHorse(), rankHorseView.getTrackRankedHorse());
-            String tKey = date + "|" + trackName;
-
-            Track track = trackMap.computeIfAbsent(tKey, k -> {
-                Track tr = new Track(); tr.setDate(date); tr.setNameOfTrack(trackName);
-                return tr;
-            });
-
-            String compName = normalizeCompetition(
-                    rankHorseView.getCompetitionRankedHorse());
-            String compKey = tKey + "|" + compName;
-
-            Competition comp = compMap.computeIfAbsent(compKey, k -> {
-                Competition c = new Competition();
-                c.setNameOfCompetition(compName);
-                c.setTrack(track); track.getCompetitions().add(c); return c;
-            });
-
-            String lKey = compKey + "|" + rankHorseView.getLapRankedHorse();
-            Lap lap = lapMap.computeIfAbsent(lKey, k -> {
-                Lap l = new Lap(); l.setNameOfLap(rankHorseView.getLapRankedHorse());
-                l.setCompetition(comp); comp.getLaps().add(l); return l;
-            });
-
-            String hKey = lKey + "|" + rankHorseView.getNr();
-            CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
-                CompleteHorse h = new CompleteHorse();
-                h.setNumberOfCompleteHorse(rankHorseView.getNr());
-                h.setLap(lap); lap.getHorses().add(h); return h;
-            });
-
-            horse.setNameOfCompleteHorse(rankHorseView.getNameRankedHorse());
-
-            int starts = toInt(rankHorseView.getStarterRankedHorse());
-
-
-            Starts s = getOrCreateStarts(horse, starts);
-
-            s.setAnalys    (toInt(rankHorseView.getAnalysRankedHorse()));
-            s.setFart      (toInt(rankHorseView.getTidRankedHorse()));
-            s.setStyrka    (toInt(rankHorseView.getPrestationRankedHorse()));
-            s.setKlass     (toInt(rankHorseView.getMotstandRankedHorse()));
-            s.setPrispengar(toInt(rankHorseView.getPrispengarRankedHorse()));
-            s.setKusk      (toInt(rankHorseView.getStallSkrikRankedHorse()));
-            s.setPlacering (toInt(rankHorseView.getPlaceringRankedHorse()));
-            s.setForm      (toInt(rankHorseView.getFormRankedHorse()));
-            s.setA1        (toInt(rankHorseView.getA1RankedHorse()));
-            s.setA2        (toInt(rankHorseView.getA2RankedHorse()));
-            s.setA3        (toInt(rankHorseView.getA3RankedHorse()));
-            s.setA4        (toInt(rankHorseView.getA4RankedHorse()));
-            s.setA5        (toInt(rankHorseView.getA5RankedHorse()));
-            s.setA6        (toInt(rankHorseView.getA6RankedHorse()));
-            s.setTips      (toInt(rankHorseView.getTipsRankedHorse()));
-
-
-
-            RoiView roi = roiMap.get(rankHorseView.getId());
-            if (roi != null) {
-                s.setRoiTotalt (roi.getRoiTotalt());
-                s.setRoiSinceDayOne(roi.getRoiSinceDayOne());
-                s.setRoiVinnare(roi.getRoiVinnare());
-                s.setRoiPlats  (roi.getRoiPlats());
-                s.setRoiTrio   (roi.getRoiTrio());
-                s.setResultat  (roi.getResultat());
+                processed++;
             }
 
-            processed++;
+            // Spara EN bana och frigör minnet innan nästa
+            trackRepo.save(existingTrackMap.get(key));
+            em.flush();
+            em.clear();
         }
 
-        trackRepo.saveAll(trackMap.values());
         syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
 
         return new ResponseEntity<>(
