@@ -23,7 +23,7 @@ public class RankedHorseScheduler {
     }
 
     // private final ReentrantLock lock = new ReentrantLock();
-    @Scheduled(cron = "0 0/10 * * * *") //Skulle kunna ändra till fixeddELAY OCH ETT LOCK? Se ovan.
+    //@Scheduled(cron = "0 0/10 * * * *") //Skulle kunna ändra till fixeddELAY OCH ETT LOCK? Se ovan.
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
        // cleanup.truncateAllExceptEmailAndSyncMeta();
