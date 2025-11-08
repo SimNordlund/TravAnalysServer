@@ -261,7 +261,7 @@ public class RankHorseController {
     }
 
     private static String normalizeCompetition(String s) {
-        if (s == null) return "Vinnare";
+        if (s == null) return "Vinnare"; //det ej problem jao
         String v = s.trim();
         return v.isEmpty() ? "Vinnare" : v;
     }
