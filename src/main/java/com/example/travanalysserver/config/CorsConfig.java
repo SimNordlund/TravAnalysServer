@@ -12,7 +12,6 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-
         config.addAllowedOriginPattern("http://localhost:5173");
         config.addAllowedOriginPattern("https://travanalys.onrender.com");
         config.addAllowedOriginPattern("https://travanalys.se");
@@ -22,6 +21,7 @@ public class CorsConfig {
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
+        config.addAllowedMethod("OPTIONS");
 
         config.addAllowedHeader("Authorization");
         config.addAllowedHeader("Content-Type");

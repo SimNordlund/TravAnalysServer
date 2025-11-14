@@ -60,6 +60,8 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test:6.3.0")
 
 	implementation("io.smallrye:jandex:3.3.1")
+//	implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.2")
+//	implementation("org.glassfish.jaxb:jaxb-runtime:4.0.5")
 }
 
 tasks.withType<Test> {
