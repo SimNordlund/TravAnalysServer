@@ -14,19 +14,19 @@ import java.util.List;
 @RequestMapping("/banner")
 public class BannerController {
 
-    private final BannerRepo bannerRepo; //Changed!
+    private final BannerRepo bannerRepo;
 
-    @GetMapping(produces = "application/json") //Changed!
+    @GetMapping(produces = "application/json")
     @Transactional(readOnly = true, transactionManager = "secondaryTransactionManager")
-    public List<Banner> getAll() { //Changed!
-        return bannerRepo.findAll(); //Changed!
+    public List<Banner> getAll() {
+        return bannerRepo.findAll();
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json") //Changed!
+    @GetMapping(value = "/{id}", produces = "application/json")
     @Transactional(readOnly = true, transactionManager = "secondaryTransactionManager")
-    public ResponseEntity<Banner> getById(@PathVariable Long id) { //Changed!
-        return bannerRepo.findById(id) //Changed!
-                .map(ResponseEntity::ok) //Changed!
-                .orElse(ResponseEntity.notFound().build()); //Changed!
+    public ResponseEntity<Banner> getById(@PathVariable Long id) {
+        return bannerRepo.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }
