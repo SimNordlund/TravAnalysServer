@@ -24,7 +24,8 @@ public class Starts {
     private int placering;
     private int form;
 
-    private int starter;
+    @Column(length = 32, nullable = false)
+    private String starter;
 
     private int a1,a2,a3,a4,a5,a6;
 

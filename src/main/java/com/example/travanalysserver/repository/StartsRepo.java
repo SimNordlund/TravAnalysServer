@@ -8,12 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface StartsRepo extends JpaRepository<Starts, Long> {
-    Optional<Starts> findByCompleteHorse_IdAndStarter(Long completeHorseId, int starter);
+
+    Optional<Starts> findByCompleteHorse_IdAndStarter(Long completeHorseId, String starter);
 
     @Query("""
             select distinct s.starter
             from Starts s
             where s.completeHorse.lap.id = :lapId
             """)
-    List<Integer> findAvailableStartersForLap(Long lapId);
+    List<String> findAvailableStartersForLap(Long lapId);
 }

@@ -12,7 +12,6 @@ public class RankedHorseScheduler {
 
     private final RankHorseController controller;
     private final PrimaryDbCleanupService cleanup;
-
     private static final Logger logger =
             LoggerFactory.getLogger(RankedHorseScheduler.class);
 
@@ -23,10 +22,10 @@ public class RankedHorseScheduler {
     }
 
     // private final ReentrantLock lock = new ReentrantLock();
-    //@Scheduled(cron = "0 0/10 * * * *") //Skulle kunna ändra till fixeddELAY OCH ETT LOCK? Se ovan.
+    @Scheduled(cron = "0 0 12-23 * * *", zone = "Europe/Stockholm") //Skulle kunna ändra till fixeddELAY OCH ETT LOCK? Se ovan.
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
-       // cleanup.truncateAllExceptEmailAndSyncMeta();
+        cleanup.truncateAllExceptEmailAndSyncMeta();
         controller.saveAllRanked();
     }
 }

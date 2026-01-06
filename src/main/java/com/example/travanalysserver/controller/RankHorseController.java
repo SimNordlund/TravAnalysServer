@@ -189,8 +189,8 @@ public class RankHorseController {
 
                 horse.setNameOfCompleteHorse(v.getNameRankedHorse());
 
-                int starts = toInt(v.getStarterRankedHorse());
-                Starts s = getOrCreateStarts(horse, starts);
+                String starter = normalizeStarter(v.getStarterRankedHorse()); //Changed!
+                Starts s = getOrCreateStarts(horse, starter); //Changed!
 
                 s.setAnalys    (toInt(v.getAnalysRankedHorse()));
                 s.setFart      (toInt(v.getTidRankedHorse()));
@@ -236,18 +236,19 @@ public class RankHorseController {
     }
 
 
-    private static Starts getOrCreateStarts(CompleteHorse horse, int starter) {
+    private static Starts getOrCreateStarts(CompleteHorse horse, String starter) { //Changed!
         return horse.getStarts().stream()
-                .filter(s -> s.getStarter() == starter)
+                .filter(s -> starter.equals(s.getStarter())) //Changed!
                 .findFirst()
                 .orElseGet(() -> {
                     Starts s = new Starts();
-                    s.setStarter(starter);
+                    s.setStarter(starter); //Changed!
                     s.setCompleteHorse(horse);
                     horse.getStarts().add(s);
                     return s;
                 });
     }
+
 
     private static LocalDate toLocalDate(Integer yyyymmdd) {
         if (yyyymmdd == null) return LocalDate.MIN;
@@ -264,5 +265,11 @@ public class RankHorseController {
         if (s == null) return "Vinnare"; //det ej problem jao
         String v = s.trim();
         return v.isEmpty() ? "Vinnare" : v;
+    }
+
+    private static String normalizeStarter(String s) { //Changed!
+        if (s == null) return "0"; //Changed!
+        String t = s.trim(); //Changed!
+        return t.isEmpty() ? "0" : t; //Changed!
     }
 }
