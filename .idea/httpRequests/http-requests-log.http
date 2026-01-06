@@ -1,3 +1,80 @@
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-01-06T111508.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-12-06T142202.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-12-06T132809.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-12-06T125431.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-12-06T120543.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-12-03T171950.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-11-14T231654.201.txt
+
+###
+
 DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
 Content-Type: application/json
 Connection: Keep-Alive
@@ -431,77 +508,6 @@ Accept: text/plain
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-21T113643.404.txt
-
-###
-
-GET https://travanalyserver-latest.onrender.com/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-21T111129.201.txt
-
-###
-
-GET https://travanalyserver-latest.onrender.com/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-20T152849.201.txt
-
-###
-
-DELETE https://travanalyserver-latest.onrender.com/travanalys/deleteTrackById/3
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-20T152822.404.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-19T231446.201.txt
-
-###
-
-GET https://travanalyserver-latest.onrender.com/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-19T222051.201.txt
-
-###
-
-GET https://travanalyserver-latest.onrender.com/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-09-19T215722.201.txt
 
 ###
 
