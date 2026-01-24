@@ -5,7 +5,7 @@ import com.example.travanalysserver.repository.StartsRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Comparator; //Changed!
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -17,10 +17,10 @@ public class StartsController {
 
     @GetMapping("/findData")
     public StartsDTO findData(@RequestParam Long completeHorseId,
-                              @RequestParam String starter) { //Changed!
-        String normalizedStarter = normalizeStarter(starter); //Changed!
+                              @RequestParam String starter) {
+        String normalizedStarter = normalizeStarter(starter);
 
-        return startsRepo.findByCompleteHorse_IdAndStarter(completeHorseId, normalizedStarter) //Changed!
+        return startsRepo.findByCompleteHorse_IdAndStarter(completeHorseId, normalizedStarter)
                 .map(s -> StartsDTO.builder()
                         .id(s.getId())
                         .analys(s.getAnalys()).fart(s.getFart()).styrka(s.getStyrka())
@@ -33,33 +33,33 @@ public class StartsController {
                         .build())
                 .orElseGet(() -> StartsDTO.builder()
                         .analys(0).fart(0).styrka(0).klass(0).prispengar(0).kusk(0)
-                        .placering(0).form(0).starter("0") //Changed!
+                        .placering(0).form(0).starter("0")
                         .a1(0).a2(0).a3(0).a4(0).a5(0).a6(0)
                         .build());
     }
 
     @GetMapping("/available")
-    public List<String> available(@RequestParam Long lapId) { //Changed!
-        return startsRepo.findAvailableStartersForLap(lapId).stream() //Changed!
-                .map(this::normalizeStarter) //Changed!
-                .distinct() //Changed!
-                .sorted(starterComparator()) //Changed!
+    public List<String> available(@RequestParam Long lapId) {
+        return startsRepo.findAvailableStartersForLap(lapId).stream()
+                .map(this::normalizeStarter)
+                .distinct()
+                .sorted(starterComparator())
                 .toList();
     }
 
-    private String normalizeStarter(String s) { //Changed!
-        if (s == null) return "0"; //Changed!
-        String t = s.trim(); //Changed!
-        return t.isEmpty() ? "0" : t; //Changed!
+    private String normalizeStarter(String s) {
+        if (s == null) return "0";
+        String t = s.trim();
+        return t.isEmpty() ? "0" : t;
     }
 
-    private Comparator<String> starterComparator() { //Changed!
+    private Comparator<String> starterComparator() {
         return Comparator
-                .comparingInt(this::tryParseIntOrMax) //Changed!
-                .thenComparing(String::compareToIgnoreCase); //Changed!
+                .comparingInt(this::tryParseIntOrMax)
+                .thenComparing(String::compareToIgnoreCase);
     }
 
-    private int tryParseIntOrMax(String s) { //Changed!
-        try { return Integer.parseInt(s); } catch (Exception e) { return Integer.MAX_VALUE; } //Changed!
+    private int tryParseIntOrMax(String s) {
+        try { return Integer.parseInt(s); } catch (Exception e) { return Integer.MAX_VALUE; }
     }
 }
