@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 public interface RoiView {
 
     Long getId();
-    Long        getRankId();
-    BigDecimal  getRoiTotalt();
+    Long getRankId();
+    BigDecimal getRoiTotalt();
     BigDecimal  getRoiSinceDayOne();
     BigDecimal getRoiVinnare();
     BigDecimal  getRoiPlats();

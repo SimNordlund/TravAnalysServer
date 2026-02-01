@@ -189,8 +189,8 @@ public class RankHorseController {
 
                 horse.setNameOfCompleteHorse(v.getNameRankedHorse());
 
-                String starter = normalizeStarter(v.getStarterRankedHorse()); //Changed!
-                Starts s = getOrCreateStarts(horse, starter); //Changed!
+                String starter = normalizeStarter(v.getStarterRankedHorse());
+                Starts s = getOrCreateStarts(horse, starter);
 
                 s.setAnalys    (toInt(v.getAnalysRankedHorse()));
                 s.setFart      (toInt(v.getTidRankedHorse()));
@@ -236,13 +236,13 @@ public class RankHorseController {
     }
 
 
-    private static Starts getOrCreateStarts(CompleteHorse horse, String starter) { //Changed!
+    private static Starts getOrCreateStarts(CompleteHorse horse, String starter) {
         return horse.getStarts().stream()
-                .filter(s -> starter.equals(s.getStarter())) //Changed!
+                .filter(s -> starter.equals(s.getStarter()))
                 .findFirst()
                 .orElseGet(() -> {
                     Starts s = new Starts();
-                    s.setStarter(starter); //Changed!
+                    s.setStarter(starter);
                     s.setCompleteHorse(horse);
                     horse.getStarts().add(s);
                     return s;
@@ -267,9 +267,9 @@ public class RankHorseController {
         return v.isEmpty() ? "Vinnare" : v;
     }
 
-    private static String normalizeStarter(String s) { //Changed!
-        if (s == null) return "0"; //Changed!
-        String t = s.trim(); //Changed!
-        return t.isEmpty() ? "0" : t; //Changed!
+    private static String normalizeStarter(String s) {
+        if (s == null) return "0";
+        String t = s.trim();
+        return t.isEmpty() ? "0" : t;
     }
 }
