@@ -8,7 +8,6 @@ import com.example.travanalysserver.repository.SyncMetaRepo;
 import com.example.travanalysserver.repository.TrackRepo;
 import com.example.travanalysserver.repositorysec.RankHorseRepo;
 import com.example.travanalysserver.repositorysec.RoiRepo;
-import com.example.travanalysserver.entity.Starts;
 
 import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import lombok.RequiredArgsConstructor;
@@ -109,7 +108,7 @@ public class RankHorseController {
                             .toList());
         }
 
-        // Gruppindela per (datum|bana) så vi kan spara och flush/clear per gru
+        // Gruppindela per (datum|bana) så vi kan spara och flush/clear per gruppp
         Map<String, List<RankHorseView>> byTrack = workList.stream()
                 .collect(Collectors.groupingBy(v -> {
                     LocalDate d = toLocalDate(v.getDateRankedHorse());
@@ -138,7 +137,7 @@ public class RankHorseController {
 
         // Jobba grupp för grupp: håll liten graf i minnet och flush/clear direkt efter
         for (Map.Entry<String, List<RankHorseView>> entry : byTrack.entrySet()) {
-            String key = entry.getKey(); //
+            String key = entry.getKey();
             String[] parts = key.split("\\|", 2);
             LocalDate date = LocalDate.parse(parts[0]);
             String trackName = parts[1];

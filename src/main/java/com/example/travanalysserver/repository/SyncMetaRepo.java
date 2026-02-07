@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository //Behövs denna egentligen?
+@Repository
 public interface SyncMetaRepo extends JpaRepository<SyncMeta,String> {
 
     @Modifying
