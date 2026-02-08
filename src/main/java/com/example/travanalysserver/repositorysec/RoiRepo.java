@@ -12,4 +12,6 @@ import java.util.List;
 public interface RoiRepo extends JpaRepository<Roi, Long> {
     List<RoiView> findAllProjectedBy();
     List<RoiView> findAllByUpdatedAtAfter(LocalDateTime cutoff);
+    List<RoiView> findAllByRankIdIn(Collection<Long> rankIds); //Changed!
+
 }
