@@ -1446,8 +1446,12 @@ Content-Type: text/plain
 ###GET http://localhost:8080//ranked/print
 #GET https://travanalyserver-latest.onrender.com/ranked/print
 
-GET http://localhost:8080//ranked/print
+GET http://localhost:8080/ranked/print
 Accept: text/plain
+###
+
+GET http://localhost:8080/app_url/buttons
+accept: application/json
 ###
 
 GET http://localhost:8080//ranked/print/20260211

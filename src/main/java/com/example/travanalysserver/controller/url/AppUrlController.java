@@ -1,7 +1,7 @@
 package com.example.travanalysserver.controller.url;
 
 import com.example.travanalysserver.entitysec.AppUrl;
-import com.example.travanalysserver.repositorysec.AppUrlRepo; //Changed!
+import com.example.travanalysserver.repositorysec.AppUrlRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,14 +30,20 @@ public class AppUrlController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping(value = "/buttons", produces = "application/json") //Changed!
-    @Transactional(readOnly = true, transactionManager = "secondaryTransactionManager") //Changed!
-    public ResponseEntity<AppButtonUrlsDto> getButtonUrls() { //Changed!
-        var button2 = appUrlRepo.findById(1L).map(AppUrl::getUrl).orElse(null); //Changed!
-        var button3 = appUrlRepo.findById(2L).map(AppUrl::getUrl).orElse(null); //Changed!
-        return ResponseEntity.ok(new AppButtonUrlsDto(button2, button3)); //Changed!
+    @GetMapping(value = "/buttons", produces = "application/json")
+    @Transactional(readOnly = true, transactionManager = "secondaryTransactionManager")
+    public ResponseEntity<AppButtonDataDto> getButtonUrls() {
+        var a1 = appUrlRepo.findById(1L).orElse(null);
+        var a2 = appUrlRepo.findById(2L).orElse(null);
+
+        return ResponseEntity.ok(new AppButtonDataDto(
+                a1 != null ? a1.getUrl() : null,
+                a1 != null ? a1.getDate() : null,
+                a2 != null ? a2.getUrl() : null,
+                a2 != null ? a2.getDate() : null
+        ));
     }
 
-    //Brut ut och lägg i egen klass sen.
-    public record AppButtonUrlsDto(String button2Url, String button3Url) {} //Changed!
+    public record AppButtonDataDto(String button2Url, String button2Date, String button3Url, String button3Date
+    ) {}
 }
