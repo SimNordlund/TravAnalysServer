@@ -1450,7 +1450,7 @@ GET http://localhost:8080//ranked/print
 Accept: text/plain
 ###
 
-GET http://localhost:8080//ranked/print/20260207
+GET http://localhost:8080//ranked/print/20260211
 Accept: text/plain
 ###
 

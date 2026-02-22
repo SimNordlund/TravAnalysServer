@@ -1,3 +1,80 @@
+GET http://localhost:8080/ranked/print/20260211
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-13T193941.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print/20260207
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-13T193908.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print/20260207
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-08T120840.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-08T120444.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print/20260207
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-07T221905.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print/20260207
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-07T221832.201.txt
+
+###
+
+GET http://localhost:8080/ranked/print
+Accept: text/plain
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2026-02-07T151820.201.txt
+
+###
+
 GET https://travanalyserver-latest.onrender.com/ranked/print
 Accept: text/plain
 Connection: Keep-Alive
@@ -429,81 +506,6 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
 Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-GET http://localhost:8080/banner/1
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-11-08T001246.201.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-10-28T190114.201.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-10-28T185206.201.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-10-28T181509.201.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-10-28T174831.201.txt
-
-###
-
-GET http://localhost:8080/ranked/print
-Accept: text/plain
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=ECA0D3A3AA919E4CD79A3C3D2C308A19
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2025-10-27T201623.201.txt
 
 ###
 
