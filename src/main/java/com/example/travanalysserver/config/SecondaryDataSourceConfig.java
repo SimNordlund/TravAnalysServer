@@ -65,5 +65,4 @@ public class SecondaryDataSourceConfig {
             @Qualifier("secondaryEntityManagerFactory") EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
-
 }
