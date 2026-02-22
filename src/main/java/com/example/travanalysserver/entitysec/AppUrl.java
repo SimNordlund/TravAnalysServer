@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+
 @Entity
 @Table(name = "AppUrl", schema = "public")
 @NoArgsConstructor
