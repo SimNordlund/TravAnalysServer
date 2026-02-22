@@ -21,4 +21,6 @@ public class AppUrl {
     private Long id;
     @Column(name = "url")
     private String url;
+    @Column(name = "date")
+    private String date;
 }
