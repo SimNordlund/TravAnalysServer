@@ -1,4 +1,4 @@
-package com.example.travanalysserver.controller;
+package com.example.travanalysserver.controller.login;
 
 import com.example.travanalysserver.entity.login.GoogleUser;
 import com.example.travanalysserver.repository.GoogleRepo;

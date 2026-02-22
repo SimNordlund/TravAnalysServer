@@ -1,4 +1,4 @@
-package com.example.travanalysserver.controller;
+package com.example.travanalysserver.controller.userdata;
 
 import com.example.travanalysserver.entity.Likes;
 import com.example.travanalysserver.repository.LikesRepo;

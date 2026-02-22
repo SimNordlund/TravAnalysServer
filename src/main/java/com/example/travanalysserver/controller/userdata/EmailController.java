@@ -1,4 +1,4 @@
-package com.example.travanalysserver.controller;
+package com.example.travanalysserver.controller.userdata;
 
 import com.example.travanalysserver.entity.EmailAdress;
 import com.example.travanalysserver.repository.EmailAdressRepo;

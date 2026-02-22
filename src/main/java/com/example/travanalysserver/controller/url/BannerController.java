@@ -1,4 +1,4 @@
-package com.example.travanalysserver.controller;
+package com.example.travanalysserver.controller.url;
 
 import com.example.travanalysserver.entitysec.Banner;
 import com.example.travanalysserver.repositorysec.BannerRepo;
