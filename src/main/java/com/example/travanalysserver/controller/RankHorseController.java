@@ -63,7 +63,7 @@ public class RankHorseController {
             Map.entry("Vg", "Vaggeryd"),   Map.entry("Vi", "Visby"),
             Map.entry("Å",  "Åby"),        Map.entry("Åm", "Åmål"),
             Map.entry("År", "Årjäng"),     Map.entry("Ö",  "Örebro"),
-            Map.entry("Ös", "Östersund"),  Map.entry("Bj",  "Bjärke")
+            Map.entry("Ös", "Östersund"),  Map.entry("Bj",  "Bjerke")
     );
 
     private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;
