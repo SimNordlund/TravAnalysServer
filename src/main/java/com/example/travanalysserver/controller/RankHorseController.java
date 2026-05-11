@@ -14,6 +14,8 @@ import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +40,7 @@ public class RankHorseController {
     private final RoiRepo        roiRepo;
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
+    private final PlatformTransactionManager transactionManager;
 
     @PersistenceContext
     private EntityManager em;
@@ -225,7 +228,6 @@ public class RankHorseController {
     }
 
     @GetMapping("/print")
-    @Transactional
     public ResponseEntity<String> saveAllRanked() {
 
         cleanup.truncateAllExceptEmailAndSyncMeta(); // trunkering sker i schedulern
@@ -266,7 +268,32 @@ public class RankHorseController {
                             .toList());
         }
 
-        // Gruppindela per (datum|bana) så vi kan spara och flush/clear per gru
+        Map<LocalDate, List<RankHorseView>> byDate = workList.stream()
+                .collect(Collectors.groupingBy(
+                        v -> toLocalDate(v.getDateRankedHorse()),
+                        TreeMap::new,
+                        Collectors.toList()
+                ));
+
+        TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
+        int processed = 0;
+
+        for (Map.Entry<LocalDate, List<RankHorseView>> dayEntry : byDate.entrySet()) {
+            Integer dayProcessed = transactionTemplate.execute(status ->
+                    saveRankedDay(dayEntry.getValue(), roiMap)
+            );
+            processed += dayProcessed == null ? 0 : dayProcessed;
+        }
+
+        syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
+
+        return new ResponseEntity<>(
+                "Processed " + processed + " horses since " + lastRun,
+                HttpStatus.CREATED
+        );
+    }
+
+    private int saveRankedDay(List<RankHorseView> workList, Map<Long, RoiView> roiMap) {
         Map<String, List<RankHorseView>> byTrack = workList.stream()
                 .collect(Collectors.groupingBy(v -> {
                     LocalDate d = toLocalDate(v.getDateRankedHorse());
@@ -276,7 +303,6 @@ public class RankHorseController {
                 }));
 
         int processed = 0;
-
 
         Set<LocalDate> dates = workList.stream()
                 .map(v -> toLocalDate(v.getDateRankedHorse()))
@@ -384,12 +410,7 @@ public class RankHorseController {
             em.clear();
         }
 
-        syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
-
-        return new ResponseEntity<>(
-                "Processed " + processed + " horses since " + lastRun,
-                HttpStatus.CREATED
-        );
+        return processed;
     }
 
 
