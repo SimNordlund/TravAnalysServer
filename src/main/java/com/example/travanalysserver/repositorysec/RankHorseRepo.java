@@ -11,9 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface RankHorseRepo extends JpaRepository<RankHorse, Long> {
-    List<RankHorseView> findAllProjectedBy();
-    List<RankHorseView> findAllByUpdatedAtAfter(LocalDateTime cutoff);
-
     List<RankHorseView> findAllByDateRankedHorseIn(Collection<Integer> dates);
 
     @Query("""
@@ -36,24 +33,4 @@ public interface RankHorseRepo extends JpaRepository<RankHorse, Long> {
             order by r.dateRankedHorse
             """)
     List<Integer> findDistinctDatesChangedByRoiSince(@Param("cutoff") LocalDateTime cutoff);
-
-    @Query("""
-            select r
-            from RankHorse r
-            where r.dateRankedHorse = :dateRankedHorse
-              and (
-                  r.updatedAt > :cutoff
-                  or exists (
-                      select 1
-                      from Roi roi
-                      where roi.rankId = r.id
-                        and roi.updatedAt > :cutoff
-                  )
-              )
-            order by r.trackRankedHorse, r.lapRankedHorse, r.nr, r.id
-            """)
-    List<RankHorseView> findChangedForDateSince(
-            @Param("dateRankedHorse") Integer dateRankedHorse,
-            @Param("cutoff") LocalDateTime cutoff
-    );
 }

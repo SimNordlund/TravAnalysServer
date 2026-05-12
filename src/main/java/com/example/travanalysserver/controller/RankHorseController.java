@@ -10,7 +10,6 @@ import com.example.travanalysserver.repositorysec.RankHorseRepo;
 import com.example.travanalysserver.repositorysec.RoiRepo;
 import com.example.travanalysserver.entity.Starts;
 
-import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,8 +43,6 @@ public class RankHorseController {
 
     @PersistenceContext
     private EntityManager em;
-
-    private final PrimaryDbCleanupService cleanup; //temp lösning
 
     private static final Map<String, String> BANKOD_TO_TRACK = Map.ofEntries(
             Map.entry("Ar", "Arvika"),     Map.entry("Ax", "Axevalla"),
@@ -91,135 +88,7 @@ public class RankHorseController {
                     .body("No rows found for date " + requestedDate + " (" + dateCandidates + ")");
         }
 
-        // Skriv över: ta bort befintligt för datumet i mål-DB först
-        List<Track> existingForDate = trackRepo.findByDate(requestedDate);
-        if (!existingForDate.isEmpty()) {
-            trackRepo.deleteAll(existingForDate);
-            em.flush();
-            em.clear();
-        }
-
-        Set<Long> ids = workList.stream()
-                .map(RankHorseView::getId)
-                .collect(Collectors.toSet());
-
-        Map<Long, RoiView> roiMap = ids.isEmpty()
-                ? new HashMap<>()
-                : roiRepo.findAllByRankIdIn(ids).stream()
-                .collect(Collectors.toMap(RoiView::getRankId, Function.identity(), (a, b) -> b));
-
-        // Samma bearbetning/sparlogik som i saveAllRanked, men för vald dag
-        Map<String, List<RankHorseView>> byTrack = workList.stream()
-                .collect(Collectors.groupingBy(v -> {
-                    LocalDate d = toLocalDateFlexible(v.getDateRankedHorse());
-                    String trackName = BANKOD_TO_TRACK
-                            .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
-                    return d + "|" + trackName;
-                }));
-
-        int processed = 0;
-
-        Set<LocalDate> dates = workList.stream()
-                .map(v -> toLocalDateFlexible(v.getDateRankedHorse()))
-                .collect(Collectors.toSet());
-
-        Set<String> names = workList.stream()
-                .map(v -> BANKOD_TO_TRACK.getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse()))
-                .collect(Collectors.toSet());
-
-        List<Track> existing = trackRepo.findAllByDateInAndNameOfTrackIn(dates, names);
-        Map<String, Track> existingTrackMap = new HashMap<>();
-        for (Track t : existing) {
-            String k = t.getDate() + "|" + t.getNameOfTrack();
-            existingTrackMap.put(k, t);
-        }
-
-        for (Map.Entry<String, List<RankHorseView>> entry : byTrack.entrySet()) {
-            String key = entry.getKey();
-            String[] parts = key.split("\\|", 2);
-            LocalDate date = LocalDate.parse(parts[0]);
-            String trackName = parts[1];
-
-            Map<String,Competition>   compMap  = new HashMap<>();
-            Map<String,Lap>           lapMap   = new HashMap<>();
-            Map<String,CompleteHorse> horseMap = new HashMap<>();
-
-            Track track = existingTrackMap.getOrDefault(key, null);
-            if (track == null) {
-                track = new Track();
-                track.setDate(date);
-                track.setNameOfTrack(trackName);
-                existingTrackMap.put(key, track);
-            }
-
-            for (RankHorseView v : entry.getValue()) {
-                String compName = normalizeCompetition(v.getCompetitionRankedHorse());
-                String compKey  = key + "|" + compName;
-                Track finalTrack = track;
-                Competition comp = compMap.computeIfAbsent(compKey, k -> {
-                    Competition c = new Competition();
-                    c.setNameOfCompetition(compName);
-                    c.setTrack(finalTrack);
-                    finalTrack.getCompetitions().add(c);
-                    return c;
-                });
-
-                String lKey = compKey + "|" + v.getLapRankedHorse();
-                Lap lap = lapMap.computeIfAbsent(lKey, k -> {
-                    Lap l = new Lap();
-                    l.setNameOfLap(v.getLapRankedHorse());
-                    l.setCompetition(comp);
-                    comp.getLaps().add(l);
-                    return l;
-                });
-
-                String hKey = lKey + "|" + v.getNr();
-                CompleteHorse horse = horseMap.computeIfAbsent(hKey, k -> {
-                    CompleteHorse h = new CompleteHorse();
-                    h.setNumberOfCompleteHorse(v.getNr());
-                    h.setLap(lap);
-                    lap.getHorses().add(h);
-                    return h;
-                });
-
-                horse.setNameOfCompleteHorse(v.getNameRankedHorse());
-
-                String starter = normalizeStarter(v.getStarterRankedHorse());
-                Starts s = getOrCreateStarts(horse, starter);
-
-                s.setAnalys    (toInt(v.getAnalysRankedHorse()));
-                s.setFart      (toInt(v.getTidRankedHorse()));
-                s.setStyrka    (toInt(v.getPrestationRankedHorse()));
-                s.setKlass     (toInt(v.getMotstandRankedHorse()));
-                s.setPrispengar(toInt(v.getPrispengarRankedHorse()));
-                s.setKusk      (toInt(v.getStallSkrikRankedHorse()));
-                s.setPlacering (toInt(v.getPlaceringRankedHorse()));
-                s.setForm      (toInt(v.getFormRankedHorse()));
-                s.setA1        (toInt(v.getA1RankedHorse()));
-                s.setA2        (toInt(v.getA2RankedHorse()));
-                s.setA3        (toInt(v.getA3RankedHorse()));
-                s.setA4        (toInt(v.getA4RankedHorse()));
-                s.setA5        (toInt(v.getA5RankedHorse()));
-                s.setA6        (toInt(v.getA6RankedHorse()));
-                s.setTips      (toInt(v.getTipsRankedHorse()));
-
-                RoiView roi = roiMap.get(v.getId());
-                if (roi != null) {
-                    s.setRoiTotalt (roi.getRoiTotalt());
-                    s.setRoiSinceDayOne(roi.getRoiSinceDayOne());
-                    s.setRoiVinnare(roi.getRoiVinnare());
-                    s.setRoiPlats  (roi.getRoiPlats());
-                    s.setRoiTrio   (roi.getRoiTrio());
-                    s.setResultat  (roi.getResultat());
-                }
-
-                processed++;
-            }
-
-            trackRepo.save(existingTrackMap.get(key));
-            em.flush();
-            em.clear();
-        }
+        int processed = refreshRankedDate(requestedDate, workList, loadRoiMap(workList));
 
         return new ResponseEntity<>(
                 "Processed " + processed + " horses for date " + requestedDate,
@@ -230,15 +99,15 @@ public class RankHorseController {
     @GetMapping("/print")
     public ResponseEntity<String> saveAllRanked() {
 
-        cleanup.truncateAllExceptEmailAndSyncMeta(); // trunkering sker i schedulern
-
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
                 .orElse(LocalDateTime.of(1970,1,1,0,0));
 
-        Set<Integer> affectedDates = new TreeSet<>();
-        affectedDates.addAll(rankHorseRepo.findDistinctDatesChangedByRankSince(lastRun));
-        affectedDates.addAll(rankHorseRepo.findDistinctDatesChangedByRoiSince(lastRun));
+        Set<LocalDate> affectedDates = new TreeSet<>();
+        rankHorseRepo.findDistinctDatesChangedByRankSince(lastRun)
+                .forEach(d -> affectedDates.add(toLocalDateFlexible(d)));
+        rankHorseRepo.findDistinctDatesChangedByRoiSince(lastRun)
+                .forEach(d -> affectedDates.add(toLocalDateFlexible(d)));
 
         if (affectedDates.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
@@ -248,27 +117,18 @@ public class RankHorseController {
         TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
         int processed = 0;
 
-        for (Integer dateRankedHorse : affectedDates) {
+        for (LocalDate date : affectedDates) {
             List<RankHorseView> workList =
-                    rankHorseRepo.findChangedForDateSince(dateRankedHorse, lastRun);
+                    rankHorseRepo.findAllByDateRankedHorseIn(sourceDateCandidates(date));
 
             if (workList.isEmpty()) {
                 continue;
             }
 
-            Set<Long> ids = workList.stream()
-                    .map(RankHorseView::getId)
-                    .collect(Collectors.toSet());
-
-            Map<Long, RoiView> roiMap = ids.isEmpty()
-                    ? new HashMap<>()
-                    : roiRepo.findAllByRankIdIn(ids).stream()
-                    .collect(Collectors.toMap(RoiView::getRankId,
-                            Function.identity(),
-                            (a, b) -> b));
+            Map<Long, RoiView> roiMap = loadRoiMap(workList);
 
             Integer dayProcessed = transactionTemplate.execute(status ->
-                    saveRankedDay(workList, roiMap)
+                    refreshRankedDate(date, workList, roiMap)
             );
             processed += dayProcessed == null ? 0 : dayProcessed;
         }
@@ -281,10 +141,34 @@ public class RankHorseController {
         );
     }
 
+    private int refreshRankedDate(LocalDate date, List<RankHorseView> workList, Map<Long, RoiView> roiMap) {
+        List<Track> existingForDate = trackRepo.findByDate(date);
+        if (!existingForDate.isEmpty()) {
+            trackRepo.deleteAll(existingForDate);
+            em.flush();
+            em.clear();
+        }
+
+        return saveRankedDay(workList, roiMap);
+    }
+
+    private Map<Long, RoiView> loadRoiMap(List<RankHorseView> workList) {
+        Set<Long> ids = workList.stream()
+                .map(RankHorseView::getId)
+                .collect(Collectors.toSet());
+
+        return ids.isEmpty()
+                ? new HashMap<>()
+                : roiRepo.findAllByRankIdIn(ids).stream()
+                .collect(Collectors.toMap(RoiView::getRankId,
+                        Function.identity(),
+                        (a, b) -> b));
+    }
+
     private int saveRankedDay(List<RankHorseView> workList, Map<Long, RoiView> roiMap) {
         Map<String, List<RankHorseView>> byTrack = workList.stream()
                 .collect(Collectors.groupingBy(v -> {
-                    LocalDate d = toLocalDate(v.getDateRankedHorse());
+                    LocalDate d = toLocalDateFlexible(v.getDateRankedHorse());
                     String trackName = BANKOD_TO_TRACK
                             .getOrDefault(v.getTrackRankedHorse(), v.getTrackRankedHorse());
                     return d + "|" + trackName;
@@ -293,7 +177,7 @@ public class RankHorseController {
         int processed = 0;
 
         Set<LocalDate> dates = workList.stream()
-                .map(v -> toLocalDate(v.getDateRankedHorse()))
+                .map(v -> toLocalDateFlexible(v.getDateRankedHorse()))
                 .collect(Collectors.toSet());
 
         Set<String> names = workList.stream()
