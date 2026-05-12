@@ -236,51 +236,39 @@ public class RankHorseController {
                 .map(SyncMeta::getLastRun)
                 .orElse(LocalDateTime.of(1970,1,1,0,0));
 
-        List<RankHorseView> rankDelta =
-                rankHorseRepo.findAllByUpdatedAtAfter(lastRun);
-        List<RoiView> roiDelta =
-                roiRepo.findAllByUpdatedAtAfter(lastRun);
+        Set<Integer> affectedDates = new TreeSet<>();
+        affectedDates.addAll(rankHorseRepo.findDistinctDatesChangedByRankSince(lastRun));
+        affectedDates.addAll(rankHorseRepo.findDistinctDatesChangedByRoiSince(lastRun));
 
-        if (rankDelta.isEmpty() && roiDelta.isEmpty()) {
+        if (affectedDates.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
                     .body("No new or changed rows since " + lastRun);
         }
 
-        Map<Long,RoiView> roiMap = roiDelta.stream()
-                .collect(Collectors.toMap(RoiView::getRankId,
-                        Function.identity(),
-                        (a,b) -> b));
-
-        roiMap.putAll(
-                roiRepo.findAllProjectedBy().stream()
-                        .filter(r -> !roiMap.containsKey(r.getRankId()))
-                        .collect(Collectors.toMap(RoiView::getRankId, Function.identity()))
-        );
-
-        Set<Long> idsFromRoiDelta =
-                roiDelta.stream().map(RoiView::getRankId).collect(Collectors.toSet());
-
-        List<RankHorseView> workList = new ArrayList<>(rankDelta);
-        if (!idsFromRoiDelta.isEmpty()) {
-            workList.addAll(
-                    rankHorseRepo.findAllProjectedBy().stream()
-                            .filter(v -> idsFromRoiDelta.contains(v.getId()))
-                            .toList());
-        }
-
-        Map<LocalDate, List<RankHorseView>> byDate = workList.stream()
-                .collect(Collectors.groupingBy(
-                        v -> toLocalDate(v.getDateRankedHorse()),
-                        TreeMap::new,
-                        Collectors.toList()
-                ));
-
         TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
         int processed = 0;
 
-        for (Map.Entry<LocalDate, List<RankHorseView>> dayEntry : byDate.entrySet()) {
+        for (Integer dateRankedHorse : affectedDates) {
+            List<RankHorseView> workList =
+                    rankHorseRepo.findChangedForDateSince(dateRankedHorse, lastRun);
+
+            if (workList.isEmpty()) {
+                continue;
+            }
+
+            Set<Long> ids = workList.stream()
+                    .map(RankHorseView::getId)
+                    .collect(Collectors.toSet());
+
+            Map<Long, RoiView> roiMap = ids.isEmpty()
+                    ? new HashMap<>()
+                    : roiRepo.findAllByRankIdIn(ids).stream()
+                    .collect(Collectors.toMap(RoiView::getRankId,
+                            Function.identity(),
+                            (a, b) -> b));
+
             Integer dayProcessed = transactionTemplate.execute(status ->
-                    saveRankedDay(dayEntry.getValue(), roiMap)
+                    saveRankedDay(workList, roiMap)
             );
             processed += dayProcessed == null ? 0 : dayProcessed;
         }
