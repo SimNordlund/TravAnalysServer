@@ -96,6 +96,32 @@ public class RankHorseController {
         );
     }
 
+    @GetMapping("/print/{dateInt}/delete")
+    @Transactional
+    public ResponseEntity<String> deleteRankedForDate(@PathVariable Integer dateInt) {
+        LocalDate requestedDate;
+        try {
+            requestedDate = parseRequestedDate(dateInt);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest()
+                    .body("Invalid date. Use 6 digits (yyMMdd) or 8 digits (yyyyMMdd).");
+        }
+
+        List<Track> existingForDate = trackRepo.findByDate(requestedDate);
+        if (existingForDate.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                    .body("No rows found for date " + requestedDate);
+        }
+
+        trackRepo.deleteAll(existingForDate);
+        em.flush();
+        em.clear();
+
+        return ResponseEntity.ok(
+                "Deleted " + existingForDate.size() + " tracks for date " + requestedDate
+        );
+    }
+
     @GetMapping("/print")
     public ResponseEntity<String> saveAllRanked() {
 
