@@ -77,12 +77,12 @@ public class AppUrlController {
 
 
     //Cronjob när urler uppdateras
-    @Scheduled(cron = "0 0 11 * * THU", zone = "Europe/Stockholm")
+    @Scheduled(cron = "0 0 03 * * THU", zone = "Europe/Stockholm")
     @Transactional(transactionManager = "secondaryTransactionManager")
     public void scheduledAdvanceV85OneWeek() {
         advanceAppUrlOneWeek(V85_APP_URL_ID);
     }
-    @Scheduled(cron = "0 0 11 * * SUN", zone = "Europe/Stockholm")
+    @Scheduled(cron = "0 0 03 * * SUN", zone = "Europe/Stockholm")
     @Transactional(transactionManager = "secondaryTransactionManager")
     public void scheduledAdvanceV86OneWeek() {
         advanceAppUrlOneWeek(V86_APP_URL_ID);
