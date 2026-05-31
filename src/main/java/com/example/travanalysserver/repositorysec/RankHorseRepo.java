@@ -16,6 +16,13 @@ public interface RankHorseRepo extends JpaRepository<RankHorse, Long> {
     @Query("""
             select distinct r.dateRankedHorse
             from RankHorse r
+            order by r.dateRankedHorse
+            """)
+    List<Integer> findDistinctDates();
+
+    @Query("""
+            select distinct r.dateRankedHorse
+            from RankHorse r
             where r.updatedAt > :cutoff
             order by r.dateRankedHorse
             """)

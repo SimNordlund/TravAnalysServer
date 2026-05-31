@@ -20,6 +20,6 @@ public class RankedHorseScheduler {
     //@Scheduled(cron = "0 0 12-23 * * *", zone = "Europe/Stockholm") //Skulle kunna ändra till fixeddELAY OCH ETT LOCK? Se ovan.
     public void runEveryFiveMinutes() {
         logger.info("Hämtar uppdaterd data ifrån GameChanger");
-        controller.saveAllRanked();
+        controller.updateAllRanked();
     }
 }

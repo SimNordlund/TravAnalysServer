@@ -9,6 +9,7 @@ import com.example.travanalysserver.repository.TrackRepo;
 import com.example.travanalysserver.repositorysec.RankHorseRepo;
 import com.example.travanalysserver.repositorysec.RoiRepo;
 import com.example.travanalysserver.entity.Starts;
+import com.example.travanalysserver.service.impl.PrimaryDbCleanupService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -40,6 +41,7 @@ public class RankHorseController {
     private final TrackRepo      trackRepo;
     private final SyncMetaRepo   syncMetaRepo;
     private final PlatformTransactionManager transactionManager;
+    private final PrimaryDbCleanupService cleanup;
 
     @PersistenceContext
     private EntityManager em;
@@ -69,7 +71,7 @@ public class RankHorseController {
     private static final DateTimeFormatter BASIC = DateTimeFormatter.BASIC_ISO_DATE;
     private static final DateTimeFormatter YYMMDD = DateTimeFormatter.ofPattern("yyMMdd");
 
-    @GetMapping("/print/{dateInt}")
+    @GetMapping({"/update/{dateInt}", "/print/{dateInt}"})
     @Transactional
     public ResponseEntity<String> saveRankedForDate(@PathVariable Integer dateInt) {
         LocalDate requestedDate;
@@ -96,7 +98,7 @@ public class RankHorseController {
         );
     }
 
-    @GetMapping("/print/{dateInt}/delete")
+    @GetMapping("/update/{dateInt}/delete")
     @Transactional
     public ResponseEntity<String> deleteRankedForDate(@PathVariable Integer dateInt) {
         LocalDate requestedDate;
@@ -122,8 +124,8 @@ public class RankHorseController {
         );
     }
 
-    @GetMapping("/print")
-    public ResponseEntity<String> saveAllRanked() {
+    @GetMapping("/update")
+    public ResponseEntity<String> updateAllRanked() {
 
         LocalDateTime lastRun = syncMetaRepo.findById("ranked_horses")
                 .map(SyncMeta::getLastRun)
@@ -163,6 +165,46 @@ public class RankHorseController {
 
         return new ResponseEntity<>(
                 "Processed " + processed + " horses since " + lastRun,
+                HttpStatus.CREATED
+        );
+    }
+
+    @GetMapping("/print")
+    public ResponseEntity<String> printAllRanked() {
+        Set<LocalDate> sourceDates = rankHorseRepo.findDistinctDates().stream()
+                .map(RankHorseController::toLocalDateFlexible)
+                .collect(Collectors.toCollection(TreeSet::new));
+
+        if (sourceDates.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                    .body("No ranked horses found in source database");
+        }
+
+        cleanup.truncateAllExceptEmailAndSyncMeta();
+
+        TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
+        int processed = 0;
+
+        for (LocalDate date : sourceDates) {
+            List<RankHorseView> workList =
+                    rankHorseRepo.findAllByDateRankedHorseIn(sourceDateCandidates(date));
+
+            if (workList.isEmpty()) {
+                continue;
+            }
+
+            Map<Long, RoiView> roiMap = loadRoiMap(workList);
+
+            Integer dayProcessed = transactionTemplate.execute(status ->
+                    saveRankedDay(workList, roiMap)
+            );
+            processed += dayProcessed == null ? 0 : dayProcessed;
+        }
+
+        syncMetaRepo.save(new SyncMeta("ranked_horses", LocalDateTime.now()));
+
+        return new ResponseEntity<>(
+                "Reset primary database and processed " + processed + " horses",
                 HttpStatus.CREATED
         );
     }
