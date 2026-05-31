@@ -39,6 +39,8 @@ out/
 ### Logs ###
 http-requests-log-http
 http-requests-log.http
+/.idea/httpRequests/
+/requests.http
 
 ### Environment variables ##
 .env
